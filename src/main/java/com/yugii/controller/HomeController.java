@@ -3,6 +3,7 @@ package com.yugii.controller;
 import javax.validation.Valid;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -24,21 +25,26 @@ import java.util.List;
 @Controller
 public class HomeController extends BaseController {
 
+    private Logger logger = Logger.getLogger(HomeController.class);
 
-    @RequestMapping(value="/login.html",method=RequestMethod.GET,produces = "text/html; charset=utf-8")
+    @RequestMapping(value="/login.jsp",method=RequestMethod.GET,produces = "text/html; charset=utf-8")
     public String loginForm(Model model,String message){
+        logger.info("login --- get");
+        System.out.print("login --- get");
         if(!StringUtils.isEmpty(message))
             model.addAttribute(message);
         model.addAttribute("user", new User());
-        return "/login.jsp";
+        return "/index.html";
     }
 
-    @RequestMapping(value="/login.html",method=RequestMethod.POST,produces = "text/html; charset=utf-8")
+    @RequestMapping(value="/login.jsp",method=RequestMethod.POST,produces = "text/html; charset=utf-8")
     public String login(@Valid User user,BindingResult bindingResult,Model model,RedirectAttributes attr){
         try {
+            logger.info("login --- post");
+            System.out.print("login --- post");
             if(bindingResult.hasErrors()){
                 addMessage(attr, "用户名或密码错误");
-                return "redirect:/login.html";
+                return "redirect:/index.html";
             }
             //使用shiro管理登录
 //            SecurityUtils.getSubject().login(new UsernamePasswordToken(user.getUsername(), user.getPassword()));
@@ -48,7 +54,7 @@ public class HomeController extends BaseController {
             return "/user.jsp";
         } catch (AuthenticationException e) {
             addMessage(attr, "用户名或密码错误");
-            return "redirect:/login.html";
+            return "redirect:/index.html";
         }
     }
 
@@ -57,7 +63,7 @@ public class HomeController extends BaseController {
         //使用权限管理工具进行用户的退出，注销登录
         SecurityUtils.getSubject().logout();
         addMessage(attr, "您已安全退出");
-        return "redirect:/login.html";
+        return "redirect:/index.html";
     }
 
     @RequestMapping("/403.html")

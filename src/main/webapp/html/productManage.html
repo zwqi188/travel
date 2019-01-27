@@ -1,0 +1,132 @@
+<div ng-show="pageStatus=='list'">
+    <div class="search-wrap">
+        <div class="search-content">
+            <form name="serviceAreaSearch" ng-submit="search()">
+                <table class="search-tab">
+                    <tr>
+                        <th width="80">用户名</th>
+                        <td><input type="text" ng-model="serviceArea.areaId" class="common-text" placeholder="请输入"></td>
+                        <th>手机号</th>
+                        <td><input type="text" ng-model="serviceArea.areaName" class="common-text" placeholder="请输入">
+                        </td>
+                        <td><input type="submit" class="btn btn-primary" value="查询"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="result-wrap">
+        <div class="result-title">
+            <div class="result-list">
+                <a href="javascript:;" ng-click="add()"><i class="icon-font"></i>新增商品</a>
+                <a href="javascript:;" ng-click="deleteSelect()"><i class="icon-font"></i>批量删除</a>
+            </div>
+        </div>
+        <div class="result-content">
+            <table class="result-tab" width="100%">
+                <tr>
+                    <th class="tc"><input class="allChoose" name="" type="checkbox"></th>
+                    <th class="tc">用户名</th>
+                    <th class="tc">昵称</th>
+                    <th class="tc">手机号</th>
+                    <th class="tc">状态</th>
+                    <th class="tc">创建时间</th>
+                    <th class="tc">更新时间</th>
+                    <th class="tc">操作</th>
+                </tr>
+                <tr ng-repeat="user in data.data">
+                    <td class="tc"><input ng-model="user.id" type="checkbox"></td>
+                    <td class="tc" ng-bind="user.userName"></td>
+                    <td class="tc" ng-bind="user.nickName"></td>
+                    <td class="tc" ng-bind="user.phoneNumber"></td>
+                    <td class="tc" ng-bind="user.status=='Y'?'正常':'已停用'"></td>
+                    <td class="tc" ng-bind="user.createTime"></td>
+                    <td class="tc" ng-bind="user.updateTime"></td>
+                    <td class="tc"><input type="button" ng-click="switchStatus(user)"
+                                          ng-show="user.status=='Y'?true:false" value="停用" class="btn"><input
+                            type="button" ng-click="switchStatus(user)" ng-show="area.status=='N'?true:false" value="启用"
+                            class="btn">&nbsp;
+                        <input type="button" ng-click="edit(user)" value="编辑" class="btn">&nbsp;
+                        <input type="button" ng-click="del(user.id)" value="删除" class="btn"></td>
+                </tr>
+            </table>
+            <div class="list-page">
+                <a href="javascritp:;" ng-click="fristPage()">首页</a> |
+                <a href="javascritp:;" ng-click="upPage()">上一页</a> |
+                第{{data.page}}页/共{{data.totalPage}}页 |
+                <a href="javascritp:;" ng-click="downPage()">下一页</a> |
+                <a href="javascritp:;" ng-click="endPage()">尾页</a> |
+                共{{data.totalCount}}条 |
+                每页显示{{data.rows}}条
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-show="pageStatus=='add'">
+    <div class="result-wrap">
+        <div class="result-title">
+            新增商品
+        </div>
+        <div class="result-content">
+            <form name="addForm">
+                <table class="result-tab" width="100%" align="center">
+                    <tr>
+                        <th class="tc" width="30%">区域编号</th>
+                        <td class="tc" width="30%"><input type="text" name="areaId" ng-model="serviceArea.areaId"
+                                                          ng-maxlength="6" required></td>
+                        <td class="tc">
+                            <span class="red" ng-show="addForm.areaId.$error.required">请输入</span>
+                            <span class="red" ng-show="addForm.areaId.$error.maxlength">最大长度6</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="tc">区域名称</th>
+                        <td class="tc"><input type="text" name="areaName" ng-model="serviceArea.areaName"
+                                              ng-maxlength="20" required></td>
+                        <td class="tc">
+                            <span class="red" ng-show="addForm.areaName.$error.required">请输入</span>
+                            <span class="red" ng-show="addForm.areaName.$error.maxlength">最大长度20</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="tc">
+                            <input type="button" ng-click="save(serviceArea)" value=" 保 存 " class="btn">
+                            <input type="reset" value=" 重 置 " class="btn">
+                            <input type="button" ng-click="" value=" 返 回 " class="btn">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<div ng-show="pageStatus=='edit'">
+    <div class="result-wrap">
+        <div class="result-title">
+            编辑商品
+        </div>
+        <div class="result-content">
+            <table class="result-tab" width="100%" align="center">
+                <tr ng-hide="true">
+                    <th class="tc">区域ID</th>
+                    <td class="tc"><input type="text" ng-model="serviceArea.id"></td>
+                </tr>
+                <tr>
+                    <th class="tc" width="50%">区域编号</th>
+                    <td class="tc"><input type="text" ng-model="serviceArea.areaId" readonly></td>
+                </tr>
+                <tr>
+                    <th class="tc">区域名称</th>
+                    <td class="tc"><input type="text" ng-model="serviceArea.areaName"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="tc">
+                        <input type="button" ng-click="save(serviceArea)" value=" 保 存 " class="btn">
+                        <input type="reset" value=" 重 置 " class="btn">
+                        <input type="button" ng-click="" value=" 返 回 " class="btn">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
