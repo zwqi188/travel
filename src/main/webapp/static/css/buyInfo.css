@@ -1,0 +1,370 @@
+ul li{
+	list-style: none;
+}
+.lessonFace .slider img{
+	width: 580px;
+	height: 320px;	
+}
+.lessonFace .col-md-6{
+	/*border: 1px solid red;*/
+	/*margin: 10px auto;*/
+}
+.lessonFace .col-md-6>img{
+	width: 100%;
+	height: 100%;
+}
+.lessonFace .col-md-6 .row>span,.tuijian_liyou{
+	display: inline-block;
+	line-height: 22px;
+	padding: 0px 20px;
+	color: #999999;
+	min-width: 112px;
+}
+.tuijian_liyou{
+	padding-left: 5px;
+}
+.lessonFace .col-md-6 .row .cheap_span{
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+	border-radius: 5px;
+	background-color: #FF6600;
+	color: white;
+}
+.lessonFace .col-md-6 .row .tuijian{
+	margin-left: 19px;
+	display: block;
+	font-size: 12px;
+}
+.lessonInduce .play_method .row{
+	margin: 5px auto;
+}
+.lessonInduce .play_method span{
+	display: inline-block;
+	font-size: 12px;
+}
+.lessonInduce .play_method .introduce_header{
+	display: block;
+	margin: 20px auto;
+	width: 650px;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	padding: 6px 0px;
+	background-color: #0066CC;
+}
+.lessonInduce .play_method .house_tip{
+	display: block;
+	margin: 20px auto;
+	font-size: 20px;
+	color: #0066CC;
+}
+.lessonInduce .list_div .tab_logo img{
+	margin: 20px 30px;
+	width: 82px;
+	height: 82px;
+	/*border: 1px solid red;*/
+}
+.lessonInduce .list_div .tab_content .row{
+	border-bottom: 1px solid lightgray;
+	margin: 30px auto;
+}
+.lessonInduce .list_div .tab_content .tip_header{
+	font-weight: bold;
+}
+.lessonInduce .list_div .tab_content ol{
+	margin-left: -20px;
+	/*border: 1px solid aqua;*/
+}
+.lessonInduce .list_div .tab_content ol li{
+	line-height: 30px;
+}
+.lessonFace .col-md-6 .row{
+	/*border: 1px solid aqua;*/
+	margin-top: 17px;
+}
+.lessonFace .col-md-6 .price_div{
+	padding: 5px 0px;
+}
+.lessonFace .col-md-6 .row .price{
+	display: inline-block;
+	color: #FB6238;
+	font-size: 30px;
+}
+.lessonFace .col-md-6 .row img{
+	width: 28px;
+	height: 25px;
+	margin-right: 5px;
+}
+.lessonFace .col-md-6 .row .nowBuy{
+	width: 150px;
+	height: 50px;
+	color: white;
+	background-color: #FF4B33;
+	font-size: 22px;
+	margin-left: 20px;
+	margin-right: 5px;
+}
+.lessonFace .col-md-6 .row .buyCar{
+	display: inline-block;
+	width: 50px;
+	line-height: 36px;
+	background-color: #FEDEC4;
+	text-align: center;
+}
+.lessonFace .col-md-6 .row .buyCar img{
+	
+	width: 25px;
+	height: 25px;
+}
+.lessonInduce {
+	margin-top: 30px;
+/*	border: 1px solid aqua;*/
+}
+.lessonInduce .induceHeader{
+	background-color: #F2F1F1;
+}
+.lessonInduce .tab-content #easyInduce img{
+	width: 100%;
+}
+
+.lessonInduce .tab-content .tab-pane .eval_div{
+	width: 90%;
+	margin: 30px auto;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_content .tab-pane{
+	/*border: 1px solid plum;*/
+	height: 200px;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_header{
+	font-size: 20px;
+	padding: 10px 10px;
+	background-color: #F2F1F1;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_header>.messSpan{
+	margin-left: 10px;
+	color: #F9854C;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_table{
+	margin-top: 10px;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_table table{
+	margin-left: -14px;	
+	border-right: 1px solid lightgray;
+	/*line-height: 90px;*/
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_table table td{
+	border: none;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_table table td[rowspan='3']{
+	text-align: center;
+	font-size: 30px;
+	color: #FF7046;
+} 
+.lessonInduce .tab-content .tab-pane .eval_div .eval_table table td[rowspan='3'] span{ 
+	font-size: 14px;
+	color: #999999;
+	background-color: white;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_table table td>span{ 
+	display: inline-block;
+	width: 130px;
+	height: 13px;
+	background-color: #FF8E1C;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_table .eval_words{
+	/*border: 1px solid aqua;*/
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_table .eval_words>span{
+	border: 1px solid #FFD6AD;
+	display: inline-block;
+	width: 120px;
+	line-height: 30px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+	text-align: center;
+	font-size: 12px;
+	font-family: '幼圆';
+	color: #999999;
+}
+
+.lessonInduce .tab-content .tab-pane .eval_div .eval_choice{
+	font-size: 20px;
+	padding: 10px 10px;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	/*line-height: 38px;*/
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_choice ul li input[type='radio']{
+	margin-right: 5px;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_choice ul li a{
+	border: none;
+	background-color: white;
+	font-size: 14px;
+	/*border: 1px solid aqua;*/
+	margin: -8px 0px;
+	color: black;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_content .eval_girl img{
+	margin-top: 20px;
+	width: 80px;
+	height: 90px;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_content .eval_girl .good_eval{
+	height: 70px;
+	/*border: 1px solid aqua;*/
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_content .eval_girl .good_eval img{
+	width: 25px;
+	height: 30px;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_content .eval_girl .eval_words span{
+	border: 1px solid #FFD6AD;
+	display: inline-block;
+	width: 120px;
+	line-height: 30px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+	text-align: center;
+	font-size: 12px;
+	font-family: '幼圆';
+	color: #999999;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_content .eval_girl .response{
+	text-align: right;
+	line-height: 33px;
+}
+.lessonInduce .tab-content .tab-pane .eval_div .eval_content .eval_girl .response span{
+	color: #999999;
+}
+
+.lessonInduce .saleMan{
+	background-color: #F5F5F5;
+	height: 537px;
+}
+.lessonInduce .saleMan .row{
+	/*border: 1px solid red;*/
+	margin: 25px auto;
+}
+.lessonInduce .saleMan .row .col-md-7 .logo_word{
+	height: 60px;
+	display: inline-block;
+	margin-top: 5px;
+	/*border: 1px solid aqua;*/
+}
+.lessonInduce .saleMan .row .col-md-7 .logo_word img{
+	width: 25px;
+	height: 25px;
+	margin-top: 15px;
+	margin-right: 5px;
+}
+.lessonInduce .saleMan .row .col-md-5{
+	width: 100px;
+	color: #999999;
+}
+.lessonInduce .saleMan .row .col-md-7 a{
+	/*margin-left: -50px;*/
+	width: 100px;
+	border-radius: 15px;
+	background-color: white;
+	border: 1px solid #26C486;
+	color: #26C486;
+	/*26C486*/
+}
+.lessonInduce .saleMan .row .col-md-6 a{
+	width: 100px;
+	line-height: 30px;
+}
+.lessonInduce .saleMan .row .inSchool a{
+	color: white;
+	background-color: #33BF85;
+}
+.lessonInduce .saleMan .row .shoucang a{
+	color: #666666;
+	background-color: #FEFEFE;
+}
+
+
+/* 在线聊天 */
+#divMain{
+	font-size:12px;
+	text-align:center;
+	position: absolute;
+	top: 300px;
+	left: 300px;
+	z-index: 9999999999;
+	background-color: white;
+	display: none;
+}
+.divShow{
+	text-align:left;
+	border:solid 1px #ccc;
+	height:220px;
+	/* padding:5px; */
+	font-size:12px;
+	/* overflow-y:scroll; */
+}
+#divMain{
+	width:700px;
+	border:solid 5px #ccc
+}
+#divMain .divtip{
+	padding:10px;
+}
+#divMain .divtop{
+	width:98%;
+	height: 300px;
+}
+#divMain .divtop .divL{
+	padding-left:20px;
+	float:left;
+	width:70%;
+}
+#divMain .divtop .divR{
+	float:right;
+	width:20%;
+}
+#divMain .divBot{
+	clear:both;
+	padding:10px;
+	width: 96%;
+	margin: 0px auto;
+	height: 180px;
+}
+#divFace{
+	text-align:left;
+	/* border: 1px solid black; */
+	padding-bottom: 5px;
+}
+#txtContent{
+	width: 650px;
+	height: 130px;
+}
+table{
+	position: relative;
+}
+.btn_div{
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+.word_say{
+	color: #FA8072;
+}
+.man_show{
+	color: #87CEEB;
+	display: block;
+	line-height: 30px;
+	padding-left: 10px;
+}
+.man_show .glyphicon{
+	margin-right: 5px;
+}
+#spnMsg{
+	position:absolute;
+	border:solid 1px #cc3300;
+	padding:2px;
+	background-color:#ffe0a3;
+	display:none
+}

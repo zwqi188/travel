@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+.thumbnail img {
+	height: 100px;
+	width: 150px;
+	border: 1px solid #cccccc;
+}
+
+.thumbnail {
+	position: relative;
+	width: 180px;
+	height:300px;
+	text-align: center;
+}
+
+#batchdel {
+	display: none;
+	margin-right: 120px;
+}
+#ok{
+display: none;
+text-align: center;
+}
+.delbtn {
+	position: absolute;
+	top: 25px;
+	left: 155px;
+	background-color: #EFEFEF;
+	padding-top: 8px;
+}
+
+.check {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 150px;
+	width: 30px;
+	height: 24px;
+}
+
+.hidespan {
+	position: absolute;
+	margin-top: -20px;
+	display: none;
+}

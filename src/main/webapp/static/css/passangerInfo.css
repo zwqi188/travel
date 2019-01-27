@@ -1,0 +1,32 @@
+.wrap_table{
+}
+.btn_a{
+	margin: 15px auto;
+}
+.btn_a a{
+	width: 120px;
+	margin-left: 10px;
+}
+/* 分页美化 */
+.foot_pager{
+	text-align: right;
+}
+.foot_pager a{
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+	border-right: 1px solid black;
+	color: black;
+	font-size: 14px;
+}
+.foot_pager input[type='button']{
+	width: 30px;
+	margin-left: 5px;
+}
+.foot_pager select{
+	width: 40px;
+	margin: 0px 5px;
+}
+.clear{
+	clear: both;
+}

@@ -1,0 +1,22 @@
+.wrap_indent{
+	height: 450px;
+	border: 1px solid red;
+}
+.indent_progress{
+	margin: 20px auto;
+	border: none;
+}
+.indent_progress li>a{
+	display: inline-block;
+	font-size: 12px;
+	width: 200px;
+	text-align: center;
+	border: none;
+}
+.indent_progress li>a .progress{
+	height: 10px;
+	margin-top: 10px;
+}
+span {
+	padding-left: 20px;
+}

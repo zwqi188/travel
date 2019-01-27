@@ -1,0 +1,45 @@
+
+.footer {
+	height: 100px;
+}
+
+.quarter {
+	width: 25%;
+	height: 100px;
+	padding-top: 20px;
+	float: left;
+	text-align: center;
+	border: 1px solid #DDDDDD;
+}
+
+.clear {
+	clear: both;
+}
+
+.link {
+	border-top: 3px solid #D43F3A;
+	padding-left: 20px;
+	padding-top: 10px;
+	position: relative;
+	top: 10px;
+}
+
+.link ul {
+	list-style-type: none;
+}
+
+.link ul li {
+	width: 8%;
+	float: left;
+	border-right: 1px solid #DDDDDD;
+	text-align: center;
+}
+
+.link ul li a {
+	text-decoration: none;
+	color: #5E5E5E;
+}
+
+.link span {
+	color: #5E5E5E;
+}

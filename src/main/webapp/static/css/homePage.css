@@ -1,0 +1,352 @@
+body{
+	/*background-color: red;*/
+	/*background: url(../img/loginBg.jpg);*/
+}
+.container{
+	margin: 20px auto;
+}
+.sch_div .city_div,.sch_div .menu_content{
+	width: 390px;
+	/*border: 1px solid red;*/
+}
+.sch_div .city_div{
+	position: relative;
+}
+.sch_div .city_div .menu_btn{
+	width: 192px;
+	height: 40px;
+	background-color: white;
+	border: 1px solid lightgray;
+}
+.sch_div .city_div .caret{
+	margin-left: 20px;
+}
+.sch_div .city_div .pop_men_div{
+	border: 1px solid #FE9813;
+	width: 390px;
+	/* margin-top: 12px;
+	margin-left: -13px; */
+	height: 450px;
+	position: absolute;
+	background-color: white;
+	z-index: 99999999999;
+}
+.sch_div .city_div .pop_men_div form{
+	margin: 20px auto;
+}
+.sch_div .city_div .pop_men_div table a{
+	display: inline-block;
+	margin-left: 50px;
+	color: black;
+	font-weight: bold;
+}
+.sch_div .city_div .pop_men_div table a:hover{
+	color: aqua;
+}
+.sch_div .menu_content{
+	/*border: 1px solid red;*/
+}
+.sch_div .wrap_sch{
+	border-radius: 5px;
+	border: 2px solid #FE9813;
+}
+.sch_div .wrap_sch .all_product{
+	background-color: #FFEBCD;
+	width: 110px;
+}
+.sch_div .wrap_sch .sch_txt{
+	width: 250px;
+}
+.sch_div .wrap_sch .sch_btn{
+	width: 100px;
+	background-color: #FE9813;
+	color: white;
+}
+
+.content1{
+	/*border: 1px solid aqua;*/
+	position: relative;
+	/*height: 400px;*/
+}
+.content_left,.content_center,.content_right{
+	margin: 0px;
+	/*border: 1px solid aqua;*/
+	height: 500px;
+}
+.content_left{
+	/*background-color: #0264A3;*/
+	border: 2px solid #3983E5;
+	
+}
+.content_center{
+	
+}
+.content_left .nav-tabs {
+	border: none;
+	margin: 0px -15px;
+}
+.content_left .nav-tabs li>a{
+	color: black;
+	display: block;
+	width: 100%;
+	line-height: 80px;
+	border-bottom: 1px solid lightgray;
+}
+.content_left .nav-tabs li .row div{
+	/*border: 1px solid red;*/
+	height: 80px;
+	/*margin-top: -11px;*/
+	margin: -10px 0px;
+}
+.content_left .nav-tabs li .row .jiantou{
+	width: 20px;
+	/*border: 1px solid red;*/
+}
+.content_left .nav-tabs li .row .jiantou span{
+	font-size: 25px;
+	margin-left: -15px;
+}
+.content_left .nav-tabs li .travel_type{
+	/*border: 1px solid black;*/
+	width: 288px;
+}
+.content_left .nav-tabs li .travel_type>span{
+	display: block;
+	text-align: left;
+	line-height: 25px;
+}
+.content_left .nav-tabs li .travel_type span.travle_title{
+	margin-top: 5px;
+	font-size: 18px;
+}
+.content_left .nav-tabs li .travel_type>span span{
+	display: inline-block;
+	margin: 0px 3px;
+	line-height: 25px;
+	color: dimgray;
+	font-size: 12px;
+}
+.content_left .nav-tabs li .travel_type>span .abs_span{
+	color: #FF6600;
+}
+.content_left .nav-tabs li>a img{
+	width: 45px;
+	height: 45px;
+}
+.content_center{
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.content_center .top_menu_img,.content_center .bottom_menu_img{
+	
+}
+.content_center .bottom_menu_img{
+	margin-top: 30px;
+	height: 150px;
+	
+}
+.content_center .bottom_menu_img div{
+	height: 150px;
+	width:87px;
+	float: left;
+}
+
+.content_right .panel-heading{
+	position: relative;
+}
+.content_right .panel-heading span{
+	font-size: 14px;
+}
+.content_right .panel-heading .esc{
+	display: inline-block;
+	position: absolute;
+	right: 15px;
+	text-align: center;
+	width: 40px;
+	height: 20px;
+	border-radius: 5px;
+	background-color: lightgray;
+	color: aquamarine;	
+}
+.content_right .panel-heading #userName{
+	color: red;
+}
+.content_right .panel-body{
+	height: 360px;
+}
+.content_right .panel-body table td .add_lesson{
+	text-align: center;
+	width: 40px;
+	height: 20px;
+	border-radius: 5px;
+}
+.content_right .panel-body table td>span{
+	color: #1C1C1C;
+	display: inline-block;
+	width: 60px;
+	/*border: 1px solid aqua;*/
+}
+.content_right .panel-body table td>a{
+	/*float: right;*/
+	display: inline-block;
+	color: #F4A460;
+	/*border: 1px solid aqua;*/
+}
+.content_right .panel-body table td .add_lesson{
+	color: #00BFFF;
+}
+.content_center .item .carousel-caption{
+	font-family: "微软雅黑";
+	font-size: 16px;
+	color: aqua;
+}
+.content_right .panel{
+	margin: 0px -15px;
+}
+.content1 .pop_win{
+	width: 450px;
+	position: absolute;
+	left: 0px;
+	background-color: #FDF5E6;
+	border-radius: 5px;
+	border: 2px solid #F0F8FF;
+	opacity: 0.9;
+	z-index: 999999999;
+}
+.content1 .pop_win table{
+	border-bottom: 1px dashed #EEE5DE;
+}
+.content1 .pop_win table td,.content1 .pop_win table th{
+	/*width: 125px;*/
+	border: none;
+}
+.content1 .pop_win table td{
+	height: 20px;
+	/*border: 1px solid aqua;*/
+	width: 120px;
+}
+.content1 .pop_win table td a{
+	font-size: 12px;
+	color: black;
+	/*width: 125px;*/
+}
+.content1 .pop_win table th{
+	color: black;
+	width: 150px;
+	/*border: 1px solid black;*/
+}
+.demo_show .row div{
+	/*border: 1px solid red;*/
+}
+.demo_show .left_recomnd{
+	margin-left: -15px;
+}
+.demo_show .left_recomnd .most_hot{
+	margin-top: 40px;
+}
+.demo_show .left_recomnd .thumbnail{
+	height: 221px;
+}
+.demo_show .left_recomnd .thumbnail img{
+	width: 180px;
+	height: 170px;
+}
+.demo_show .left_recomnd .thumbnail .caption>span{
+	color: red;
+	font-family: '微软雅黑';
+	font-size: 16px;
+}
+.demo_show .menu_tab{
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #63B7E3;
+}
+.demo_show .menu_tab li>a{
+	display: inline-block;
+	color: black;
+	line-height: 10px;
+	border-right: 1px solid lightgray;
+}
+.demo_show .menu_tab li .most_travel{
+	border: none;
+	color: #34A591;
+}
+.demo_show .img_show .col-md-6 .row .col-md-6{
+	width: 243px;
+	height: 160px;
+}
+.demo_show .img_show .big_demo{
+	width: 480px;
+	height: 320px;
+}
+.demo_show .img_show .row .col-md-3{
+	width: 243px;
+	height: 160px;
+}
+.demo_show .img_show .thumbnail img{
+	width: 208px;
+	height:88px;
+}
+.demo_show .img_show big_demo>img{
+	width: 210px;
+	height: 300px;
+}
+.demo_show .img_show .thumbnail .img_title{
+	margin: 3px auto;
+	display: inline-block;
+}
+.demo_show .img_show .thumbnail .travle_price{
+	color: #FF6600;
+	display: block;
+}
+
+
+
+.back_top{
+	position: fixed;
+	right: 15px;
+	bottom: 80px;
+}
+.back_top img{
+	width: 46px;
+	height: 46px;
+	padding: 5px;
+	position: absolute;
+	right: 15px;
+}
+.back_top img.home{
+	height: 0px;
+	opacity: 0;
+}
+
+.floatdiv{
+	width:500px;
+	height:100px;
+	position: fixed;
+	bottom:50px;
+	left:-450px;	
+}
+.floatdiv2{
+	padding-left:10px;
+	width:500px;
+	height:100px;
+	position: fixed;
+	bottom:50px;
+	left:0px; 
+	background-color: #FFE4C4;	
+}
+#messagediv{
+ padding-top:5px; 
+ width:80%;
+ height:100px;
+ float:left;
+}
+#imgdiv{
+ width:20%;
+ height:100px;
+  float:left;
+}
+#exitdiv #messagediv button{
+	margin-left: 60px;
+	
+}

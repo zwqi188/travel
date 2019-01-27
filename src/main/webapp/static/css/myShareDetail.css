@@ -1,0 +1,11 @@
+.wrap_table{
+	width: 870px;
+}
+.share_table{
+	width: 100%;
+	margin: 30px auto;
+}
+.share_table tr td img{
+	width: 200px;
+	height: 130px;
+}

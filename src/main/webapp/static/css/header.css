@@ -1,0 +1,51 @@
+#topnav {
+	background-color: #1BA9BA;
+}
+
+ul a,#topnav a>span {
+	color: white;
+}
+
+#nav {
+	margin-top: 5px;
+}
+
+#nav a {
+	margin: 20px;
+}
+
+#topnav_logo .chinesename {
+	color: #46B8DA;
+	font-size: 1.2em;
+	font-family: "幼圆";
+	font-weight: bolder;
+	display: inline-block;
+	position: relative;
+	top: -48px;
+	left: 60px;
+}
+
+#topnav_logo .englishname {
+	color: black;
+	font-size: 1.2em;
+	font-family: "幼圆";
+	font-weight: bold;
+	display: inline-block;
+	position: relative;
+	top: -25px;
+	left: -5px;
+}
+
+#topnav_logo {
+	margin-top: -14px;
+}
+
+#topnav_logo img {
+	height: 50px;
+}
+form a,form span{
+	color: white;
+}
+span.caret{
+	color: white;
+}

@@ -1,0 +1,105 @@
+#prev{
+	width:1px;
+	height:1px;
+	position: absolute;
+	top:310px;
+	left:30px;
+}
+#next{
+	width:1px;
+	height:1px;
+	position: absolute;
+	top:310px;
+	right:30px;
+}
+#photo{
+	width:204px;
+	height:180px;
+	border:1px solid #EED5B7;
+}
+/* by zhang */
+.logo_title{
+	display: inline-block;
+	line-height: 35px;
+	font-size: 30px;
+	margin-left: 50px;
+}
+.share_header{
+	background-color: #FFA07A;
+	padding: 15px 0px;
+}
+.sharedivs{
+	margin: 20px 30px;
+}
+.sharedivs>.col-md-4{
+	/* border: 1px solid red; */
+	height: 170px;
+}
+.sharedivs .share_show{
+	border: 1px solid #00FFFF;
+	width: 98%;
+	height: 170px;
+	margin: 0px auto;
+	position: relative;
+}
+.sharedivs .share_show .glyphicon{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: aqua;
+	font-size: 20px;
+}
+.sharedivs .share_show img{
+	height: 130px;
+	width: 100%;
+}
+.sharedivs .share_show .spotname_div{
+	line-height: 35px;
+}
+.sharedivs .share_show .spotname_div span{
+	position: absolute;
+	right: 5px;
+	font-weight: bold;
+}
+
+/* 编辑框 */
+.edit_share{
+	width: 550px;
+	height: 500px;
+	position: absolute;
+	top: 60px;
+	left: 100px;
+	background-color: white;
+	border: 1px solid red;
+}
+.edit_share form{
+	/* border: 1px solid red; */
+	margin: 40px auto;
+}
+/* 美化上传文件按钮 */
+.img_file{
+	position: absolute;
+	left: 15px;
+	width: 110px;
+}
+
+.file {
+    position: relative;
+    top: 13px;
+    display: inline-block;
+    width: 125px;
+    text-align: center;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+}
+input[type='file'] {
+    opacity: 0;
+    z-index: 9999;
+}
+#sharediv{
+	display: none;
+} 
