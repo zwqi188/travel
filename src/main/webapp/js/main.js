@@ -1,8 +1,7 @@
 /*
  * 应用路由配置,控制器
  * 
- * By liuzy
- * 2015-06-14
+ * By YuGii
  */
 var beeApp = angular.module('beeApp', ['ngRoute', 'ngCookies', 'ngProject']);
 

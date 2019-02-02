@@ -4,8 +4,7 @@
  * Util:工具类,MD5,JSON转键值
  * Web:Web工具类,包含公共的请求服务器方法
  * 
- * By liuzy
- * 2015-06-14
+ * By YuGii
  */
 (function (window, angular) {
 
