@@ -13,23 +13,6 @@ $("#ajaxlineid").html(msg);Flinepage();
 setTimeout('Imglazy()',100);
 }
 
-function Flinepage(){
-	$(".Fpage a").click(function () {var selid,selnum,lineclassid,linemddid,lineplayid,linedayid,linemonthid,linezyid,linebibgid,linetiketid,linesearchid,linesearchurl;
-	 var targetOffset = $(".guidetype").offset().top;
-         //$('html,body').animate({ scrollTop: targetOffset }, 1000);
-		 $('html,body').scrollTop(targetOffset);;
-		 
-		selid=$(this).attr("data-value");
-		lineclassid=$("#lineclassid").val();linemddid=$("#linemddid").val();lineplayid=$("#playsclass").val();linedayid=$("#daysclass").val();linemonthid=$("#monthsclass").val();linebibgid=$("#linebigid").val();linezyid=$("#linezyid").val();linetiketid=$("#tiketsclass").val();linesearchid=$("#searchid").val();linesearchurl=$("#searchurl").val();
-		
-		
-		
-		
-		
-		Searchnewline(lineclassid,linemddid,lineplayid,linedayid,linemonthid,linebibgid,linezyid,linetiketid,""+linesearchid+"",""+linesearchurl+"",selid);
-	});
-	}
-
 
 $(function(){var myDate = new Date(),newmydate;
 //alert(myDate.toLocaleDateString().replace(new RegExp("/","gm"),"-"));
@@ -57,7 +40,7 @@ $(".a_menu_l").html("<a href='/'><img src='http://images.tyjiaqi.com/images/logo
 $(".logo").html("<a href='/zt/qingming/' target='_blank'><img src='http://images.tyjiaqi.com/site/gl/glct19130.jpg?v=1'></a>");
 $(".a_menu_l").html("<a href='/zt/qingming/' target='_blank'><img src='http://images.tyjiaqi.com/site/gl/glct19130.jpg?v=1' width='180'></a>");
 			}
-	
+
 	}
 })
 
@@ -293,17 +276,6 @@ async:true,
 success:function(data) 
 { valss.animate({ height: '400px'}, 500).html(data); }})})})
 
-function _n_listline(str){
-
-		var vals=$(str).attr("lineid");
-		var valss=$(str).parent().parent().parent().next().next();
-		$(str).parent().html("<a lineid='"+vals+"' onclick='_shouqi(this)' class='more_dates' style='display: inline;'>收起<i></i></a>");
-		valss.html("加载中...")
-	$.ajax({	
-url:"/book/list.do_date_"+vals, 
-async:true, 
-success:function(data) 
-{ valss.animate({ height: '400px'}, 500).html(data); }})}
 
 function _shouqi(str){
 	var valss=$(str).parent().parent().parent().next().next();
@@ -330,18 +302,6 @@ success:function(data)
 valss.html(data); 
 } 
 })}
-
-
-function _listnew_tianqi(mid,nid){
-
-$.ajax({	
-url:"/weather/ajax/"+mid+"_"+nid+"/", 
-async:true, 
-success:function(data) 
-{ if (data!=''){
-	$("#map").html(data);}}})
-setTimeout(function(){$.ajax({url:"/weather/ht/"+mid+"_"+nid+"/", async:true })},1000)
-}
 
 
 
@@ -449,47 +409,7 @@ var lineHeight = $self.find("li:first").height();
 $self.animate({ "margin-top" : -lineHeight +"px" },600 , function(){
 $self.css({"margin-top":"0px"}).find("li:first").appendTo($self);
 })
-} 	
-
-
-
-
- var strHtml="<div id=\"menu\" class=\"float-bar\"><div id=\"menusUl\"> "
- +"  <div class=\"he_position6\" id=\"menus_6\"><a></a><div id=\"menus_6group\" class=\"showaddress he_on\" style=\"display: none; z-index: 1500;\"><a href=\"/info/16\"><img src=\"http://images.tyjiaqi.com/images/wz1914.jpg\"  height=\"120\"></a><a href=\"/info/2\"><img src=\"http://images.tyjiaqi.com/images/mdj1914.jpg\"></a><a href=\"/info/12\"><img src=\"http://images.tyjiaqi.com/images/ms1914.jpg\"></a></div></div> "
-  +"  <div class=\"he_por he_position1\" id=\"menus_1\"><a onclick=\"window.open('http://p.qiao.baidu.com//im/index?siteid=4818363&ucid=7262589','国旅在线客服','height=620,width=800,status=no,toolbar=no,menubar=no,location=no');void(0);\"></a>  <div id=\"menus_1group\" class=\"cat_zx he_on\" style=\"display: none; z-index: 1400;\"><div class=\"cat_onlinezx\"><a onclick=\"window.open('http://p.qiao.baidu.com//im/index?siteid=4818363&ucid=7262589','国旅在线客服','height=620,width=800,status=no,toolbar=no,menubar=no,location=no');void(0);\">现在咨询</a></div></div></div> "
-    +"  <div class=\"he_position5\" id=\"menus_5\"><a></a><div id=\"menus_5group\" class=\"showphone he_on\" style=\"display: none; z-index: 1500;\"><i class=\"l_n_phone\"></i>021-68689678</div></div> "
-  +"      <div id=\"menus_3\" class=\"he_por he_position3\"><a></a><div id=\"menus_3group\" class=\"he_ceo he_on\" style=\"display: none; z-index: 1500;\"></div></div> "
-  +"<div id=\"menus_2\" class=\"he_por\"> <a class=\"he_position2\"></a><div id=\"menus_2group\" class=\"share-baidu he_on\" style=\"display: none; z-index: 1500;\"><div class=\"bdsharebuttonbox\" id=\"bdshare\"><a class=\"bds_more\" data-cmd=\"more\" href=\"#\"></a><a class=\"bds_qzone\"  data-cmd=\"qzone\" title=\"分享到QQ空间\" href=\"#\"></a><a class=\"bds_tsina\" data-cmd=\"tsina\" title=\"分享到新浪微博\" href=\"#\"></a><a class=\"bds_tqq\" data-cmd=\"tqq\" title=\"分享到腾讯微博\" href=\"#\"></a><a class=\"bds_renren\" data-cmd=\"renren\" title=\"分享到人人网\" href=\"#\"></a><a class=\"bds_weixin\" data-cmd=\"weixin\" title=\"分享到微信\" href=\"#\"></a></div></div> </div>"
-  +"<div class=\"he_por he_position4\"><a onclick=\"goTop();return false;\"></a></div></div> </div><div id=\"question_x\"><div style=\"display:none\" id=\"div_windows\"></div><div class=\"tw_tit\"><h3>我要提问</h3><div class=\"close\"><img id=\"closeid\" src=\"/Destination/images/gb.gif\"></div></div><form onsubmit=\"return checkform(this);\" action=\"/nasksubmit\" method=\"post\" name=\"askform\"  ><input type=\"hidden\" value=\"0\" name=\"td\"> <input type=\"hidden\" value=\"0\" name=\"d_classname\"> <input type=\"hidden\" value=\"0\" name=\"class_three\"><div class=\"question_xx\"><ul><li><label>姓名：</label><input type=\"text\" class=\"question_bk\" name=\"Books_Name\"><span id=\"truename\" class=\"xh\">*</span></li><li><label>Q Q：</label><input type=\"text\" class=\"question_bk\" name=\"Books_Qq\"></li> <li><label>手机：</label><input type=\"text\" class=\"question_bk\" name=\"Books_Spho\"><span id=\"sphos\" class=\"xh\">*</span></li><li><label>邮箱：</label><input type=\"text\" class=\"question_bk\" name=\"Books_Mail\"><span id=\"emails\" class=\"xh\">*</span></li><li><label>提问内容：</label><textarea class=\"wby\" name=\"Books_Info\"></textarea><p id=\"infos\" class=\"xh\">*限600个字符</p></li><li><label>验证码：</label><input type=\"text\" maxlength=\"4\" class=\"yzm\" name=\"Books_Yzm\"><img style=\"vertical-align:top;\" src=\"/user/images/sjyzm.asp\" id=\"yzshoujis\"> <a onclick=\"RefreshImage('yzshoujis')\" style=\"cursor:pointer;\">换个试试</a><span id=\"yzm\" class=\"xh\"></span></li><li id=\"submitids\"><input type=\"image\" class=\"anniu\" src=\"/Destination/images/tj_anniu.gif\"></li></ul></div></form></div>"
-  
-
-$(function(){
-document.getElementById("firht_fd").innerHTML = strHtml;$("#firht_fd").hide();
- $(window).scroll(function(){if($(document).scrollTop()>120 ){$("#firht_fd").show("slow");}else{$("#firht_fd").hide("slow");}})	
-$(function(){
-	$("#menu>a").hover(function(){
-		var str=$(this).attr("id").replace("group","");
-		//$("#"+str).addClass("menu_hover");//关于鼠标移到dt上对应menu悬浮效果消失，可以打开此处注释,将悬浮class样式替换掉括号里面的内容
-		$(this).show("slow");
-	},function(){
-		var str=$(this).attr("id").replace("group","");
-		//$("#"+str).removeClass("menu_hover");//关于鼠标移到dt上对应menu悬浮效果消失，可以打开此处注释,将悬浮class样式替换掉括号里面的内容
-		$(this).hide("slow");
-	});
-	$("#menusUl>div").hover(function(){
-		$("#"+this.id+"group").css({"display":"block"}).stop().animate({ opacity: 1,marginRight:-10 }, 300);
-	},function(){
-		$("#"+this.id+"group").stop().animate({ opacity: 0 ,marginRight:0}, 300).css({"display":"none"});
-	});
-});
-window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-}); 
- 
-
-
-
-
-
+}
 	
 
 function showid(idname,classids){
@@ -679,35 +599,6 @@ function delnullCookie(name)//删除cookie
 {    var exp = new Date();
     exp.setTime(exp.getTime() - 1);
 	document.cookie= name + "=null;expires="+exp.toGMTString() +";path=/";}
-	
-
-getTgurls();	
-//delnullCookie("Tg_npho");
-//delnullCookie("Tg_npho");
- $(function () {
-            updateEndTime();
-        }); function updateEndTime() {
-            var date = new Date();
-            var time = date.getTime();
-            $(".it_times").each(function (i) {
-      var endDate = this.getAttribute("endTime"); //结束时间字符串
-      var endDate1 = eval('new Date(' + endDate.replace(/\d+(?=-[^-]+$)/, function (a) { return parseInt(a, 10) - 1; }).match(/\d+/g) + ')');
-      var endTime = endDate1.getTime(); //结束时间毫秒数
-      var lag = (endTime - time) / 1000; 
-                if (lag > 0) {
-                    var second = Math.floor(lag % 60);
-                    var minite = Math.floor((lag / 60) % 60);
-                    var hour = Math.floor((lag / 3600) % 24);
-                    var day = Math.floor((lag / 3600) / 24);
-					$(this).html("<i>" +  day + "</i>天<i>" + hour + "</i>小时<i>" + minite + "</i>分<i>" + second + "</i>秒");
-						
-                }
-                else
-                    $(this).html("活动已经结束啦！");
-            });
-            setTimeout("updateEndTime()", 1000);
-        }
-
 							  
 function checkform(the){
 	
@@ -1055,60 +946,3 @@ $(".stairslist li").click(function(){
 })
 });
 
-
-
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-
-
-(function(){
-var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?e288c5120678bdf118633821e3607ec6":"https://jspassport.ssl.qhimg.com/11.0.1.js?e288c5120678bdf118633821e3607ec6";
-document.write('<script src="' + src + '" id="sozz"><\/script>');
-})();
-
-
-document.writeln("<script src=\"http://s95.cnzz.com/stat.php?id=1258093089&web_id=1258093089\" language=\"JavaScript\"></script>");
-
-//document.writeln('<script type="text/javascript"  data-lxb-uid="7262589" data-lxb-gid="90100" src="http://lxbjs.baidu.com/api/asset/api.js?t=' + new Date().getTime() + '" charset="utf-8"></scr' + 'ipt>' );
-
-
-
-
-//$(function(){$("#callBtn").click(function(){lxb.call(document.getElementById("telInput"));;})});
-
-//var _hmt = _hmt || [];
-//(function() {
-//  var hm = document.createElement("script");
-//  hm.src = "//hm.baidu.com/hm.js?d934764c449e28def5881dfcf40bb6a5";
-//  var s = document.getElementsByTagName("script")[0]; 
-//  s.parentNode.insertBefore(hm, s);
-//  
-//})();
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?29a327e2f47acc709bbf2f815781393c";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-
-//隐藏百度商桥
-
-
-//$(function(){
-//$("#callBtn").click(function(){
-//	lxb.call(document.getElementById("telInput"));
-//			
-//})
-//});
-//document.write('<script type="text/javascript"  data-lxb-uid="7262589" data-lxb-gid="90100" src="http://lxbjs.baidu.com/api/asset/api.js?t=' + new Date().getTime() + '" charset="utf-8"></scr'+'ipt>' );
