@@ -28,20 +28,8 @@ $(".t_left:first").prepend(toptime);
 var mydate = new Date();
 var t=mydate.getHours();
 var t_day=mydate.getDay();//==6周六,==0周日
-
-if (t>18 || t<8){
 $(".logo").html("<a href='/'></a>");
 $(".a_menu_l").html("<a href='/'><img src='http://images.tyjiaqi.com/images/logo.jpg' width='180'></a>");
-} else{
-	if(t_day==60 || t_day==70){
-		$(".logo").html("<a href='/'></a>");
-		$(".a_menu_l").html("<a href='/'><img src='http://images.tyjiaqi.com/images/logo.jpg' width='180'></a>");
-		}else{
-$(".logo").html("<a href='/zt/qingming/' target='_blank'><img src='http://images.tyjiaqi.com/site/gl/glct19130.jpg?v=1'></a>");
-$(".a_menu_l").html("<a href='/zt/qingming/' target='_blank'><img src='http://images.tyjiaqi.com/site/gl/glct19130.jpg?v=1' width='180'></a>");
-			}
-
-	}
 })
 
 
