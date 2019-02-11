@@ -1,5 +1,5 @@
 <!doctype html>
-<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="beeApp">
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="travelApp">
 <head>
     <meta charset="UTF-8">
     <title>乐游网主页</title>
@@ -11,20 +11,22 @@
     <script type="text/javascript" src="./js/angular/angular-route.js"></script>
     <script type="text/javascript" src="./js/angular/angular-cookies.js"></script>
     <script type="text/javascript" src="./js/ngProject.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
-
+    <script type="text/javascript" src="./js/travel/main.js"></script>
+    <script type="text/javascript" src="./js/travel/route.js"></script>
     <link rel="stylesheet" type="text/css" href="css/guolv.css">
     <script type="text/javascript" src="js/jquery-1.3.2.js"></script>
     <link rel="stylesheet" href="css/share_style0_32.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body ng-controller="indexController">
-<div ng-include="'html/template/header.html'"></div>
+<div ng-view></div>
+
 <div class="head_content">
     <span class="logo"></span>
     <span class="search"></span>
     <span class="news_tel"></span>
 </div>
+
 <div class="menunew">
     <div class="newnav">
         <div class="index_guide">
@@ -1118,6 +1120,7 @@
 <div style="display:none">
     <script type="text/javascript" src="js/newcon.js"></script>
     <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+
 </div>
 </body>
 </html>
