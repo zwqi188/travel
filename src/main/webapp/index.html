@@ -1,6 +1,14 @@
 <!doctype html>
 <html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="travelApp">
 <head>
+    <script>
+        document.createElement('ng-include');
+        document.createElement('ng-pluralize');
+        document.createElement('ng-view');
+        document.createElement('ng:include');
+        document.createElement('ng:pluralize');
+        document.createElement('ng:view');
+    </script>
     <meta charset="UTF-8">
     <title>乐游网主页</title>
     <link type="text/css" rel="stylesheet" href="./css/login.css"/>
@@ -19,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body ng-controller="indexController">
-<div ng-view></div>
+<div ng-include="/header.html"></div>
 
 <div class="head_content">
     <span class="logo"></span>

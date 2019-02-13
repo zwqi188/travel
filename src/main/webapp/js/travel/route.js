@@ -4,7 +4,7 @@
  * 路由配置
  */
 
-var travelApp = angular.module('travelApp', ['ngRoute', 'ngCookies']);
+var travelApp = angular.module('travelApp', ['ngRoute']);
 
 travelApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
@@ -16,7 +16,7 @@ travelApp.config(['$routeProvider', function ($routeProvider) {
             controller: 'registerManageController'
         })
         .when('/header.html', {
-            templateUrl: './html/template/header.html',
+            templateUrl: 'html/template/header.html',
         })
         .otherwise({
             redirectTo: '/'
