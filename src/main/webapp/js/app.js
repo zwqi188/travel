@@ -33,8 +33,26 @@ travelApp.config(function($stateProvider, $urlRouterProvider) {
                 'header@index': {
                     templateUrl: 'html/template/header.html'
                 },
-                'body@index': {
-                    templateUrl: 'html/body.html'
+                'menu@index': {
+                    templateUrl: 'html/index/menu.html'
+                },
+                'search@index': {
+                    templateUrl: 'html/index/search.html'
+                },
+                'recommend@index': {
+                    templateUrl: 'html/index/recommend.html'
+                },
+                'outbound@index': {
+                    templateUrl: 'html/index/outbound.html'
+                },
+                'inbound@index': {
+                    templateUrl: 'html/index/inbound.html'
+                },
+                'travelAround@index': {
+                    templateUrl: 'html/index/travelAround.html'
+                },
+                'customized@index': {
+                    templateUrl: 'html/index/customized.html'
                 },
                 'footer@index': {
                     templateUrl: 'html/template/footer.html'
