@@ -1,12 +1,10 @@
 package com.yugii.controller;
 
-import com.yugii.constant.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,10 +16,11 @@ public class MainController {
 
     @ResponseBody
     @RequestMapping(value = "/register.json",method = RequestMethod.POST)
-    public Map<String,Object> register(@Valid Map<String,Object> param){
-        String userName = (String) param.get(Param.USER_NAME);
-        String email = (String) param.get(Param.EMAIL);
-        return param;
+    public Map<String,Object> register(String userName, String email){
+        Map<String,Object> map = new HashMap<>();
+        map.put(userName,email);
+        return map;
+
     }
 
     @ResponseBody
