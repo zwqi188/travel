@@ -115,10 +115,10 @@
             <tx:method name="batch*" propagation="REQUIRED" read-only="false" rollback-for="java.lang.Exception"/>
             <tx:method name="sendOpen*" propagation="REQUIRED" read-only="false" rollback-for="java.lang.Exception"/>
             <tx:method name="sendClose*" propagation="REQUIRED" read-only="false" rollback-for="java.lang.Exception"/>
-            <tx:method name="find*" propagation="REQUIRED" read-only="true"/>
-            <tx:method name="get*" propagation="REQUIRED" read-only="true"/>
-            <tx:method name="load*" propagation="REQUIRED" read-only="true"/>
-            <tx:method name="*" read-only="true"/>
+            <tx:method name="find*" propagation="REQUIRED" read-only="false"/>
+            <tx:method name="get*" propagation="REQUIRED" read-only="false"/>
+            <tx:method name="load*" propagation="REQUIRED" read-only="false"/>
+            <tx:method name="*" read-only="false"/>
         </tx:attributes>
     </tx:advice>
 
