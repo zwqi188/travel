@@ -63,18 +63,36 @@ travelApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/register',
             views: {
                 '': {
-                    templateUrl: 'html/user/app.html'
+                    templateUrl: 'html/register/app.html'
                 },
                 'header@register': {
                     templateUrl: 'html/template/header.html'
                 },
                 'register@register': {
-                    templateUrl: 'html/user/register.html'
+                    templateUrl: 'html/register/register.html'
                 },
                 'footer@register': {
                     templateUrl: 'html/template/footer.html'
                 }
             }
         })
+        .state('loginView', {
+            url: '/loginView',
+            views: {
+                '': {
+                    templateUrl: 'html/login/app.html'
+                },
+                'header@loginView': {
+                    templateUrl: 'html/template/header.html'
+                },
+                'login@loginView': {
+                    templateUrl: 'html/login/login.html'
+                },
+                'footer@loginView': {
+                    templateUrl: 'html/template/footer.html'
+                }
+            }
+        })
+        
        
 });

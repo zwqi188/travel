@@ -103,7 +103,7 @@ a img{border:none;}
 .t_left{ float:right; color:#039;}
 .t_left em{ color:#F30; font-style:normal;}
 .t_left a{ padding-left:5px; padding-right:5px;}
-.t_right{ float:right;width:65px; position:relative;z-index:12;}
+.t_right{ float:right;width:165px; position:relative;z-index:12;}
 .t_right dl{ float:right; position:absolute;}
 .t_right dt{ float:right; position:relative; width:60px;}
 .t_right i{background-position:-580px -295px; width:10px; height:8px; display:block; float:right; margin-top:10px;*margin-top:-20px;}

@@ -1,0 +1,83 @@
+
+<div class="contentBox" id="contentBox">
+        <div class="warp contentBoxmain">
+            <div class="loginbox js-loginPanel" style="overflow: visible;">
+                <ul class="new-login js-newtab" data-isgeetext="True" data-isredirect="1" >
+                    <li data-rel="new-tab1" class="">会员帐号登录<i></i></li>
+                    <li data-rel="new-tab2" class="active">手机动态密码登录<i></i></li>
+                </ul>
+                <div class="new-tabbox" id="new-tab1" style="display:none">
+                    <div class="default">
+                        <span class="err" style="display:none;">您还不是春秋会员，请使用手机动态密码登录<i></i></span>
+                    </div>
+                    <ul>
+                        <li class="focus">
+                            <input placeholder="手机号码/邮箱" data-type="account" class="input" id="Account" name="Account" type="text" tabindex="1">
+                            <i class="yhm"></i>
+                        </li>
+                        <li>
+                            <input placeholder="8-16位字符" data-type="password" class="input" id="Password" name="Password" type="password" tabindex="2">
+                            <i class="mm"></i>
+                        </li>
+                            <li class="yzm" style="overflow: visible;">
+                            </li>
+                    </ul>
+                    <a class="lg_btn accountLogin" id="lg_btn" href="javascript:" >登 录</a>
+                    <div class="wjma">
+                        <label>
+                            <input id="cbkAutoLogin" name="cbkAutoLogin" class="js-rememberLogin" type="checkbox" value="">下次自动登录
+                        </label>
+                        <span class="lg_zc">
+                            <a href="">免费注册</a>&nbsp;|&nbsp;
+                            <a href="">忘记密码？</a>
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="new-tabbox hide" id="new-tab2" style="display:block">
+                    <div class="default">
+                        <span class="err" style="display: block;"><i></i>请输入手机号码</span>
+                    </div>
+                    <ul>
+                        <li class="focus onerror">
+                            <input placeholder="手机号码" data-type="phone" class="input" id="Account1" name="Account1" type="text" data-checkurl="" maxlength="11">
+                            <i class="yhm"></i>
+                        </li>
+                        <li class="sjyzm">
+                            <div class="sjyzm-box">
+                                <input class="input" id="ImageCodeTxt1" data-type="verificationCode" type="text" maxlength="4" name="ImageCodeTxt1" placeholder="验证码">
+                                <i class="mm"></i>
+                            </div>
+                            <img align="absmiddle" alt="" class="imgCC1" id="imgCC1" src="" title="换一张">
+                        </li>
+    
+                        <li class="sjyzm">
+                            <div class="sjyzm-box">
+                                <input class="input js-messagePassward" data-type="messagePassward" id="SmsCode" type="text" maxlength="6" name="SmsCode" placeholder="短信动态密码">
+                                <i class="mm"></i>
+                            </div>
+                            <span class="new-logindtmm js-notePassword" >获取动态密码</span>
+                            <span class="new-logindtmm new-logindtmmon hide js-runNum">60s后重新获取</span>
+                        </li>
+                    </ul>
+    
+                    <div class="wjma js-iDo new-loginzc">
+                        <label><input name="" type="checkbox" data-type="agreeClause" class="js-agreeClause" value="">我愿意接受 <a class="clause" href="javascript:;">春秋旅游网服务条款</a></label>
+                    </div>
+                    <a class="lg_btn phoneLogin" href="javascript:">登 录</a>
+                    <div class="wjma">
+                        <label><input name="" type="checkbox" class="js-rememberLogin" value="">下次自动登录</label>
+                        <span class="lg_zc">
+                            <a href="">免费注册</a>&nbsp;|&nbsp;
+                            <a href="">忘记密码？</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div title="DialogMessage" id="dialog-message">
+        <p style="padding-top: 10px; font-size: 13px; text-align: center" id="errMessage">
+        </p>
+    </div>

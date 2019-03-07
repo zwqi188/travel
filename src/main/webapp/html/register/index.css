@@ -1,210 +1,32 @@
 @charset "utf-8";
 
-body,
-table,
-tr,
-td,
-th,
-dl,
-dt,
-dd,
-form,
-p,
-img,
-input,
-ul,
-li,
-ol,
-dl,
-dd,
-p {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    text-decoration: none;
-    text-indent: 0;
-    list-style: none;
-    text-justify: inter-ideograph;
-}
-
-body {
-    text-align: left;
-    font: 12px/20px arial, tahoma, "宋体", MS Gothic, sans-serif;
-    color: #666;
-    background-color: #fff;
-}
-
+body {text-align: left;font: 12px/20px arial, tahoma, "宋体", MS Gothic, sans-serif;color: #666;background-color: #fff;}
 input,
 button,
 select,
-textarea {
-    outline: none
-}
-
+textarea {outline: none}
 /* Form Style */
-
-form {
-    display: block;
-}
-
-label {
-    font: menu;
-    font: 100%;
-    color: #444;
-}
-
-/*specialmenber*/
-
-.login {
-    padding-bottom: 20px;
-    width: 450px;
-    background-color: #fff;
-    font-family: "Microsoft Yahei";
-    line-height: 45px;
-}
-
-.login a {
-    vertical-align: middle;
-}
-
-.loginname {
-    margin-bottom: 5px;
-    padding: 8px 15px 0 35px;
-    color: #008857;
-    font-size: 18px;
-    border-bottom: 2px solid #008857;
-}
-
-.login .span_l {
-    padding-right: 10px;
-    display: inline-block;
-    width: 95px;
-    font-size: 14px;
-}
-
-.login input {
-    vertical-align: middle;
-}
-
-.login .warn {
-    color: #F00;
-    line-height: 14px;
-    overflow: hidden;
-}
-
-.login .text1,
-.login .text2 {
-    display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    vertical-align: middle;
-    border: 1px solid #ccc;
-}
-
-.login .text1.yes {
-    background: url(../../../images/specialuser/yes.jpg) no-repeat 230px center;
-}
-
-.login .text1.no {
-    background: url(../../../images/specialuser/no.jpg) no-repeat 230px center;
-    border-color: #F00;
-}
-
-.login .text1 {
-    padding-right: 32px;
-    width: 223px;
-}
-
-.login .text2 {
-    width: 110px;
-}
-
-.login .code {
-    margin: 0 5px;
-    padding: 0 5px;
-    display: inline-block;
-    height: 20px;
-    line-height: 20px;
-    background-color: #8dc651;
-    color: #fff;
-    font-size: 16px;
-}
-
-.login .cancel {
-    margin-left: 15px;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.login .loginbtn {
-    display: inline-block;
-    width: 170px;
-    height: 33px;
-    background: url(../../../images/specialuser/loginbtn.jpg) no-repeat center;
-    cursor: pointer;
-}
-
-.login .loginbtn:hover {
-    background: url(../../../images/specialuser/loginbtn2.jpg) no-repeat center;
-}
-
-.login .text-right {
-    text-align: right;
-}
-
+form {display: block;}
+label {font: menu;font: 100%;color: #444;}
 /*验证码*/
-
 .yzm {}
-
-.yzm label {
-    line-height: 49px;
-}
-
-.yzm .yzm_input {
-    height: 47px;
-    line-height: 47px;
-    font-size: 14px;
-    padding: 0 5px;
-    width: 153px;
-    margin-right: 10px;
-}
-
-.yzm .imgCC {
-    float: left;
-    margin-right: 10px;
-}
-
-.yzm .changepic {
-    line-height: 47px;
-}
-
-.yzm .tiwen {
-    width: 271px;
-    margin: 20px 0 0 67px
-}
-
-
+.yzm label {line-height: 49px;}
+.yzm .yzm_input {height: 47px;line-height: 47px;font-size: 14px;padding: 0 5px;width: 153px;margin-right: 10px;}
+.yzm .imgCC {float: left;margin-right: 10px;}
+.yzm .changepic {line-height: 47px;}
+.yzm .tiwen {width: 271px;margin: 20px 0 0 67px}
 .input{ border:1px solid #d7d7d6; height:38px; font:14px/38px "微软雅黑"; width:236px; padding:0 3px;}
 .input:hover{ border:1px solid #085; box-shadow:0px 0px 5px #085}
 .contentBox{background:none #f5fbfd;padding:60px 0; }
 .header{ border-bottom:1px solid #dbdedf; box-shadow:2px 2px 2px rgba(0, 0, 0, 0.1)}
 .header .warp{ padding-top:20px; height:65px; clear:both}
 .contentBoxmain{ position:relative;}
-
-.contentBox {
-    background: #e9e9e9 url(../../../images/bdbg.gif);
-    padding-bottom: 30px;
-    box-shadow: 0 7px 5px rgba(0, 0, 0, 0.1);
-    clear: both;
-    padding-top: 17px;
-}
-
+.contentBox { background: #e9e9e9 url(../../../images/bdbg.gif);padding-bottom: 30px;box-shadow: 0 7px 5px rgba(0, 0, 0, 0.1);clear: both;padding-top: 17px;}
 .zcbox{ background-color:#FFF; border:1px solid #ebf0f2;  width:500px; padding:10px 0px; text-align:left; margin-left:675px;box-shadow:0px 2px 2px rgba(0, 0, 0, 0.1); position:relative}
 .zcbox li{ height:40px; padding-top:20px; position:relative;_padding-top:10px; }
 .zcbox .input{ padding:0 20px; background-color:#FFF; width:280px}
 .zcbox .focus .input{ border-color:#085}
 .zcbox li.lab{ height:20px; padding-top:10px}
-
 .zc_tab{ height:53px;}
 .zc_tab a{ float:left; height:53px; width:210px; color:#666; font:normal 20px/49px "微软雅黑";text-align:center; border-bottom:1px solid #ccc; padding-left:40px; position:relative }
 .zc_tab a:hover{ text-decoration:none;}
@@ -237,4 +59,3 @@ a.hui{color:#aaaaaa; border:1px solid #e5e5e5;background-color:#f5f5f5; }
     width: 310px;}
 .zcbox_main span.err i {background: url("../../../images/home_icon.png") no-repeat scroll -93px -347px rgba(0, 0, 0, 0);display: block;
 height: 17px;left: 0;margin: 4px 0 0 5px;position: absolute;top: 0;width: 17px;}
-

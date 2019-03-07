@@ -1,0 +1,222 @@
+@charset "utf-8";
+.input{ border:1px solid #d7d7d6; height:38px; font:14px/38px "微软雅黑"; width:236px; padding:0 3px;}
+.input:hover{ border:1px solid #085; box-shadow:0px 0px 5px #085}
+.contentBox{background:none #f5fbfd;padding:60px 0; }
+.header{ border-bottom:1px solid #dbdedf; box-shadow:2px 2px 2px rgba(0, 0, 0, 0.1)}
+.header .warp{ padding-top:20px; height:65px; clear:both}
+.contentBoxmain{ position:relative;}
+.contentBox {
+    background: #e9e9e9 url(../../../images/bdbg.gif);
+    padding-bottom: 30px;
+    box-shadow: 0 7px 5px rgba(0, 0, 0, 0.1);
+    clear: both;
+    padding-top: 17px;
+}
+
+
+/*topnav*/
+
+.warp {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+.contentBoxmain {
+    font-family:"Microsoft YaHei";
+    background: url(../../../images/login/zcbg.jpg) no-repeat 150px top;
+}
+
+
+.loginbox {
+    width: 450px;
+    float:right;
+    padding-bottom:50px;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius:5px;
+    overflow:hidden;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+.new-login {
+    text-align:center;
+    font-size:18px;
+    height: 50px;
+    line-height: 50px;
+}
+.new-login li {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    background-color:#dff7ed;
+    color:#00be88;
+}
+
+.new-login i {
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 13px;
+    height: 5px;
+    background: url(../../../images/order/new-icon.png) no-repeat -62px 0;
+}
+
+.new-login li.active {
+    background-color: #1cbc76;
+    color: #fff;
+}
+
+.new-login li.active i {
+    display: block;
+}
+
+.new-tabbox i,
+.zc_hz i{
+    display:inline-block;
+    vertical-align:middle;
+    margin-top:-2px;
+    background:url(../../../images/order/new-icon.png) no-repeat 0 0;
+}
+.new-tabbox {
+    position: relative;
+    padding: 16px 50px 0 50px;
+}
+.new-tabbox .default {
+    height:26px;
+    line-height:26px;
+    margin-bottom:12px;
+}
+.new-tabbox .err{
+    display:none;
+    padding:0 10px;
+    color:#ff8844;
+    background-color:#ffece0;
+}
+.new-tabbox .err i {
+    display:inline-block;
+    vertical-align: middle;
+    margin: -2px 5px 0 0;
+    width: 16px;
+    height: 16px;
+    background: url(../../../images/freetour/jg.png) no-repeat center center;
+}
+.new-tabbox li{
+    display:block;
+    height:36px;
+    margin-bottom:14px;
+    border:1px solid #ccc;
+    border-radius:3px;
+    overflow:hidden;
+}
+.new-tabbox li.focus{
+    margin-bottom:20px;
+}
+.new-tabbox li.sjyzm{
+    border:none;
+    overflow:hidden;
+    clear:both;
+}
+.new-tabbox li.sjyzm .sjyzm-box{
+    float:left;
+    width:60%;
+    margin-right:5%;
+    height:34px;
+    overflow:hidden;
+    border:1px solid #ccc;
+    border-radius:3px;
+}
+.new-tabbox li.sjyzm .sjyzm-box .input{
+    width:60%;
+}
+.new-tabbox li.onerror , .new-tabbox li.sjyzm .onerror{
+    border-color:red
+}
+.new-logindtmm{
+    display:block;
+    float:left;
+    padding:0 5px;
+    border-radius:3px;
+    width:108px;
+    text-align:center;
+    cursor:pointer;
+    height:34px;
+    line-height:34px;
+    border:1px solid #ccc;
+}
+.new-logindtmm:hover{
+    color:#00be88;
+    border-color:#00be88;
+}
+.new-logindtmmon{
+    color:#999;
+    border-color:#eee;
+    background-color:#eee;
+}
+.new-logindtmmon:hover{
+    color:#999;
+    border-color:#eee;  
+}
+.new-tabbox li.yzm{
+    padding-top:6px;
+    border:none;
+}
+.new-tabbox li i {
+    display:block;
+    float:left;
+    width:20px;
+    height:20px;
+    margin:7px 15px 0 15px;
+}
+.new-tabbox li i.yhm {
+    background-position: 0 -30px;
+}
+.new-tabbox li i.mm {
+    background-position: -20px -30px;
+}
+
+.new-tabbox .input{
+    font:14px/36px "微软雅黑" !important;
+    width:80%;
+    height:36px;
+    line-height:36px;
+    margin:0;
+    padding:0;
+    border:none;
+}
+.new-tabbox .input:hover{
+    box-shadow:none
+}
+.new-tabbox .lg_btn{
+    display:block;
+    font-size:16px;
+    border-radius:3px;
+    height:42px;
+    line-height:42px;
+    margin-bottom:10px;
+    text-align:center;
+    color:#fff;
+    background-color:#ff8844;
+}
+
+.wjma{
+    overflow:hidden;
+    clear:both;
+    text-align:right;
+    margin-bottom:10px;
+}
+.wjma label{
+    float:left;
+    vertical-align:middle;
+}
+.wjma a{
+    color:#666;
+}
+.wjma .cblue, .wjma a:hover, .wjma a.cblue{
+    color:#407fde;
+}
