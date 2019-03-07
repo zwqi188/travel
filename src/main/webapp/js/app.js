@@ -28,7 +28,7 @@ travelApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/index',
             views: {
                 '': {
-                    templateUrl: 'html/app.html'
+                    templateUrl: 'html/index/app.html'
                 },
                 'header@index': {
                     templateUrl: 'html/template/header.html'
@@ -55,6 +55,23 @@ travelApp.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl: 'html/index/customized.html'
                 },
                 'footer@index': {
+                    templateUrl: 'html/template/footer.html'
+                }
+            }
+        })
+        .state('register', {
+            url: '/register',
+            views: {
+                '': {
+                    templateUrl: 'html/user/app.html'
+                },
+                'header@register': {
+                    templateUrl: 'html/template/header.html'
+                },
+                'register@register': {
+                    templateUrl: 'html/user/register.html'
+                },
+                'footer@register': {
                     templateUrl: 'html/template/footer.html'
                 }
             }
