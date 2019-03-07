@@ -93,6 +93,23 @@ travelApp.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('travelDetailView', {
+            url: '/travelDetailView',
+            views: {
+                '': {
+                    templateUrl: 'html/travelDetail/app.html'
+                },
+                'header@travelDetailView': {
+                    templateUrl: 'html/template/header.html'
+                },
+                'travelDetail@travelDetailView': {
+                    templateUrl: 'html/travelDetail/travelDetail.html'
+                },
+                'footer@travelDetailView': {
+                    templateUrl: 'html/template/footer.html'
+                }
+            }
+        })
         
        
 });
