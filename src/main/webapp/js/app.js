@@ -110,6 +110,40 @@ travelApp.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('travelView', {
+            url: '/travelView',
+            views: {
+                '': {
+                    templateUrl: 'html/travel/app.html'
+                },
+                'header@travelView': {
+                    templateUrl: 'html/template/header.html'
+                },
+                'travel@travelView': {
+                    templateUrl: 'html/travel/travel.html'
+                },
+                'footer@travelView': {
+                    templateUrl: 'html/template/footer.html'
+                }
+            }
+        })
+        .state('customerView', {
+            url: '/customerView',
+            views: {
+                '': {
+                    templateUrl: 'html/customer/app.html'
+                },
+                'header@customerView': {
+                    templateUrl: 'html/template/header.html'
+                },
+                'customer@customerView': {
+                    templateUrl: 'html/customer/customer.html'
+                },
+                'footer@customerView': {
+                    templateUrl: 'html/template/footer.html'
+                }
+            }
+        })
         
        
 });

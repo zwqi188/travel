@@ -1,0 +1,48 @@
+
+@charset "utf-8";
+
+body {color: #585858;font-family: Arial,Microsoft YaHei,宋体,Geneva,"Helvetica Neue",Helvetica,sans-serif;font-size: 12px;line-height: 1.2;}
+
+
+.p_diystyle{ float:left; width:930px; margin-top:10px;}
+.mod_left{ float:left; width:540px;font-family:"微软雅黑";}
+.mod_right{float:left; margin-left:40px; width:340px;background-color: #f3f3f3; border-radius: 10px;margin-top:55px;}
+.p_d_txt{border-bottom: 5px solid #fb6a00; height:30px; line-height:30px; width:90px; font-size:14px; margin-left:10px; padding-left:5px;}
+
+
+.icon-pchelper-c1 { left: -14px;  position: absolute; top: 10px;background-position: -476px -261px; height: 20px;width: 18px;}
+.cell-check-group em{ font-style:normal; width:85px; font-size:14px; float:left; line-height:35px;}
+.cell-check-group li{ float:left; margin:10px 10px;}
+.cell-check-group input{border: 1px solid #dbdbdb;border-radius: 3px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; height:30px; padding-left:3px; color:#666; width:120px;}
+.comment-p { float:left;margin-bottom: 10px; margin-top: 20px; margin-left:10px;}
+.comment-p p { color: #4085ea; margin-bottom: 5px; font-size:14px; margin-bottom:10px;}
+.comment-p textarea { height: 120px; overflow-y: auto;width: 500px;border: 1px solid #dbdbdb;}
+textarea, input[type="text"], input[type="password"] {border-radius: 3px;}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus { border-color: rgba(255, 171, 81, 0.8);box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px rgba(240, 127, 5, 0.4);outline: 0 none;}
+input, textarea { box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;}
+textarea, input[type="text"], input[type="password"] {height: 22px;font-family:"微软雅黑"; padding: 4px 10px;resize: none; font-size:12px;line-height:22px;}
+.cell-quesiton-bz { display: table;margin-top: 20px; float:left; width:100%;}
+.cell-quesiton-bz em{ font-style:normal;}
+.cell-submit-button { margin-left:35%; height:18px;font-family:"微软雅黑";background-color: #039bf9;background-image: linear-gradient(to top, #015ff5, #039bf9);border: medium none; border-radius: 3px;box-shadow: 0 1px 3px rgba(0, 0, 0, 0.26), 0 1px rgba(255, 255, 255, 0) inset;color: #fff;cursor: pointer; padding: 12px 30px 8px 30px;;vertical-align: middle;width:16%; float:left;}
+
+
+
+.dz_bg_date{ float:left;color:#F7F7F7; position:relative;}
+.dz_ed_date{ float:left; margin-left:10px;color:#F7F7F7; position:relative;}
+.cus_input { border: 1px solid transparent; box-shadow:none;background:rgba(255, 255, 255, 0.4); color:#eaeaea; }
+input::-webkit-input-placeholder {color:#eaeaea;}
+input:-moz-placeholder { color:#eaeaea;}
+.dz_service{ width:415px; height:300px; right:20px; top:120px; position:absolute; color:#fff; }
+.dz_service dt{ font-size:30px;}
+.dz_service dd{ font-size:14px; padding-top:15px; line-height:25px;}
+.dx_procedure{ width:415px; height:300px; right:20px; top:260px; position:absolute; color:#fff; }
+.dx_procedure dt{ font-size:46px; font-weight:bold; margin-bottom:30px;}
+.dx_procedure dd{ font-size:30px; margin-bottom:15px;}
+.startTime,.endTime{ width:180px;}
+.playday{ width:250px;}
+.whereplay,.phonenumber,.username,.email,.other{ width:403px;}
+.dz_budget{ width:100px;}
+.pp_num{ border:0px; background:rgba(255, 255, 255, 0);filter:Alpha(opacity=50); position:static; *zoom:1; border-bottom:1px #FFFFFF solid;color:#eaeaea;}
+.pp_r{ float:left; line-height:33px; }
+.pp_r li{ float:left;margin-left:10px; cursor:pointer;}
+.dz_pp,.dz_pp li{ float:left; margin-left:10px; line-height:33px;cursor:pointer;}
