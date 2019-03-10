@@ -27,6 +27,21 @@ textarea, input[type="text"], input[type="password"] {height: 22px;font-family:"
 
 
 
+.dz_cp{ width:1200px; margin:0 auto;}
+.banner{ background:url(http://images.tyjiaqi.com/zt/dingzhi/dzbg.jpg) no-repeat  scroll center center transparent;height:628px; width:100%;background-color:#3dc4f1; position:relative;}
+.dz_dateimg,.dz_j_up,.dz_j_down_1,.dz_j_down_2{background-attachment: scroll;background-image: url(http://images.tyjiaqi.com/imgs1/newbg666.png); background-repeat: no-repeat;}
+.dz_hd_l em,.dz_hd_r em{background-attachment: scroll;background-image: url(http://images.tyjiaqi.com/imgs1/un_group_detail.png); background-repeat: no-repeat;}
+.dz_w_bg{ width:1200px; position:relative; margin:0 auto;}
+.dz_dateimg{background-position:-55px 0px; width:30px; height:30px; position:absolute; z-index:10; right:10px; top:4px;}
+.dz_boxbg{ position:absolute; width:545px; height:485px; border-radius:5px;background:rgba(45, 76, 135, 0.4); top:80px; left:50px; color:#fff;float:left;}
+.dz_boxbg .sel{ background:#f90;}
+.dz_boxbg dt{ font-size:36px; float:left; margin-left:200px; margin-top:40px;}
+.dz_boxbg dd{ float:left; width:540px; font-size:14px; margin-top:15px;}
+.dz_bg{ border-radius:2px;background:rgba(255, 255, 255, 0.4);float:left; position:relative;}
+.dz_cc{ cursor:pointer;}
+.dz_c{  padding:8px 15px; margin-left:86px;}
+.dz_s{  margin-left:20px; padding:8px 15px;}
+.dz_left{ float:left; margin-left:20px; margin-right:10px; line-height:38px;}
 .dz_bg_date{ float:left;color:#F7F7F7; position:relative;}
 .dz_ed_date{ float:left; margin-left:10px;color:#F7F7F7; position:relative;}
 .cus_input { border: 1px solid transparent; box-shadow:none;background:rgba(255, 255, 255, 0.4); color:#eaeaea; }
