@@ -1,7 +1,6 @@
 package com.yugii.controller;
 
-import com.yugii.Response.LeResponse;
-import com.yugii.entity.User;
+import com.yugii.response.LeResponse;
 import com.yugii.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.yugii.Response;
+package com.yugii.response;
 
 import com.yugii.constants.Response;
 
