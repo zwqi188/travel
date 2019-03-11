@@ -144,6 +144,23 @@ travelApp.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('orderView', {
+            url: '/orderView',
+            views: {
+                '': {
+                    templateUrl: 'html/order/app.html'
+                },
+                'header@orderView': {
+                    templateUrl: 'html/template/header.html'
+                },
+                'order@orderView': {
+                    templateUrl: 'html/order/order.html'
+                },
+                'footer@orderView': {
+                    templateUrl: 'html/template/footer.html'
+                }
+            }
+        })
         
        
 });
