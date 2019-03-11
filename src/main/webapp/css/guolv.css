@@ -1,6 +1,7 @@
 ﻿@charset "utf-8";
 /* CSS Document */
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td { margin: 0; padding: 0;}
+body
+{ margin: 0; padding: 0;}
 ul,ol,li{list-style:none;}
 i,em{ font-style:normal;}
 body {color: #585858;font-family: Arial,Microsoft YaHei,宋体,Geneva,"Helvetica Neue",Helvetica,sans-serif;font-size: 12px;line-height: 1.2;}
@@ -30,19 +31,6 @@ a img{border:none;}
 .so_hot{color: #b5b5b5; padding-top:10px; margin-left:3px;}
 .so_hot a{color: #b5b5b5; padding-right:15px; text-decoration:none}
 .so_hot a:hover{color:#F90;}
-.t_right i,.a_ouzhou,.a_mzhou,.a_rd,.a_az,.a_hg,.a_yl,.a_gn,.a_zb,.a_ouzhou_ico,.a_mzhou_ico,.a_rd_ico,.a_az_ico,.a_hg_ico,.a_yl_ico,.a_gn_ico,.a_zb_ico,.re_book a,.cat_news li,.cat_cj_title,.ty_line_right i,.cat_yl_title,.cat_gn_title,.cat_hd_title,.cat_qz_title,.mc_tel,.a_hangx,.a_chuf,.a_gongsi,.bolang,.wen,.huida,.nhot,.nxin,.sanj,.oz_tui,.oz_month,.oz_tejia,.oz_ziyou,.oz_tui_s,.oz_month_s,.oz_tejia_s,.oz_ziyou_s,.oz_y_title,.ty_p_an a,.newnav .allsort i,.newnav .allsort .up,.f_click i,.v_question li,.more_date i,.more_dates i,.ty_titles li i,.newnav .nav_main i,.newnav .nav_main .up{background-attachment: scroll;background-image: url(http://images.tyjiaqi.com/imgs1/newmain.png); background-repeat: no-repeat;}
-
-.newnav .nav_main .show-iconss{background-attachment: scroll;background-image: url(http://images.tyjiaqi.com/imgs1/newbg666.png?v=1); background-repeat: no-repeat;}
-
-.gl_cj_logo,.gl_gn_logo,.gl_yl_logo,.gl_zb_logo,.gl_qz_logo,.gl_yj_logo,.gl_td_logo,.gl_hjlg,.gl_gsdlg,.gl_dzhlg,.gl_gzlg,.gl_thlg,.gl_nwlg,.gl_dz1,.gl_dz2,.gl_dz3,.gl_dz4,.gl_dz5,.gl_dz6,.gl_telimg,.ozmenutop,.jpmenutop,.mgmenutop,.azmenutop,.bhdmenutop{background-attachment: scroll;background-image: url(http://images.tyjiaqi.com/imgs1/newbg666.png?v=2); background-repeat: no-repeat;}
-.gl_yl{ line-height:30px;}
-.gl_cj_logo{background-position:0px 0px; width:46px; height:46px; float:left;margin-top: -8px;}
-.gl_gn_logo{background-position:0px -54px; width:46px; height:46px; float:left;margin-top: -8px;}
-.gl_zb_logo{background-position:0px -102px; width:46px; height:46px; float:left;margin-top: -8px;}
-.gl_yl_logo{background-position:0px -160px; width:46px; height:46px; float:left;margin-top: -8px;}
-.gl_td_logo{background-position:-4px -214px; width:46px; height:46px; float:left;margin-top: -8px;}
-.gl_qz_logo{background-position:0px -272px; width:46px; height:46px; float:left;margin-top: -8px;}
-.gl_yj_logo{background-position:0px -327px; width:46px; height:46px; float:left;margin-top: -8px;}
 
 .ozmenutop{position:absolute;background-position:-95px -320px; width:50px; height:20px; left:110px;top:-8px;}
 .ozmenutop a{ width:15px; height:15px; display:block; overflow:hidden;}
@@ -52,31 +40,6 @@ a img{border:none;}
 .mgmenutop a{ width:25px; height:15px; display:block; overflow:hidden;}
 .bhdmenutop{position:absolute;background-position:-95px -380px; width:75px; height:20px; left:110px;top:-8px;}
 .bhdmenutop a{ width:45px; height:15px; display:block; overflow:hidden;}
-
-
-.gl_hjlg{background-position:-178px 0px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_gsdlg{background-position:-178px -45px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_dzhlg{background-position:-178px -85px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_gzlg{background-position:-178px -127px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_thlg{background-position:-178px -168px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_nwlg{background-position:-178px -209px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_dz1{background-position:-85px -2px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_dz2{background-position:-85px -40px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_dz3{background-position:-85px -80px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_dz4{background-position:-85px -121px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_dz5{background-position:-85px -161px; height: 30px; width:35px; float:left; padding-right:15px;}
-.gl_dz6{background-position:-85px -199px; height: 30px; width:35px; float:left; padding-right:15px;}
-
-.icon-pchelper-n4, .icon-pchelper-n3, .icon-pchelper-n1,  .icon-pchelper-c1,.icon-pchelper-n5,.icon-pchelper-n2{ background-image: url(http://images.tyjiaqi.com/imgs1/icon-pchelper.png); background-repeat: no-repeat;}
-.icon-pchelper-n4 {background-position: -10px -10px; height: 28px; width: 337px;}
-.icon-pchelper-n3 {background-position: -10px -58px;height: 231px; width: 297px;}
-.icon-pchelper-n1 {background-position: -367px -10px; height: 42px; width: 176px;}
-.icon-pchelper-n5 {background-position: -523px -222px; height: 14px; width: 15px;}
-.icon-pchelper-n2 { background-position: -436px -261px;height: 20px; width: 20px;}
-
-[class^="i-"], [class*=" i-"], [class^="icon-"], [class*=" icon-"] {display: inline-block;line-height: 0;position: relative;text-align: left;text-decoration: none;text-indent: 0;vertical-align: middle;
-}
-.mod-helper-bubble { width:480px; margin-top:20px; margin-left:10px;background-color: #4085ea; border: 1px solid #ccc; border-radius: 5px;box-shadow: 0 3px 5px rgba(8, 1, 3, 0.1); color: #fff;  font-size: 16px; margin-bottom: 20px; padding: 24px 20px; position:relative; line-height:25px;}
 
 .more_date{ position:relative; padding-left:10px;}
 .more_dates{ position:relative; padding-left:10px; display:none;}
@@ -147,8 +110,6 @@ a img{border:none;}
 .newnav .allmdd dd{ float:left; line-height:24px; padding-left:36px; height:24px; overflow:hidden;}
 .newnav .allmdd dd a{ padding-right:4px; color:#c2d9f8; padding-left:4px;}
 .newnav .allmdd .a_ouzhou{background-position:0px 0px; padding-left:30px; margin-left:10px; }
-.newnav .allmdd .a_ouzhou_ico{background-position:0px -256px; padding-left:30px; margin-left:10px; }
-.newnav .allmdd .a_ouzhou_ico a{ color:#06F;}
 .newnav .allmdd .a_mzhou{background-position:0px -33px; padding-left:30px; margin-left:10px; }
 .newnav .allmdd .a_mzhou_ico{background-position:0px -290px; padding-left:30px; margin-left:10px; }
 .newnav .allmdd .a_mzhou_ico a{ color:#06F;}
@@ -520,3 +481,5 @@ a img{border:none;}
 .v_menu a img {float: right;margin: 9px 15px 0 0; width:90px; height:60px;}
 
 .l_cooperate img{ margin-right:5px; margin-top:5px;}
+
+.allmdd dl:hover .cats{display: inherit;}
