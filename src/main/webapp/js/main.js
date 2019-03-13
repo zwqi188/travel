@@ -5,45 +5,6 @@
  */
 var beeApp = angular.module('beeApp', ['ngRoute', 'ngCookies', 'ngProject']);
 
-// 配置路由
-beeApp.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider
-        .when('/', {
-            templateUrl: './html/welcome.html'
-        })
-        .when('/serviceAreaManage', {
-            templateUrl: './html/serviceAreaManage.html',
-            controller: 'serviceAreaManageController'
-        })
-        .when('/salerManage', {
-            templateUrl: './html/salerManage.html',
-            controller: 'salerManageController'
-        })
-        .when('/productManage', {
-            templateUrl: './html/productManage.html',
-            controller: 'productManageController'
-        })
-        .when('/transManage', {
-            templateUrl: './html/transManage.html',
-            controller: 'transManageController'
-        })
-        .when('/reportManage', {
-            templateUrl: './html/reportManage.html',
-            controller: 'reportManageController'
-        })
-        .when('/pushManage', {
-            templateUrl: './html/pushManage.html',
-            controller: 'pushManageController'
-        })
-        .when('/rePassword', {
-            templateUrl: './html/rePassword.html',
-            controller: 'rePasswordController'
-        })
-        .otherwise({
-            redirectTo: '/'
-        });
-}]);
-
 // 主页控制器
 beeApp.controller('indexController', function (Web, Util, $scope, $location, $route) {
     Web.autoLogin($scope);

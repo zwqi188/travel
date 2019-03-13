@@ -1,34 +1,11 @@
 <div class="contentBox" id="contentBox">
     <div class="warp contentBoxmain">
         <div class="zcbox">
-            <form id="RegFrm" action="https://my.springtour.com/Member/Register" method="post">
+            <form id="RegFrm" action="https://my.springtour.com/Member/Register" method="post" ng-controller="registerController">
                 <input type="hidden" value="0" id="RegFlag" name="RegFlag">
                 <div class="zc_tab">
                     <a class="on" href="javascript:">手机注册<span class="phone"></span><i class="arr"></i><i class="tab_line"></i></a>
                     <a class="" href="javascript:">邮箱注册<span class="mail"></span><i class="arr"></i></a>
-                </div>
-                <!--注册参与活动-->
-                <div id="registerActivity" data-url="https://my.springtour.com/Activity/QueryRegisterActivity">
-                    <div class="gift" style="display:none">
-                        <span>
-                            <img src="./春秋旅游网 注册_files/gift.png">
-                        </span>
-                        <p id="activityName">新用户手机注册赠送¥50红包新用户手机</p>
-                    </div> 
-                    <div class="ruleout" style="display:none">
-                        <div class="rule">
-                            <div class="closeout">
-                                <span>×</span>
-                            </div>
-                            <h2>活动规则</h2>
-                            <div id="activityLimit">
-                                1. 新人大礼包仅限多点新用户领取，每位用户 限领1次，礼包每日限量发放，领完为止<br>
-                                2. 大礼包中的优惠券，领完成功后请在“我的 -优惠券”中查看<br>
-                                3. 优惠券有效期以券面时间为准，逾期作废<br>
-                                4. 大礼包中的优惠券，领完成功后请在“我的 -优惠券”中查看，大礼包中的优惠券，领完 成功后请在“我的·优惠券”中查看
-                            </div>
-                        </div>
-                    </div>
                 </div>
                     <!--手机注册-->
                     <div class="zcbox_main zcbox_phone" id="regPhonePanel">
@@ -62,7 +39,7 @@
                                 <a class="clause" href="javascript:void(0);">春秋旅游网服务条款</a>
                             </label>
                         </div>
-                        <a class="lg_btn" id="regPhoneBtn" href="javascript:" >注 册</a>
+                        <a class="lg_btn" id="regPhoneBtn" href="javascript:" ng-click="registerFromServer()">注 册</a>
                         <span class="lg_zc">已经注册？<a href="">马上登录</a></span>
                     </div>
                     <!--邮箱注册-->
