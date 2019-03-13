@@ -6,12 +6,19 @@ travelApp.controller('registerController', function($scope, $http, $state, $stat
         console.log($stateParams);
         $http.post({
             method:'POST',
-            url:'/register.json',
-            data:''
+            url:'/travel/register.json',
+            data:'{mobile:123143243,password:12345}'
         }).success(function(data, status, headers, config){
             console.log(data, status, headers, config);
         }).error(function(data, status, headers, config){
             console.log(data, status, headers, config);
         });
     }
+    $scope.getFromServer = function () {
+        $http.get('/travel/get.json')
+            .success(function (data) {
+                console.log(data);
+            });
+    }
+
 });
