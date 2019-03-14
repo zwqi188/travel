@@ -7,7 +7,7 @@ travelApp.controller('registerController', function($scope, $http, $state, $stat
         $http({
             method:'POST',
             url:'/travel/register.json',
-            data:{'mobile':'123143243','password':'12345'}
+            data:{'mobile':'123143','password':'12345'}
         }).success(function(data){
             alert(data.respMsg);
         }).error(function(data, status, headers, config){

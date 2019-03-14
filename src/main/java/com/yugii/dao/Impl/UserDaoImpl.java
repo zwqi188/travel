@@ -26,7 +26,7 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 
     @Override
     public int findByMobile(String mobile) {
-        String hql = "from User where telPhone=? ";
+        String hql = "from User where telPhone=:telPhone ";
         Map<String, Object> param= new HashMap<>();
         param.put("telPhone", mobile);
         return find(hql, param).size();
