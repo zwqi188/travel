@@ -7,46 +7,22 @@ import com.yugii.constants.Response;
  */
 public class LeResponse {
 
-    private String code;
+    private String respCode;
 
-    private String message;
+    private String respMsg;
 
     private Object data;
 
     public LeResponse() {}
 
     public LeResponse(String code,String message) {
-        this.code = code;
-        this.message = message;
+        this.respCode = code;
+        this.respMsg = message;
     }
 
     public LeResponse(String code,String message, Object data) {
-        this.code = code;
-        this.message = message;
-        this.data = data;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(Object data) {
+        this.respCode = code;
+        this.respMsg = message;
         this.data = data;
     }
 
@@ -56,5 +32,29 @@ public class LeResponse {
 
     public static LeResponse fail(){
         return new LeResponse(Response.FAIL, Response.FAIL_MESSAGE);
+    }
+
+    public String getRespCode() {
+        return respCode;
+    }
+
+    public void setRespCode(String respCode) {
+        this.respCode = respCode;
+    }
+
+    public String getRespMsg() {
+        return respMsg;
+    }
+
+    public void setRespMsg(String respMsg) {
+        this.respMsg = respMsg;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 }

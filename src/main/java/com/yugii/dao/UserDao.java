@@ -9,5 +9,5 @@ public interface UserDao {
 
     public Boolean register(User user);
 
-    public User findByMobile(String mobile);
+    public int findByMobile(String mobile);
 }

@@ -22,13 +22,14 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public boolean register(String mobile, String password) {
-        if(userDao.findByMobile(mobile)==null) {
+        if(userDao.findByMobile(mobile) == 0) {
             User user = new User();
             user.setTelPhone(mobile);
             user.setPassword(password);
             user.setCreatedAt(new Date());
             userDao.register(user);
+            return true;
         }
-        return true;
+        return false;
     }
 }

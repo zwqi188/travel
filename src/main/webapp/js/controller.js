@@ -4,18 +4,18 @@ travelApp.controller('registerController', function($scope, $http, $state, $stat
     $scope.registerFromServer = function () {
         console.log("registerFromServer");
         console.log($stateParams);
-        $http.post({
+        $http({
             method:'POST',
             url:'/travel/register.json',
-            data:'{mobile:123143243,password:12345}'
-        }).success(function(data, status, headers, config){
-            console.log(data, status, headers, config);
+            data:{'mobile':'123143243','password':'12345'}
+        }).success(function(data){
+            alert(data.respMsg);
         }).error(function(data, status, headers, config){
-            console.log(data, status, headers, config);
+            alert(data.respMsg);
         });
     }
     $scope.getFromServer = function () {
-        $http.get('/travel/get.json')
+        $http('/travel/get.json')
             .success(function (data) {
                 console.log(data);
             });

@@ -4,6 +4,7 @@ import com.yugii.response.LeResponse;
 import com.yugii.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -20,9 +21,12 @@ public class MainController {
 
     @ResponseBody
     @RequestMapping(value = "/register.json",method = RequestMethod.POST)
-    public LeResponse register(@RequestParam Map<String,Object> param){
+    public LeResponse register(@RequestBody Map<String,Object> param){
         String mobile = (String) param.get("mobile");
         String password = (String) param.get("password");
+        if(StringUtils.isEmpty(mobile) || StringUtils.isEmpty(password)) {
+            return LeResponse.fail();
+        }
         if(userService.register(mobile, password)) {
             return LeResponse.success();
         }
