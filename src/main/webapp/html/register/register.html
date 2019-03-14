@@ -4,8 +4,10 @@
             <form id="RegFrm" action="https://my.springtour.com/Member/Register" method="post" ng-controller="registerController">
                 <input type="hidden" value="0" id="RegFlag" name="RegFlag">
                 <div class="zc_tab">
-                    <a class="on" href="javascript:">手机注册<span class="phone"></span><i class="arr"></i><i class="tab_line"></i></a>
-                    <a class="" href="javascript:">邮箱注册<span class="mail"></span><i class="arr"></i></a>
+                    <a class="on" href="javascript:">手机注册<span class="phone"></span>
+                        <i class="arr"></i><i class="tab_line"></i></a>
+                    <a class="" href="javascript:">邮箱注册<span class="mail"></span>
+                        <i class="arr"></i></a>
                 </div>
                     <!--手机注册-->
                     <div class="zcbox_main zcbox_phone" id="regPhonePanel">
@@ -13,23 +15,23 @@
                         <ul>
                             <li>
                                 <span>手机号码：</span><span class="rt">
-                                    <input class="input" placeholder="11位手机号码" id="RegPhone" name="RegPhone" type="text" maxlength="11" data-notice="" data-checkphoneurl="https://my.springtour.com/Member/CheckNameIsRegister">
+                                    <input class="input" placeholder="11位手机号码" id="RegPhone" ng-model="mobile" type="text" maxlength="11" >
                                 </span>
                             </li>
                             <li><span>验证码：</span><span class="rt yzm">  
-                                    <input placeholder="请填写验证码" id="CheckCode1" name="CheckCode1" class="input" type="text" maxlength="4">
-                                    <img align="absmiddle" alt="" class="yzm_img" id="imgCC1" src="">
-                                    <a class="yzm_a" style="color: Gray" href="javascript:" id="changepic_btn1" data-url="https://my.springtour.com/handle/CheckCodeHandler.ashx?t=636847460207781638">换一张</a>
+                                    <input placeholder="请填写验证码" id="CheckCode1" name="CheckCode1" ng-model="yzm" class="input" type="text" maxlength="4">
+                                    <img class="yzm_img" id="imgCC1" src="">
+                                    <a class="yzm_a" style="color: Gray" href="javascript:" id="changepic_btn1" >换一张</a>
                                 </span> 
                             </li>
                             <li>
                                 <span>密码：</span><span class="rt">
-                                    <input placeholder="8-16个字符" class="input" id="RegistPasswordPhone" name="RegistPassword" type="password" maxlength="16">
+                                    <input placeholder="8-16个字符" class="input" id="RegistPasswordPhone" ng-model="password" type="password" maxlength="16">
                                 </span>
                             </li>
                             <li>
                                 <span>确认密码：</span><span class="rt">
-                                    <input placeholder="请再次填写密码" class="input" id="ConfirmPasswordPhone" name="ConfirmPassword" type="password" maxlength="16">
+                                    <input placeholder="请再次填写密码" class="input" id="ConfirmPasswordPhone" ng-model="password2" type="password" maxlength="16">
                                 </span>
                             </li>
                         </ul>
