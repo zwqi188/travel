@@ -3,8 +3,10 @@ package com.yugii.dao.Impl;
 import com.yugii.dao.UserDao;
 import com.yugii.entity.User;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.CollectionUtils;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,18 +35,28 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
     }
 
     @Override
-    public User findUserByMobile(String mobile) {
-        String hql = "from User where telPhone=:telPhone ";
+    public User findUserByMobileAndPass(String mobile, String password) {
+        String hql = "from User where telPhone=:telPhone and password=:password";
         Map<String, Object> param= new HashMap<>();
         param.put("telPhone", mobile);
-        return find(hql, param).get(0);
+        param.put("password", password);
+        List<User> users = find(hql, param);
+        if(!CollectionUtils.isEmpty(users)) {
+            return users.get(0);
+        }
+        return null;
     }
 
     @Override
-    public User findUserByEmail(String userName) {
-        String hql = "from User where email=:email ";
+    public User findUserByEmailAndPass(String userName, String password) {
+        String hql = "from User where email=:email and password=:password";
         Map<String, Object> param= new HashMap<>();
         param.put("email", userName);
-        return find(hql, param).get(0);
+        param.put("password", password);
+        List<User> users = find(hql, param);
+        if(!CollectionUtils.isEmpty(users)) {
+            return users.get(0);
+        }
+        return null;
     }
 }

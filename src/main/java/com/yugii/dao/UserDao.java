@@ -11,7 +11,7 @@ public interface UserDao {
 
     int findByMobile(String mobile);
 
-    User findUserByMobile(String mobile);
+    User findUserByMobileAndPass(String mobile, String password);
 
-    User findUserByEmail(String userName);
+    User findUserByEmailAndPass(String userName, String password);
 }

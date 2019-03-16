@@ -33,11 +33,17 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+    /**
+     * 登录
+     * @param userName
+     * @param password
+     * @return
+     */
     @Override
     public User login(String userName, String password) {
-        User user = userDao.findUserByMobile(userName);
+        User user = userDao.findUserByMobileAndPass(userName, password);
         if(user == null) {
-            user = userDao.findUserByEmail(userName);
+            user = userDao.findUserByEmailAndPass(userName, password);
         }
         return user;
     }
