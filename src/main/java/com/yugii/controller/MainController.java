@@ -79,6 +79,7 @@ public class MainController {
         if(user != null) {
             Map<String,Object> returnMsg = new HashMap<>();
             returnMsg.put(Param.USER_ID, user.getId());
+            returnMsg.put(Param.USER_NAME, user.getUserName());
             return new LeResponse(Response.SUCCESS, Response.SUCCESS_MESSAGE, returnMsg);
         }
         return LeResponse.fail(ResponseEnums.ERROR_LOGIN_FAIL.getResponseMsg());
