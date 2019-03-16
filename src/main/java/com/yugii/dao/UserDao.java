@@ -7,7 +7,11 @@ import com.yugii.entity.User;
  */
 public interface UserDao {
 
-    public Boolean register(User user);
+    Boolean register(User user);
 
-    public int findByMobile(String mobile);
+    int findByMobile(String mobile);
+
+    User findUserByMobile(String mobile);
+
+    User findUserByEmail(String userName);
 }

@@ -41,3 +41,32 @@ travelApp.controller('registerController', function($scope, $http, $state, $stat
     }
 
 });
+
+travelApp.controller('loginController', function ($scope, $http, Http, Utils, ConstantFactory) {
+
+    $scope.loginFromServer = function () {
+        var account = $scope.account;
+        var password = $scope.password;
+        var md5Password = hex_md5(password);
+        if(Utils.isEmpty(account) || Utils.isEmpty(password)) {
+            alert("请输入用户名或密码");
+            return;
+        }
+        var param = {
+            'account' : account,
+            'password' : md5Password
+        };
+
+        Http.go($http,
+            ConstantFactory.HTTP_METHOD_POST,
+            ConstantFactory.URL_LOGIN,
+            param,
+            function (data) {
+                alert(data.respMsg);
+            },
+            function (data) {
+                alert(data.respMsg);
+            });
+    }
+
+});

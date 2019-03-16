@@ -7,5 +7,19 @@ import com.yugii.entity.User;
  */
 public interface UserService {
 
-    public boolean register(String mobile, String password);
+    /**
+     * 注册
+     * @param mobile
+     * @param password
+     * @return
+     */
+    boolean register(String mobile, String password);
+
+    /**
+     * 登录
+     * @param userName
+     * @param password
+     * @return
+     */
+    User login(String userName, String password);
 }

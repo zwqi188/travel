@@ -32,4 +32,13 @@ public class UserServiceImpl implements UserService {
         }
         return false;
     }
+
+    @Override
+    public User login(String userName, String password) {
+        User user = userDao.findUserByMobile(userName);
+        if(user == null) {
+            user = userDao.findUserByEmail(userName);
+        }
+        return user;
+    }
 }
