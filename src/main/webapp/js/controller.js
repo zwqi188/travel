@@ -1,6 +1,4 @@
-travelApp.controller('registerController', function($scope, $http, $state, $stateParams, Http) {
-    console.log($stateParams);
-
+travelApp.controller('registerController', function($scope, $http, $state, $stateParams, Http, constantFactory) {
     $scope.registerFromServer = function () {
         console.log($scope.mobile);
         var param = {
@@ -8,8 +6,8 @@ travelApp.controller('registerController', function($scope, $http, $state, $stat
             'password':$scope.password
         };
         Http.go($http,
-            'POST',
-            '/travel/register.json',
+            constantFactory.HTTP_METHOD_POST,
+            constantFactory.URL_REGISTER,
             param,
             function(data){alert(data.respMsg)},
             function(data){alert(data.respMsg)});
