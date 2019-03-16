@@ -30,8 +30,16 @@ public class LeResponse {
         return new LeResponse(Response.SUCCESS, Response.SUCCESS_MESSAGE);
     }
 
+    public static LeResponse success(String respMsg){
+        return new LeResponse(Response.SUCCESS, respMsg);
+    }
+
     public static LeResponse fail(){
         return new LeResponse(Response.FAIL, Response.FAIL_MESSAGE);
+    }
+
+    public static LeResponse fail(String respMsg){
+        return new LeResponse(Response.FAIL, respMsg);
     }
 
     public String getRespCode() {

@@ -1,4 +1,4 @@
-travelApp.factory('constantFactory',function () {
+travelApp.factory('ConstantFactory',function () {
     var constant = {};
     //网络请求方式
     constant.HTTP_METHOD_POST = "POST";

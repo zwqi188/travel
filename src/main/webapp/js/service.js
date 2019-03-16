@@ -14,3 +14,15 @@ travelApp.service('Http', function() {
         });
     }
 });
+
+/**
+ * 工具类方法
+ */
+travelApp.service('Utils', function () {
+    this.isEmpty = function (value) {
+        if(value == '' || value == null) {
+            return true;
+        }
+        return false;
+    };
+});

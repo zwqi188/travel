@@ -19,9 +19,8 @@
                                 </span>
                             </li>
                             <li><span>验证码：</span><span class="rt yzm">  
-                                    <input placeholder="请填写验证码" id="CheckCode1" name="CheckCode1" ng-model="yzm" class="input" type="text" maxlength="4">
-                                    <img class="yzm_img" id="imgCC1" src="">
-                                    <a class="yzm_a" style="color: Gray" href="javascript:" id="changepic_btn1" >换一张</a>
+                                    <input placeholder="请填写验证码" id="CheckCode1" name="CheckCode1" ng-model="checkCode" class="input" type="text" maxlength="4">
+                                    <img class="yzm_img" src="/travel/checkCode/getCode.json" onclick="this.src='/travel/checkCode/getCode.json?' + Math.random()">
                                 </span> 
                             </li>
                             <li>
@@ -37,8 +36,8 @@
                         </ul>
                         <div class="wjma">
                             <label>
-                                <input id="ckbPhone" name="ckbPhone" type="checkbox" value="">我愿意接受
-                                <a class="clause" href="javascript:void(0);">春秋旅游网服务条款</a>
+                                <input id="ckbPhone" name="ckbPhone" type="checkbox" ng-model="agreement" value="true">我愿意接受
+                                <a class="clause">春秋旅游网服务条款</a>
                             </label>
                         </div>
                         <a class="lg_btn" id="regPhoneBtn" href="javascript:" ng-click="registerFromServer()">注 册</a>
