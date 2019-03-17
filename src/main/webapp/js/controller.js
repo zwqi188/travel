@@ -42,7 +42,7 @@ travelApp.controller('registerController', function($scope, $http, $state, $stat
 
 });
 
-travelApp.controller('loginController', function ($scope, $http, Http, Utils, ConstantFactory) {
+travelApp.controller('loginController', function ($scope, $http, $state, Http, Utils, ConstantFactory) {
 
     $scope.loginFromServer = function () {
         var account = $scope.account;
@@ -62,6 +62,13 @@ travelApp.controller('loginController', function ($scope, $http, Http, Utils, Co
             ConstantFactory.URL_LOGIN,
             param,
             function (data) {
+                if(data.respCode == "1000") {
+                    $scope.userName = data.data.userName;
+                    $scope.userId = data.data.id;
+                    alert(data.respMsg);
+                    $state.go('index');
+                    return;
+                }
                 alert(data.respMsg);
             },
             function (data) {
