@@ -27,8 +27,18 @@ public class Ticket {
 	/**
 	 * 团购数量
 	 */
-	private Integer groupNum;
+	private String groupName;
 
+	/**
+	 * 票数
+	 */
+	private Integer number;
+
+	private String startTime;
+
+	private String endTime;
+
+	private String ticketName;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -69,15 +79,6 @@ public class Ticket {
 		this.isGroup = isGroup;
 	}
 
-	@Column(name = "groupNum")
-	public Integer getGroupNum() {
-		return groupNum;
-	}
-
-	public void setGroupNum(Integer groupNum) {
-		this.groupNum = groupNum;
-	}
-
 	@Column(name = "spotId")
 	public Integer getSpotId() {
 		return spotId;
@@ -85,5 +86,46 @@ public class Ticket {
 
 	public void setSpotId(Integer spotId) {
 		this.spotId = spotId;
+	}
+	@Column(name = "number")
+	public Integer getNumber() {
+		return number;
+	}
+
+	public void setNumber(Integer number) {
+		this.number = number;
+	}
+	@Column(name = "startTime")
+	public String getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	@Column(name = "endTime")
+	public String getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+	@Column(name = "groupName")
+	public String getGroupName() {
+		return groupName;
+	}
+
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+
+	@Column(name = "ticketName")
+	public String getTicketName() {
+		return ticketName;
+	}
+
+	public void setTicketName(String ticketName) {
+		this.ticketName = ticketName;
 	}
 }

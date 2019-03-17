@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     public boolean register(String mobile, String password) {
         if(userDao.findByMobile(mobile) == 0) {
             User user = new User();
-            user.setTelPhone(mobile);
+            user.setMobile(mobile);
             user.setPassword(password);
             user.setCreatedAt(new Date());
             userDao.register(user);

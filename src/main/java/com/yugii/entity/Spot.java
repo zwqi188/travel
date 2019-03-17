@@ -6,8 +6,8 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "signSpot")
-public class Signspot {
+@Table(name = "spot")
+public class Spot {
 
 	/**
 	 * 景点编号
@@ -48,7 +48,7 @@ public class Signspot {
 	 */
 	private Date updatedAt;
 
-	public Signspot() {
+	public Spot() {
 	}
 
 	@Id

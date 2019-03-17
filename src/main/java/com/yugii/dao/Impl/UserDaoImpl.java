@@ -28,17 +28,17 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 
     @Override
     public int findByMobile(String mobile) {
-        String hql = "from User where telPhone=:telPhone ";
+        String hql = "from User where mobile=:mobile ";
         Map<String, Object> param= new HashMap<>();
-        param.put("telPhone", mobile);
+        param.put("mobile", mobile);
         return find(hql, param).size();
     }
 
     @Override
     public User findUserByMobileAndPass(String mobile, String password) {
-        String hql = "from User where telPhone=:telPhone and password=:password";
+        String hql = "from User where mobile=:mobile and password=:password";
         Map<String, Object> param= new HashMap<>();
-        param.put("telPhone", mobile);
+        param.put("mobile", mobile);
         param.put("password", password);
         List<User> users = find(hql, param);
         if(!CollectionUtils.isEmpty(users)) {

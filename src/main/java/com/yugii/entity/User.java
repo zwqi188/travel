@@ -26,7 +26,7 @@ public class User implements Serializable {
     /**
      * 电话号码
      */
-    private String telPhone;
+    private String mobile;
     /**
      * 邮件
      */
@@ -35,7 +35,28 @@ public class User implements Serializable {
     private Date createdAt;
 
     private Date updatedAt;
+    /**
+     * 昵称
+     */
+    private String nickName;
+    /**
+     * 性别
+     */
+    private String gender;
 
+    /**
+     * 地址
+     */
+    private String address;
+    /**
+     * 身份证号
+     */
+    private String idCard;
+
+    /**
+     * 优惠券编号
+     */
+    private Integer discountId;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -75,14 +96,6 @@ public class User implements Serializable {
         this.realName = realName;
     }
 
-    @Column(name = "telPhone")
-    public String getTelPhone() {
-        return telPhone;
-    }
-
-    public void setTelPhone(String telPhone) {
-        this.telPhone = telPhone;
-    }
 
     @Column(name = "email")
     public String getEmail() {
@@ -110,5 +123,59 @@ public class User implements Serializable {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @Column(name = "mobile")
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    @Column(name = "nickName")
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    @Column(name = "address")
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Column(name = "discountId")
+    public Integer getDiscountId() {
+        return discountId;
+    }
+
+    public void setDiscountId(Integer discountId) {
+        this.discountId = discountId;
+    }
+
+    @Column(name = "gender")
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    @Column(name = "idCard")
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 }

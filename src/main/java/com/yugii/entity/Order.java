@@ -36,6 +36,11 @@ public class Order {
 	 */
 	private Date updatedAt;
 
+	/**
+	 * 订单状态
+	 */
+	private String orderStatus;
+
 	public Order() {
 	}
 
@@ -97,5 +102,14 @@ public class Order {
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+
+	@Column(name = "orderStatus")
+	public String getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
 	}
 }
