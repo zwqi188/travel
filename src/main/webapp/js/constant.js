@@ -8,6 +8,8 @@ travelApp.factory('ConstantFactory',function () {
     constant.URL_REGISTER = "/travel/register.json";
     //用户登录
     constant.URL_LOGIN = "/travel/login.json";
+    //通过userId查询用户信息
+    constant.URL_GET_USERINFO_BY_USERID = "/travel/getUserInfoByUserId.json";
 
     constant.RESP_CODE_1000 = "1000";
 

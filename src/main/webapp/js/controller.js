@@ -89,22 +89,51 @@ travelApp.controller('headerController', function ($scope, $rootScope, Utils, Co
 
     $rootScope.$on(ConstantFactory.LOGIN_MESSAGE,function (event, data) {
         if(Utils.isEmpty(data)){
-            $rootScope.user = null;
+            $rootScope.loginUser = null;
             $rootScope.isLogin = false;
         } else {
             if(!Utils.isEmpty(data.nickName)) {
-                $rootScope.user = data.nickName;
+                $rootScope.loginUser = data.nickName;
             }else if(!Utils.isEmpty(data.userName)) {
-                $rootScope.user = data.userName;
+                $rootScope.loginUser = data.userName;
             } else {
-                $rootScope.user = data.userId;
+                $rootScope.loginUser = data.userId;
             }
+            $rootScope.user = data;
             $rootScope.isLogin = true;
         }
 
     });
-
+    /**
+     * 退出
+     */
     $scope.loginOut = function () {
       $rootScope.$broadcast(ConstantFactory.LOGIN_MESSAGE, null);
     };
+});
+
+/**
+ * 用户中心controller
+ */
+travelApp.controller('userCenterController', function ($scope, $rootScope, $http, Http, Utils, ConstantFactory) {
+    var userId = $rootScope.user.userId;
+    var param = {
+        'userId' : userId.toString()
+    };
+    Http.go($http,
+        ConstantFactory.HTTP_METHOD_POST,
+        ConstantFactory.URL_GET_USERINFO_BY_USERID,
+        param,
+        function (data) {
+            if(data.respCode == ConstantFactory.RESP_CODE_1000) {
+                $scope.userName = data.data.userName;
+                $scope.nickName = data.data.nickName;
+                $scope.address = data.data.address;
+                $scope.idCard = data.data.idCard;
+                $scope.gender = data.data.gender;
+            }
+        },function (data) {
+
+        });
+
 });

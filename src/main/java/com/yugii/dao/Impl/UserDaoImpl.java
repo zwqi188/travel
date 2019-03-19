@@ -59,4 +59,16 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
         }
         return null;
     }
+
+    @Override
+    public User getUserInfoByUserId(String userId) {
+        String hql = "from User where id=:id";
+        Map<String, Object> param= new HashMap<>();
+        param.put("id", Integer.parseInt(userId));
+        List<User> users = find(hql, param);
+        if(!CollectionUtils.isEmpty(users)) {
+            return users.get(0);
+        }
+        return null;
+    }
 }

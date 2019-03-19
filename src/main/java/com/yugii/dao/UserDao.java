@@ -14,4 +14,6 @@ public interface UserDao {
     User findUserByMobileAndPass(String mobile, String password);
 
     User findUserByEmailAndPass(String userName, String password);
+
+    User getUserInfoByUserId(String userId);
 }

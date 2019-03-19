@@ -6,7 +6,8 @@ package com.yugii.enums;
 public enum ResponseEnums {
     ERROR_LACK_PARAM("[T-1101]","缺少验证参数！"),
     ERROR_VARIFY_CHECK_CODE("[TV-1102]","验证码校验错误！"),
-    ERROR_LOGIN_FAIL("[TV-1103]","用户名或密码错误！");
+    ERROR_LOGIN_FAIL("[TV-1103]","用户名或密码错误！"),
+    ERROR_NO_QUERY_RESULT("[TV-1104]","查询结果为空！");
 
 
     ResponseEnums (String code, String msg) {

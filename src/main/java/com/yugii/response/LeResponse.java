@@ -34,6 +34,11 @@ public class LeResponse {
         return new LeResponse(Response.SUCCESS, respMsg);
     }
 
+    public static LeResponse success(Object data){
+        return new LeResponse(Response.SUCCESS, Response.SUCCESS_MESSAGE, data);
+    }
+
+
     public static LeResponse fail(){
         return new LeResponse(Response.FAIL, Response.FAIL_MESSAGE);
     }

@@ -13,4 +13,7 @@ public class Param {
     public static final String USER_ID = "userId";
     public static final String ACCOUNT = "account";
     public static final String NICK_NAME = "nickName";
+    public static final String GENDER = "gender";
+    public static final String ADDRESS = "address";
+    public static final String ID_CARD = "idCard";
 }
