@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" ng-controller="headerController">
     <div class="new_c_top">
         <ul>
             <li class="headleft" id="usercheck">
@@ -7,9 +7,11 @@
             </li>
             <li class="headright">
                 <div class="t_right">
-                    <dl><a ui-sref="index">返回主页</a> |
-                        <a ui-sref="register">注册{{userId}}</a> |
-                        <a ui-sref="loginView">登录</a>
+                    <dl><a ui-sref="index">返回主页</a>
+                        <a ui-sref="register" ng-if="!isLogin">注册</a>
+                        <a ui-sref="loginView" ng-if="!isLogin">登录</a>
+                        <a ui-sref="register" ng-if="isLogin">{{user}},欢迎您！</a>
+                        <a ui-sref="loginView" ng-if="isLogin">退出</a>
                     </dl>
                 </div>
                 <div class="t_left"></div>

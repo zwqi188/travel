@@ -12,4 +12,5 @@ public class Param {
     public static final String CHECK_CODE = "checkCode";
     public static final String USER_ID = "userId";
     public static final String ACCOUNT = "account";
+    public static final String NICK_NAME = "nickName";
 }

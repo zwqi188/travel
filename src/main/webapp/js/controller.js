@@ -1,3 +1,6 @@
+/**
+ * 注册
+ */
 travelApp.controller('registerController', function($scope, $http, $state, $stateParams, Http, Utils, ConstantFactory) {
     $scope.registerFromServer = function () {
         var password = $scope.password;
@@ -41,8 +44,10 @@ travelApp.controller('registerController', function($scope, $http, $state, $stat
     }
 
 });
-
-travelApp.controller('loginController', function ($scope, $http, $state, Http, Utils, ConstantFactory) {
+/**
+ * 登录
+ */
+travelApp.controller('loginController', function ($scope, $rootScope, $http, $state, Http, Utils, ConstantFactory) {
 
     $scope.loginFromServer = function () {
         var account = $scope.account;
@@ -64,7 +69,7 @@ travelApp.controller('loginController', function ($scope, $http, $state, Http, U
             function (data) {
                 if(data.respCode == "1000") {
                     $scope.userName = data.data.userName;
-                    $scope.userId = data.data.id;
+                    $rootScope.$broadcast(ConstantFactory.LOGIN_MESSAGE, data.data);
                     alert(data.respMsg);
                     $state.go('index');
                     return;
@@ -76,4 +81,26 @@ travelApp.controller('loginController', function ($scope, $http, $state, Http, U
             });
     }
 
+});
+/**
+ * 网页头部
+ */
+travelApp.controller('headerController', function ($scope, $rootScope, Utils, ConstantFactory) {
+
+    $rootScope.$on(ConstantFactory.LOGIN_MESSAGE,function (event, data) {
+        if(Utils.isEmpty(data)){
+            $rootScope.user = null;
+            $rootScope.isLogin = false;
+        } else {
+            if(!Utils.isEmpty(data.nickName)) {
+                $rootScope.user = data.nickName;
+            }else if(!Utils.isEmpty(data.userName)) {
+                $rootScope.user = data.userName;
+            } else {
+                $rootScope.user = data.userId;
+            }
+            $rootScope.isLogin = true;
+        }
+
+    });
 });

@@ -9,5 +9,7 @@ travelApp.factory('ConstantFactory',function () {
     //用户登录
     constant.URL_LOGIN = "/travel/login.json";
 
+    //消息
+    constant.LOGIN_MESSAGE = "loginMessage";
     return constant;
 });

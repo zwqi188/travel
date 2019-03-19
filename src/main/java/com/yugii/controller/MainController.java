@@ -80,6 +80,7 @@ public class MainController {
             Map<String,Object> returnMsg = new HashMap<>();
             returnMsg.put(Param.USER_ID, user.getId());
             returnMsg.put(Param.USER_NAME, user.getUserName());
+            returnMsg.put(Param.NICK_NAME, user.getNickName());
             return new LeResponse(Response.SUCCESS, Response.SUCCESS_MESSAGE, returnMsg);
         }
         return LeResponse.fail(ResponseEnums.ERROR_LOGIN_FAIL.getResponseMsg());

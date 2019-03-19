@@ -11,6 +11,7 @@ var travelApp = angular.module('travelApp',['ui.router']);
 travelApp.run(function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
+    $rootScope.isLogin = false;
 });
 
 /**
