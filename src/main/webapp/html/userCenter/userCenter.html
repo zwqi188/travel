@@ -1,8 +1,7 @@
 <div class="contentBox" id="contentBox">
-    <div class="warp contentBoxmain">
         <div class="zcbox">
             <form id="RegFrm" method="post" ng-controller="userCenterController">
-                <div class="">
+                <div class="zc_tab">
                    用户中心
                 </div>
                 <!--手机注册-->
@@ -29,6 +28,11 @@
                             </span>
                         </li>
                         <li>
+                            <span>身份证号：</span><span class="rt">
+                                <input class="input" placeholder="身份证号" ng-model="mobile" type="text" >
+                            </span>
+                        </li>
+                        <li>
                             <span></span><span class="rt">
                                 <a class="lg_btn" id="regPhoneBtn" href="javascript:">修 改</a>
                             </span>
@@ -39,5 +43,4 @@
                 </div>
             </form>
         </div>
-    </div>
 </div>
