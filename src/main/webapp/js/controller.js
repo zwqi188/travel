@@ -67,7 +67,7 @@ travelApp.controller('loginController', function ($scope, $rootScope, $http, $st
             ConstantFactory.URL_LOGIN,
             param,
             function (data) {
-                if(data.respCode == "1000") {
+                if(data.respCode == ConstantFactory.RESP_CODE_1000) {
                     $scope.userName = data.data.userName;
                     $rootScope.$broadcast(ConstantFactory.LOGIN_MESSAGE, data.data);
                     alert(data.respMsg);
@@ -103,4 +103,8 @@ travelApp.controller('headerController', function ($scope, $rootScope, Utils, Co
         }
 
     });
+
+    $scope.loginOut = function () {
+      $rootScope.$broadcast(ConstantFactory.LOGIN_MESSAGE, null);
+    };
 });

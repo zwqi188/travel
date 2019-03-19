@@ -8,10 +8,11 @@
             <li class="headright">
                 <div class="t_right">
                     <dl><a ui-sref="index">返回主页</a>
+                        <a ui-sref="userCenterView">欢迎</a>
                         <a ui-sref="register" ng-if="!isLogin">注册</a>
                         <a ui-sref="loginView" ng-if="!isLogin">登录</a>
-                        <a ui-sref="register" ng-if="isLogin">{{user}},欢迎您！</a>
-                        <a ui-sref="loginView" ng-if="isLogin">退出</a>
+                        <a ui-sref="userCenterView" ng-if="isLogin">{{user}},欢迎您！</a>
+                        <a ng-if="isLogin" ng-click="loginOut()">退出</a>
                     </dl>
                 </div>
                 <div class="t_left"></div>

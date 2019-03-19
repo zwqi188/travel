@@ -162,6 +162,23 @@ travelApp.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('userCenterView', {
+            url: '/userCenterView',
+            views: {
+                '': {
+                    templateUrl: 'html/userCenter/app.html'
+                },
+                'header@userCenterView': {
+                    templateUrl: 'html/template/header.html'
+                },
+                'userCenter@userCenterView': {
+                    templateUrl: 'html/userCenter/userCenter.html'
+                },
+                'footer@userCenterView': {
+                    templateUrl: 'html/template/footer.html'
+                }
+            }
+        })
         
        
 });
