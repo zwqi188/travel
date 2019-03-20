@@ -3,6 +3,8 @@ package com.yugii.service;
 import com.yugii.entity.User;
 import com.yugii.response.LeResponse;
 
+import java.util.Map;
+
 /**
  * Created by apple on 19/1/21.
  */
@@ -30,4 +32,10 @@ public interface UserService {
      * @return
      */
     LeResponse getUserInfoByUserId(String userId);
+
+    /**
+     * 通过userId修改用户信息
+     * @return
+     */
+    LeResponse updateUserInfoByUserId(Map<String,Object> param);
 }

@@ -9,6 +9,7 @@ import com.yugii.response.LeResponse;
 import com.yugii.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.persistence.Transient;
 import javax.transaction.Transactional;
@@ -72,5 +73,43 @@ public class UserServiceImpl implements UserService {
             return LeResponse.success(returnMap);
         }
         return LeResponse.fail(ResponseEnums.ERROR_NO_QUERY_RESULT.getResponseMsg());
+    }
+
+    /**
+     * 修改用户信息
+     * @param param
+     * @return
+     */
+    @Override
+    public LeResponse updateUserInfoByUserId(Map<String, Object> param) {
+        String userId = (String) param.get(Param.USER_ID);
+        String userName = (String) param.get(Param.USER_NAME);
+        String gender = (String) param.get(Param.GENDER);
+        String nickName = (String) param.get(Param.NICK_NAME);
+        String address = (String) param.get(Param.ADDRESS);
+        String idCard = (String) param.get(Param.ID_CARD);
+        User user = userDao.getUserInfoByUserId(userId);
+        if(!StringUtils.isEmpty(userName)) {
+            user.setUserName(userName);
+        }
+        if(!StringUtils.isEmpty(nickName)) {
+            user.setNickName(nickName);
+        }
+        if(!StringUtils.isEmpty(gender)) {
+            user.setGender(gender);
+        }
+        if(!StringUtils.isEmpty(address)) {
+            user.setAddress(address);
+        }
+        if(!StringUtils.isEmpty(idCard)) {
+            user.setIdCard(idCard);
+        }
+        user.setUpdatedAt(new Date());
+        try {
+            userDao.update(user);
+        } catch (Exception ex) {
+            return LeResponse.fail(ex.getMessage());
+        }
+        return LeResponse.success();
     }
 }

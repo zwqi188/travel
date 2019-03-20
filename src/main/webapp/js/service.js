@@ -5,6 +5,9 @@ travelApp.service('Http', function() {
     this.go = function ($http,method,url,param,callbackSucc,callbackErr) {
         $http({
             method:method,
+            headers: {
+                "Content-Type":"application/json"
+            },
             url:url,
             data:param
         }).success(function(data){
@@ -24,5 +27,16 @@ travelApp.service('Utils', function () {
             return true;
         }
         return false;
+    };
+});
+
+travelApp.service('Cities', function () {
+    var cities = null;
+    this.getProvince = function (value) {
+        cities = new Array();
+        for(var val in value) {
+            cities.push(val);
+        }
+        return cities;
     };
 });

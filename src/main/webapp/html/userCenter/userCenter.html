@@ -19,12 +19,20 @@
                         </li>
                         <li>
                             <span>性别：</span><span class="rt">
-                                <input class="input" placeholder="性别" ng-model="gender" type="text" >
+                                <input ng-model="gender" name="gender" ng-value="男" type="radio" checked>男
+                                <input ng-model="gender" name="gender" ng-value="女" type="radio" >女
                             </span>
                         </li>
                         <li>
                             <span>地址：</span><span class="rt">
-                                <input class="input" placeholder="地址" ng-model="address" type="text" >
+                                <select><option ng-repeat="p in provinces">{{p}}</option></select>省
+                                <select><option ng-repeat="c in city">{{c}}</option></select>市
+                                <select><option ng-repeat="a in area">{{a}}</option></select>区
+                            </span>
+                        </li>
+                        <li>
+                            <span>&nbsp;</span><span class="rt">
+                                <input class="input details" placeholder="详细地址" ng-model="details" type="text" >
                             </span>
                         </li>
                         <li>
@@ -34,7 +42,7 @@
                         </li>
                         <li>
                             <span></span><span class="rt">
-                                <a class="lg_btn" id="regPhoneBtn" href="javascript:">修 改</a>
+                                <a class="lg_btn" id="regPhoneBtn" href="javascript:" ng-click="updateUserInfoByUserId()">修 改</a>
                             </span>
                         </li>
 

@@ -101,30 +101,4 @@ public class MainController {
 
     }
 
-    /**
-     * 用户信息查询 /getUserInfoByUserId.json
-     * 请求参数
-     * @param param
-     *      userId         /M/用户id
-     * @return
-     *      respCode        /M/返回码
-     *      respMsg         /M/返回信息
-     *      data            /O/详细信息
-     *          userId      /O/用户id
-     *          userName    /O/用户姓名
-     *          nickName    /O/用户昵称
-     *          address     /O/地址
-     *          idCard      /O/身份证号
-     */
-    @ResponseBody
-    @RequestMapping(value = "/getUserInfoByUserId.json", method = RequestMethod.POST)
-    public LeResponse getUserInfoByUserId(@RequestBody Map<String,Object> param) {
-
-        String userId = (String) param.get(Param.USER_ID);
-        if(StringUtils.isEmpty(userId)) {
-            return LeResponse.fail(ResponseEnums.ERROR_LACK_PARAM.getMessage());
-        }
-        return userService.getUserInfoByUserId(userId);
-    }
-
 }

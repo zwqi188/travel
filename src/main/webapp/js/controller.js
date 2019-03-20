@@ -115,11 +115,22 @@ travelApp.controller('headerController', function ($scope, $rootScope, Utils, Co
 /**
  * 用户中心controller
  */
-travelApp.controller('userCenterController', function ($scope, $rootScope, $http, Http, Utils, ConstantFactory) {
+travelApp.controller('userCenterController', function ($scope, $rootScope, $http, $state, Http, Utils, ConstantFactory, Cities) {
+
+
+    var province = Cities.getProvince(ConstantFactory.CITEIS);
+    console.log(province);
+    $scope.provinces = ["a"];
     var userId = $rootScope.user.userId;
+    if(Utils.isEmpty(userId)){
+        alert("你还未登录，请先登录！");
+        $state.go('loginView');
+        return;
+    }
     var param = {
         'userId' : userId.toString()
     };
+
     Http.go($http,
         ConstantFactory.HTTP_METHOD_POST,
         ConstantFactory.URL_GET_USERINFO_BY_USERID,
@@ -135,5 +146,35 @@ travelApp.controller('userCenterController', function ($scope, $rootScope, $http
         },function (data) {
 
         });
+
+    $scope.updateUserInfoByUserId = function () {
+        var userId = $rootScope.user.userId;
+        if(Utils.isEmpty(userId)){
+            alert("你还未登录，请先登录！");
+            $state.go('loginView');
+            return;
+        }
+        var param = {
+            'userId' : userId.toString(),
+            'userName': $scope.userName,
+            'nickName': $scope.nickName,
+            'address': $scope.address,
+            'idCard': $scope.idCard,
+            'gender': $scope.gender
+        };
+        Http.go($http,
+            ConstantFactory.HTTP_METHOD_POST,
+            ConstantFactory.URL_UPDATE_USERINFO,
+            param,
+            function (data) {
+                if(data.respCode == ConstantFactory.RESP_CODE_1000) {
+                   alert(data.respMsg);
+                }
+
+            },function (data) {
+                alert(data.respMsg);
+            });
+
+    };
 
 });
