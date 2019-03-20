@@ -31,12 +31,12 @@ travelApp.service('Utils', function () {
 });
 
 travelApp.service('Cities', function () {
-    var cities = null;
-    this.getProvince = function (value) {
-        cities = new Array();
+    var list = null;
+    this.getList = function (value) {
+        list = new Array();
         for(var val in value) {
-            cities.push(val);
+            list.push(val);
         }
-        return cities;
+        return list;
     };
 });

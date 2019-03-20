@@ -118,9 +118,8 @@ travelApp.controller('headerController', function ($scope, $rootScope, Utils, Co
 travelApp.controller('userCenterController', function ($scope, $rootScope, $http, $state, Http, Utils, ConstantFactory, Cities) {
 
 
-    var province = Cities.getProvince(ConstantFactory.CITEIS);
-    console.log(province);
-    $scope.provinces = ["a"];
+    var province = Cities.getList(ConstantFactory.CITEIS);
+    $scope.provinces = province;
     var userId = $rootScope.user.userId;
     if(Utils.isEmpty(userId)){
         alert("你还未登录，请先登录！");
@@ -146,6 +145,16 @@ travelApp.controller('userCenterController', function ($scope, $rootScope, $http
         },function (data) {
 
         });
+
+    $scope.getCities = function () {
+        var cities = Cities.getList(ConstantFactory.CITEIS[$scope.prov])
+        $scope.city = cities;
+    };
+
+    $scope.getArea = function () {
+        var area = ConstantFactory.CITEIS[$scope.prov][$scope.cit];
+        $scope.area = area;
+    };
 
     $scope.updateUserInfoByUserId = function () {
         var userId = $rootScope.user.userId;
