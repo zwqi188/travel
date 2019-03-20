@@ -119,7 +119,8 @@ travelApp.controller('userCenterController', function ($scope, $rootScope, $http
 
 
     var province = Cities.getList(ConstantFactory.CITEIS);
-    $scope.provinces = province;
+    $scope.provinceList = province;
+
     var userId = $rootScope.user.userId;
     if(Utils.isEmpty(userId)){
         alert("你还未登录，请先登录！");
@@ -147,13 +148,13 @@ travelApp.controller('userCenterController', function ($scope, $rootScope, $http
         });
 
     $scope.getCities = function () {
-        var cities = Cities.getList(ConstantFactory.CITEIS[$scope.prov])
-        $scope.city = cities;
+        var cityList = Cities.getList(ConstantFactory.CITEIS[$scope.province])
+        $scope.cityList = cityList;
     };
 
     $scope.getArea = function () {
-        var area = ConstantFactory.CITEIS[$scope.prov][$scope.cit];
-        $scope.area = area;
+        var areaList = ConstantFactory.CITEIS[$scope.province][$scope.city];
+        $scope.areaList = areaList;
     };
 
     $scope.updateUserInfoByUserId = function () {
@@ -163,11 +164,17 @@ travelApp.controller('userCenterController', function ($scope, $rootScope, $http
             $state.go('loginView');
             return;
         }
+        var address = {
+            'province':$scope.province,
+            'city':$scope.city,
+            'area':$scope.area,
+            'detail':$scope.detail
+        };
         var param = {
             'userId' : userId.toString(),
             'userName': $scope.userName,
             'nickName': $scope.nickName,
-            'address': $scope.address,
+            'address': JSON.stringify(address),
             'idCard': $scope.idCard,
             'gender': $scope.gender
         };
@@ -179,7 +186,6 @@ travelApp.controller('userCenterController', function ($scope, $rootScope, $http
                 if(data.respCode == ConstantFactory.RESP_CODE_1000) {
                    alert(data.respMsg);
                 }
-
             },function (data) {
                 alert(data.respMsg);
             });

@@ -107,7 +107,7 @@ travelApp.factory('ConstantFactory',function () {
                 "唐海县",
                 "遵化市",
                 "迁安市",
-                " 曹妃甸区",
+                "曹妃甸区",
                 "其他"
             ],
             "秦皇岛": [

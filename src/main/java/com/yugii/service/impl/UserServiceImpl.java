@@ -1,7 +1,6 @@
 package com.yugii.service.impl;
 
 import com.yugii.constants.Param;
-import com.yugii.constants.Response;
 import com.yugii.dao.UserDao;
 import com.yugii.entity.User;
 import com.yugii.enums.ResponseEnums;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import javax.persistence.Transient;
 import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.HashMap;
