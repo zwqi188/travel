@@ -20,10 +20,10 @@ a img{border:none;}
 .new_c_top .headright dl{ position:relative;}
 .head_content{ width:1200px; margin:0 auto;height:90px;}
 .head_content .logo{ float:left; width:272px;}
-.head_content .logo a{ background:url(/images/logo.jpg) no-repeat 0 8px; width:272px; height:90px; display:block;}
+.head_content .logo a{ width:272px; height:90px; display:block;}
 .head_content .search{ float:left; width:541px; margin-left:100px; margin-top:32px; position:relative;}
-.head_content .news_tel{ float:left; background:url(/images/newphone.jpg) no-repeat; width:287px; height:58px; margin-top:18px;}
-.head_content .newstel{ float:left; background:url(/images/mdphone.jpg) no-repeat; width:287px; height:58px; margin-top:18px;}
+.head_content .news_tel{ float:left; width:287px; height:58px; margin-top:18px;}
+.head_content .newstel{ float:left; width:287px; height:58px; margin-top:18px;}
 .menunew{box-shadow:-1px 2px 6px rgba(0, 0, 0, 0.3); background:#2577e3; height:45px; line-height:45px; position:relative; z-index:10;width:100%;}
 .keyword_new {background: none repeat scroll 0 0 #fff; border: 2px solid #ff8800;float: left; height: 30px;width: 425px;border-radius:2px 0 0 2px;}
 .keyword_new input { padding-left:5px;background: none repeat scroll 0 0 rgba(0, 0, 0, 0);border: 0 none;float: left; height: 28px;line-height: 28px;width: 420px;}
@@ -344,3 +344,83 @@ a img{border:none;}
 .l_cooperate img{ margin-right:5px; margin-top:5px;}
 
 .allmdd dl:hover .cats{display: inherit;}
+
+.example {width: 624px;height: 336px;font-size: 40px;text-align: center;margin: 20px auto;background-color: #464576;}
+.carousel-item{line-height: 336px;color: #fff;font-family:  Arial Black}
+ul,
+ol,
+li,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.ft-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ft-carousel .carousel-inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.ft-carousel .carousel-inner .carousel-item {
+    float: left;
+    height: 100%;
+}
+
+.ft-carousel .carousel-item img {
+    width: 100%;
+}
+
+.ft-carousel .carousel-indicators {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+}
+
+.ft-carousel .carousel-indicators span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    margin: 0 4px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ft-carousel .carousel-indicators span.active {
+    background-color: #de3a3a;
+}
+
+.ft-carousel .carousel-btn {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 45px;
+    margin-top: -25px;
+    cursor: pointer;
+}
+
+.ft-carousel .carousel-prev-btn {
+    left: 0;
+    background: url(../img/prev.png) no-repeat;
+}
+
+.ft-carousel .carousel-next-btn {
+    right: 0;
+    background: url(../img/next.png) no-repeat;
+}

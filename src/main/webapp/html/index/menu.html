@@ -402,50 +402,43 @@
                     <a ui-sref="customerView">定制游<i></i></a>
                 </li>
             </ul>
-            <span class="nxin"></span>
-            <span class="nhot"></span>
-            <span class="ozmenutop">
-                <a href="/ouzhou_t/" target="_blank">欧洲旅游</a>
-            </span>
         </div>
     </div>
-    <div class="J_navMenu" data-tab="0"></div>
 </div>
 <div class="web_new">
     <div class="cat_left">
         <div id="slider">
             <div id="slider-holder">
-                <ul>
-                    <li>
-                        <a href="/shanghai/travel124172.htm" target="_blank">
-                            <img alt="巴尔干半岛克罗地亚、黑山、波黑、塞尔维亚、罗马尼亚、保加利亚六国15日深度全景之旅" src="images/beg2019129.jpg?v=1"  height="428" width="998"></a>
-                    </li>
-                    <li>
-                        <a><img alt="2019春节旅游" src="images/gl_998.jpg?v=1"  height="428" width="998"></a>
-                    </li>
-                    <li>
-                        <a><img alt="春季旅游" src="images/chunji315_1.jpg?v=1"  height="428" width="998"></a>
-                    </li>
-                    <li>
-                        <a><img alt="错峰旅游" src="images/cf-998.jpg?v=8"  height="428" width="998"></a>
-                    </li>
-                    <li>
-                        <a href="/zt/haidao/" target="_blank"><img alt="海岛旅游" src="images/glhd2018925.jpg?v=8"  height="428" width="998"></a>
-                    </li>
-                    <li>
-                        <a href="/zt/qinzi/" target="_blank"><img alt="亲子旅游" src="images/glqz998.jpg?v=8"  height="428" width="998"></a>
-                    </li>
-                    <li>
-                        <a href="/ouzhou_t/" target="_blank"><img alt="2019欧洲旅游" src="images/oz180328.jpg"  height="428" width="998"></a>
-                    </li>
-                    <li>
-                        <a href="/zt/xiyanghong/" target="_blank"><img alt="爸妈旅游" src="images/bm9982017524.jpg"  height="428" width="998"></a>
-                    </li>
-                </ul>
+                <div class="example">
+                    <div class="ft-carousel" id="carousel_1">
+                        <ul class="carousel-inner">
+                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
+                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
+                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
+                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
+                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
+                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div id="slider-nav">
-                <a class="active">1</a><a>2</a><a>3</a><a>4</a><a>5</a><a>6</a><a>7</a><a>8</a>
-            </div>
+
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $("#carousel_1").FtCarousel();
+
+    $("#carousel_2").FtCarousel({
+        index: 1,
+        auto: false
+    });
+
+    $("#carousel_3").FtCarousel({
+        index: 0,
+        auto: true,
+        time: 3000,
+        indicators: false,
+        buttons: true
+    });
+</script>
