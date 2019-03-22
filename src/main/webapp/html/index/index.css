@@ -2,7 +2,7 @@
 .sliderContainer {
     position: relative;
     width: 1000px;
-    height: 450px;
+    height: 430px;
     margin: 0 auto;
     box-shadow: 0 0 5px green;
     overflow: hidden;
@@ -10,13 +10,13 @@
 .sliderContainer .wrapImg {
     position: absolute;
     width: 4750px;
-    height: 420px;
+    height: 430px;
     z-index: 1;
 }
 .sliderContainer .wrapImg img {
     float: left;
-    width: 600px;
-    height: 400px;
+    width: 1000px;
+    height: 430px;
 }
 .sliderContainer .buttons {
     position: absolute;

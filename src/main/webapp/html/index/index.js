@@ -1,4 +1,4 @@
-var wrapImg = document.getElementsByClassName("wrapImg");
+var wrapImg = document.getElementById("wrapImg");
 var next = document.getElementsByClassName("arrow_right");
 var prev = document.getElementsByClassName("arrow_left");
 next.onclick = function () {
@@ -17,8 +17,9 @@ function next_pic () {
     if(wrapImg.style.left === "-3600px"){
         newLeft = -1200;
     }else{
-        newLeft = parseInt(wrapImg.style.left)-600;
+        newLeft = parseInt(wrapImg.style.left)-1000;
     }
+    console.log(parseInt(wrapImg.style.left));
     wrapImg.style.left = newLeft + "px";
 };
 function prev_pic () {
@@ -31,7 +32,7 @@ function prev_pic () {
     if(wrapImg.style.left === "0px"){
         newLeft = -2400;
     }else{
-        newLeft = parseInt(wrapImg.style.left)+600;
+        newLeft = parseInt(wrapImg.style.left)+1000;
     }
     wrapImg.style.left = newLeft + "px";
 };
@@ -69,10 +70,10 @@ for (var i = 0, len = dots.length; i < len; i++){
                 dis = dis - 5;
             }
             //和使用prev和next相同，在最开始的照片5和最终的照片1在使用时会出现问题，导致符号和位数的出错，做相应地处理即可
-            if(index == 0 && parseInt(wrapImg.style.left)!== -600){
+            if(index == 0 && parseInt(wrapImg.style.left)!== -1000){
                 dis = 5 + dis;
             }
-            wrapImg.style.left = (parseInt(wrapImg.style.left) +  dis * 600)+"px";
+            wrapImg.style.left = (parseInt(wrapImg.style.left) +  dis * 1000)+"px";
             index = i;
             showCurrentDot();
         }
