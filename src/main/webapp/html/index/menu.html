@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="./html/index/index.css">
 <div class="menunew">
     <div class="newnav">
         <div class="index_guide">
@@ -408,37 +409,26 @@
 <div class="web_new">
     <div class="cat_left">
         <div id="slider">
-            <div id="slider-holder">
-                <div class="example">
-                    <div class="ft-carousel" id="carousel_1">
-                        <ul class="carousel-inner">
-                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
-                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
-                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
-                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
-                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
-                            <li class="carousel-item"><img src="images/glhd2018925.jpg" /></li>
-                        </ul>
-                    </div>
+            <div class="sliderContainer">
+                <div class="wrapImg">
+                    <img src="./images/gl_998.jpg" alt="">
+                    <img src="./images/glhd2018925.jpg" alt="">
+                    <img src="./images/gl_998.jpg" alt="">
+                    <img src="./images/glhd2018925.jpg" alt="">
+                    <img src="./images/gl_998.jpg" alt="">
                 </div>
+                <div class="buttons" id="buttonSpan">
+                    <span class="on">1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                </div>
+                <a href="javascript:;" class="arrow arrow_left">&lt;</a>
+                <a href="javascript:;" class="arrow arrow_right">&gt;</a>
             </div>
 
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $("#carousel_1").FtCarousel();
-
-    $("#carousel_2").FtCarousel({
-        index: 1,
-        auto: false
-    });
-
-    $("#carousel_3").FtCarousel({
-        index: 0,
-        auto: true,
-        time: 3000,
-        indicators: false,
-        buttons: true
-    });
-</script>
+<script type="text/javascript" src="./html/index/index.js"></script>
