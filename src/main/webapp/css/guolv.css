@@ -228,8 +228,8 @@ a img{border:none;}
 .gl_l_price em{ font-size:20px; padding:0 3px;}
 .gl_top{ position:absolute; top:0px; left:0px; width:1000px;}
 .gl_dz_l,.gl_dz_r{ float:left; margin-left:10px; width:490px; height:306px; position:relative;}
-.gl_dz_l{ background:url(http://images.tyjiaqi.com/imgs1/dz613_2.jpg) no-repeat;}
-.gl_dz_r{ background:url(http://images.tyjiaqi.com/imgs1/dz613_1.jpg) no-repeat;}
+.gl_dz_l {background: url("../images/dz613_2.jpg") no-repeat;}
+.gl_dz_r {background: url("../images/dz613_1.jpg") no-repeat;}
 .gl_dz_bt,.gl_dz_ms,.gl_dz_an{ position:absolute; color:#fff;}
 .gl_dz_bt{ font-size:30px; top:13px; right:35px;}
 .gl_dz_ms{ width:150px; top:90px; right:17px; line-height:22px; font-size:13px;}
