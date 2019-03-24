@@ -11,7 +11,7 @@
  Target Server Version : 50641
  File Encoding         : utf-8
 
- Date: 03/20/2019 23:36:13 PM
+ Date: 03/24/2019 15:09:52 PM
 */
 
 SET NAMES utf8;
@@ -28,6 +28,19 @@ CREATE TABLE `comment` (
   `comParentId` int(11) DEFAULT NULL,
   `comDesc` varchar(255) DEFAULT NULL,
   `comLike` int(11) DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `config`
+-- ----------------------------
+DROP TABLE IF EXISTS `config`;
+CREATE TABLE `config` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(50) DEFAULT NULL,
+  `value` varchar(255) DEFAULT NULL,
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -140,7 +153,7 @@ CREATE TABLE `user` (
 --  Records of `user`
 -- ----------------------------
 BEGIN;
-INSERT INTO `user` VALUES ('1', null, '12345', null, '123143', null, '2019-03-14 19:40:46', null, null, null, null, null, null), ('2', null, '1231', null, '123213', null, '2019-03-14 21:54:13', null, null, null, null, null, null), ('3', null, '324', null, 'er', null, '2019-03-14 21:58:48', null, null, null, null, null, null), ('4', null, '9', null, '909', null, '2019-03-14 22:04:05', null, null, null, null, null, null), ('5', null, '534', null, '234', null, '2019-03-14 22:29:20', null, null, null, null, null, null), ('6', null, '6464', null, '6564645', null, '2019-03-16 10:50:41', null, null, null, null, null, null), ('7', null, '202cb962ac59075b964b07152d234b70', null, '32423435234', null, '2019-03-16 14:31:09', null, null, null, null, null, null), ('8', null, '202cb962ac59075b964b07152d234b70', null, '43425426543', null, '2019-03-16 14:32:39', null, null, null, null, null, null), ('9', null, '202cb962ac59075b964b07152d234b70', null, '42342342543', null, '2019-03-16 14:33:35', null, null, null, null, null, null), ('10', null, '202cb962ac59075b964b07152d234b70', null, '35324523626', null, '2019-03-16 14:34:15', null, null, null, null, null, null), ('11', null, '202cb962ac59075b964b07152d234b70', null, '53453453453', null, '2019-03-16 14:35:04', null, null, null, null, null, null), ('12', null, '202cb962ac59075b964b07152d234b70', null, '53453454645', null, '2019-03-16 14:50:15', null, null, null, null, null, null), ('13', null, 'e10adc3949ba59abbe56e057f20f883e', null, '12464565476', null, '2019-03-16 15:10:04', null, null, null, null, null, null), ('14', '张三', 'e10adc3949ba59abbe56e057f20f883e', null, '18888888888', null, '2019-03-16 16:31:49', '2019-03-20 23:34:37', '大帅哥', null, '{\"province\":\"内蒙古\",\"city\":\"乌海\",\"area\":\"乌达区\"}', '67899798', null), ('15', null, 'e10adc3949ba59abbe56e057f20f883e', null, '12222222222', null, '2019-03-17 14:47:35', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1', null, '12345', null, '123143', null, '2019-03-14 19:40:46', null, null, null, null, null, null), ('2', null, '1231', null, '123213', null, '2019-03-14 21:54:13', null, null, null, null, null, null), ('3', null, '324', null, 'er', null, '2019-03-14 21:58:48', null, null, null, null, null, null), ('4', null, '9', null, '909', null, '2019-03-14 22:04:05', null, null, null, null, null, null), ('5', null, '534', null, '234', null, '2019-03-14 22:29:20', null, null, null, null, null, null), ('6', null, '6464', null, '6564645', null, '2019-03-16 10:50:41', null, null, null, null, null, null), ('7', null, '202cb962ac59075b964b07152d234b70', null, '32423435234', null, '2019-03-16 14:31:09', null, null, null, null, null, null), ('8', null, '202cb962ac59075b964b07152d234b70', null, '43425426543', null, '2019-03-16 14:32:39', null, null, null, null, null, null), ('9', null, '202cb962ac59075b964b07152d234b70', null, '42342342543', null, '2019-03-16 14:33:35', null, null, null, null, null, null), ('10', null, '202cb962ac59075b964b07152d234b70', null, '35324523626', null, '2019-03-16 14:34:15', null, null, null, null, null, null), ('11', null, '202cb962ac59075b964b07152d234b70', null, '53453453453', null, '2019-03-16 14:35:04', null, null, null, null, null, null), ('12', null, '202cb962ac59075b964b07152d234b70', null, '53453454645', null, '2019-03-16 14:50:15', null, null, null, null, null, null), ('13', null, 'e10adc3949ba59abbe56e057f20f883e', null, '12464565476', null, '2019-03-16 15:10:04', null, null, null, null, null, null), ('14', '张三', 'e10adc3949ba59abbe56e057f20f883e', null, '18888888888', null, '2019-03-16 16:31:49', '2019-03-23 12:27:48', '大帅哥', null, '{\"province\":\"内蒙古\",\"city\":\"通辽\",\"area\":\"奈曼旗\",\"detail\":\"hg\"}', '67899798', null), ('15', null, 'e10adc3949ba59abbe56e057f20f883e', null, '12222222222', null, '2019-03-17 14:47:35', null, null, null, null, null, null);
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
