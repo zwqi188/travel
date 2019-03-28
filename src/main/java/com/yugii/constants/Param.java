@@ -16,4 +16,12 @@ public class Param {
     public static final String GENDER = "gender";
     public static final String ADDRESS = "address";
     public static final String ID_CARD = "idCard";
+    public static final String PARENT_ID = "parentId";
+    public static final String IS_LEAF = "IsLeaf";
+    public static final String MENU_ID = "MenuID";
+    public static final String MENU_NAME = "MenuName";
+    public static final String MENU_URI = "MenuUri";
+    public static final String MENU_THUNBNAIL = "MenuThumbnail";
+    public static final String MENU_ORDER = "MenuOrder";
+    public static final String SUB_MENUS = "SubMenus";
 }

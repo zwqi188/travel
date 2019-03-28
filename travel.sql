@@ -157,3 +157,28 @@ INSERT INTO `user` VALUES ('1', null, '12345', null, '123143', null, '2019-03-14
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+-- ----------------------------
+--  Table structure for `menu`
+-- ----------------------------
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE `menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `menuId` varchar(255) DEFAULT NULL,
+  `menuUri` varchar(255) DEFAULT NULL,
+  `menuThumbnail` varchar(255) DEFAULT NULL,
+  `menuOrder` int(11) DEFAULT NULL,
+  `isLeaf` int(50) DEFAULT NULL,
+  `parentId` int(11) DEFAULT NULL,
+  `menuName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `menu`
+-- ----------------------------
+BEGIN;
+INSERT INTO `menu` VALUES ('1', '1001', 'order', 'fa-list-alt', '1', '0', '0', '用户管理'), ('2', '1002', 'payInfo', 'fa-dot-circle-o', '2', '0', '0', '景点管理'), ('3', '1003', 'order2', 'fa-dot-circle-o', '3', '0', '0', '订单管理'), ('4', '1004', 'order2', 'fa-dot-circle-o', '4', '0', '0', '评论管理'), ('5', '100101', 'order.payment', null, '0', '1', '1', '订单支付情况查询'), ('6', '100102', 'order.paymentDetail', null, '1', '1', '1', '支付详情情况查询');
+COMMIT;
+
+SET FOREIGN_KEY_CHECKS = 1;
