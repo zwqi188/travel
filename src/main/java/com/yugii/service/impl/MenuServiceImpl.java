@@ -1,5 +1,6 @@
 package com.yugii.service.impl;
 
+import com.yugii.constants.Constant;
 import com.yugii.constants.Param;
 import com.yugii.dao.MenuDao;
 import com.yugii.entity.Menu;
@@ -17,39 +18,51 @@ import java.util.Map;
  * Created by mac on 2019/3/28.
  */
 @Service
-public class MenuServiceImpl implements MenuService
-{
+public class MenuServiceImpl implements MenuService {
 
     @Autowired
     private MenuDao menuDao;
 
+    /**
+     * 获取所有的菜单列表
+     * @param parentId
+     * @return
+     */
     @Override
     public LeResponse getMenuListByParentId(String parentId) {
-        Map<String,Object> returnMap = new HashMap<>();
-        List<Menu> menuList = menuDao.getMenuListByParentId(parentId);
-        for (Menu menu: menuList) {
-            returnMap.put(Param.MENU_ID, menu.getMenuId());
-            returnMap.put(Param.MENU_NAME, menu.getMenuId());
-            returnMap.put(Param.MENU_URI, menu.getMenuId());
-            returnMap.put(Param.MENU_THUNBNAIL, menu.getMenuId());
-            returnMap.put(Param.MENU_ORDER, menu.getMenuId());
-            returnMap.put(Param.IS_LEAF, menu.getMenuId());
-            returnMap.put(Param.SUB_MENUS, this.getMenuList(menu.getParentId()));
-        }
-        return LeResponse.success(returnMap);
+        return LeResponse.success(getMenuList(parentId));
     }
 
-    private List<Map<String,Object>> getMenuList(Integer parentId) {
+    /**
+     * 获取同级的菜单
+     * @param parentId
+     * @return
+     */
+    @Override
+    public LeResponse getMenusByParentId(String parentId) {
+        return LeResponse.success(menuDao.getMenuListByParentId(String.valueOf(parentId)));
+    }
+
+    /**
+     * 递归的方式获取菜单
+     * @param parentId
+     * @return
+     */
+    private List<Map<String,Object>> getMenuList(String parentId) {
         List<Map<String,Object>> returnList = new ArrayList<>();
         List<Menu> menuList = menuDao.getMenuListByParentId(String.valueOf(parentId));
         for (Menu menu: menuList) {
+
             Map<String,Object> returnMap = new HashMap<>();
             returnMap.put(Param.MENU_ID, menu.getMenuId());
-            returnMap.put(Param.MENU_NAME, menu.getMenuId());
-            returnMap.put(Param.MENU_URI, menu.getMenuId());
-            returnMap.put(Param.MENU_THUNBNAIL, menu.getMenuId());
-            returnMap.put(Param.MENU_ORDER, menu.getMenuId());
-            returnMap.put(Param.IS_LEAF, menu.getMenuId());
+            returnMap.put(Param.MENU_NAME, menu.getMenuName());
+            returnMap.put(Param.MENU_URI, menu.getMenuUri());
+            returnMap.put(Param.MENU_THUNBNAIL, menu.getMenuThumbnail());
+            returnMap.put(Param.MENU_ORDER, menu.getMenuOrder());
+            returnMap.put(Param.IS_LEAF, menu.getIsLeaf());
+            if(menu.getIsLeaf() == Constant.FALSE) {
+                returnMap.put(Param.SUB_MENUS, getMenuList(String.valueOf(menu.getId())));
+            }
             returnList.add(returnMap);
         }
         return returnList;

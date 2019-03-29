@@ -7,5 +7,17 @@ import com.yugii.response.LeResponse;
  */
 public interface MenuService {
 
+    /**
+     * 获取所有的菜单列表
+     * @param parentId
+     * @return
+     */
     LeResponse getMenuListByParentId(String parentId);
+
+    /**
+     * 获取同级的菜单
+     * @param parentId
+     * @return
+     */
+    LeResponse getMenusByParentId(String parentId);
 }
