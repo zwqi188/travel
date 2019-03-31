@@ -24,4 +24,5 @@ public class Param {
     public static final String MENU_THUNBNAIL = "MenuThumbnail";
     public static final String MENU_ORDER = "MenuOrder";
     public static final String SUB_MENUS = "SubMenus";
+    public static final String ID = "Id";
 }

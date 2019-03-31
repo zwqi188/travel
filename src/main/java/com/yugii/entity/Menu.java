@@ -45,7 +45,7 @@ public class Menu {
 	/**
 	 * 状态
 	 */
-	private Integer state;
+	private String state;
 
 	private Date createdAt;
 
@@ -148,11 +148,11 @@ public class Menu {
 	}
 
 	@Column(name = "state")
-	public Integer getState() {
+	public String getState() {
 		return state;
 	}
 
-	public void setState(Integer state) {
+	public void setState(String state) {
 		this.state = state;
 	}
 }

@@ -25,12 +25,10 @@ public class MenuServiceImpl implements MenuService {
 
     /**
      * 获取所有的菜单列表
-     * @param parentId
-     * @return
      */
     @Override
-    public LeResponse getMenuListByParentId(String parentId) {
-        return LeResponse.success(getMenuList(parentId));
+    public LeResponse getMenuList() {
+        return LeResponse.success(getMenuList("0"));
     }
 
     /**
@@ -39,7 +37,7 @@ public class MenuServiceImpl implements MenuService {
      * @return
      */
     @Override
-    public LeResponse getMenusByParentId(String parentId) {
+    public LeResponse getMenuListByParentId(String parentId) {
         return LeResponse.success(menuDao.getMenuListByParentId(String.valueOf(parentId)));
     }
 
@@ -52,8 +50,8 @@ public class MenuServiceImpl implements MenuService {
         List<Map<String,Object>> returnList = new ArrayList<>();
         List<Menu> menuList = menuDao.getMenuListByParentId(String.valueOf(parentId));
         for (Menu menu: menuList) {
-
             Map<String,Object> returnMap = new HashMap<>();
+            returnMap.put(Param.ID, menu.getId());
             returnMap.put(Param.MENU_ID, menu.getMenuId());
             returnMap.put(Param.MENU_NAME, menu.getMenuName());
             returnMap.put(Param.MENU_URI, menu.getMenuUri());

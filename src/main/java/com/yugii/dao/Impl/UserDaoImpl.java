@@ -28,7 +28,7 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 
     @Override
     public int findByMobile(String mobile) {
-        String hql = "from User where mobile=:mobile ";
+        String hql = "from User where mobile=:mobile and state = '有效' ";
         Map<String, Object> param= new HashMap<>();
         param.put("mobile", mobile);
         return find(hql, param).size();
@@ -36,7 +36,7 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 
     @Override
     public User findUserByMobileAndPass(String mobile, String password) {
-        String hql = "from User where mobile=:mobile and password=:password";
+        String hql = "from User where mobile=:mobile and password=:password and state = '有效'";
         Map<String, Object> param= new HashMap<>();
         param.put("mobile", mobile);
         param.put("password", password);
@@ -49,7 +49,7 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 
     @Override
     public User findUserByEmailAndPass(String userName, String password) {
-        String hql = "from User where email=:email and password=:password";
+        String hql = "from User where email=:email and password=:password and state = '有效'";
         Map<String, Object> param= new HashMap<>();
         param.put("email", userName);
         param.put("password", password);
@@ -62,7 +62,7 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 
     @Override
     public User getUserInfoByUserId(String userId) {
-        String hql = "from User where id=:id";
+        String hql = "from User where id=:id and state = '有效'";
         Map<String, Object> param= new HashMap<>();
         param.put("id", Integer.parseInt(userId));
         List<User> users = find(hql, param);

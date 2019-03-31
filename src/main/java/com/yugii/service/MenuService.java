@@ -9,15 +9,14 @@ public interface MenuService {
 
     /**
      * 获取所有的菜单列表
-     * @param parentId
      * @return
      */
-    LeResponse getMenuListByParentId(String parentId);
+    LeResponse getMenuList();
 
     /**
      * 获取同级的菜单
      * @param parentId
      * @return
      */
-    LeResponse getMenusByParentId(String parentId);
+    LeResponse getMenuListByParentId(String parentId);
 }

@@ -9,10 +9,7 @@ import com.yugii.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Map;
@@ -31,6 +28,23 @@ public class ManageController {
     /**
      * 用户注册 /getMenuList.json
      * 请求参数
+     * @return
+     *      respCode        /M/返回码
+     *      respMsg         /M/返回信息
+     *      data            /M/详细信息
+     */
+    @ResponseBody
+    @RequestMapping(value = "/getMenuList.json",method = RequestMethod.GET)
+    public String getMuenuList(){
+        //校验参数
+        return JsonUtils.objectToString(menuService.getMenuList());
+
+    }
+
+
+    /**
+     * 用户注册 /getMenuListByParentId.json
+     * 请求参数
      * @param param
      *      parentId        /M/父节点编号
      * @return
@@ -39,8 +53,8 @@ public class ManageController {
      *      data            /M/详细信息
      */
     @ResponseBody
-    @RequestMapping(value = "/getMenuList.json",method = RequestMethod.POST)
-    public String register(@RequestBody Map<String,Object> param){
+    @RequestMapping(value = "/getMenuListByParentId.json",method = RequestMethod.POST)
+    public String getMenuListByParentId(@RequestParam Map<String,Object> param){
         //校验参数
         String parentId = (String) param.get(Param.PARENT_ID);
         if(StringUtils.isEmpty(parentId)) {

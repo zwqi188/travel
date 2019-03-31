@@ -20,10 +20,6 @@ public class User implements Serializable {
      */
     private String password;
     /**
-     * 真实姓名
-     */
-    private String realName;
-    /**
      * 电话号码
      */
     private String mobile;
@@ -52,6 +48,11 @@ public class User implements Serializable {
      * 身份证号
      */
     private String idCard;
+
+    /**
+     * 状态
+     */
+    private String state;
 
     /**
      * 优惠券编号
@@ -85,15 +86,6 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Column(name = "realName")
-    public String getRealName() {
-        return realName;
-    }
-
-    public void setRealName(String realName) {
-        this.realName = realName;
     }
 
 
@@ -177,5 +169,14 @@ public class User implements Serializable {
 
     public void setIdCard(String idCard) {
         this.idCard = idCard;
+    }
+
+    @Column(name = "state")
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

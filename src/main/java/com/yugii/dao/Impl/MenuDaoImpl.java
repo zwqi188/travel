@@ -21,7 +21,7 @@ public class MenuDaoImpl extends BaseDAO<Menu> implements MenuDao {
      */
     @Override
     public List<Menu> getMenuListByParentId(String parentId) {
-        String hql = "from Menu where parentId=:parentId";
+        String hql = "from Menu where parentId=:parentId and state = '有效' ";
         Map<String, Object> param= new HashMap<>();
         param.put("parentId", parentId);
         return find(hql, param);
