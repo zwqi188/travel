@@ -13,4 +13,8 @@ public class Constant {
      */
     public static final Integer FALSE = 0;
 
+    public static final String STATE_VALID = "有效";
+
+    public static final String STATE_UNVALID = "无效";
+
 }

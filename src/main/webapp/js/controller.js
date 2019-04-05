@@ -70,7 +70,6 @@ travelApp.controller('loginController', function ($scope, $rootScope, $http, $st
                 if(data.respCode == ConstantFactory.RESP_CODE_1000) {
                     $scope.userName = data.data.userName;
                     $rootScope.$broadcast(ConstantFactory.LOGIN_MESSAGE, data.data);
-                    alert(data.respMsg);
                     $state.go('index');
                     return;
                 }

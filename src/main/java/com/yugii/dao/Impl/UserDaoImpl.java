@@ -1,5 +1,6 @@
 package com.yugii.dao.Impl;
 
+import com.yugii.constants.Constant;
 import com.yugii.dao.UserDao;
 import com.yugii.entity.User;
 import org.springframework.stereotype.Repository;
@@ -28,18 +29,20 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 
     @Override
     public int findByMobile(String mobile) {
-        String hql = "from User where mobile=:mobile and state = '有效' ";
+        String hql = "from User where mobile=:mobile and state = :state ";
         Map<String, Object> param= new HashMap<>();
         param.put("mobile", mobile);
+        param.put("state", Constant.STATE_VALID);
         return find(hql, param).size();
     }
 
     @Override
     public User findUserByMobileAndPass(String mobile, String password) {
-        String hql = "from User where mobile=:mobile and password=:password and state = '有效'";
+        String hql = "from User where mobile=:mobile and password=:password and state = :state";
         Map<String, Object> param= new HashMap<>();
         param.put("mobile", mobile);
         param.put("password", password);
+        param.put("state", Constant.STATE_VALID);
         List<User> users = find(hql, param);
         if(!CollectionUtils.isEmpty(users)) {
             return users.get(0);
@@ -49,10 +52,11 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 
     @Override
     public User findUserByEmailAndPass(String userName, String password) {
-        String hql = "from User where email=:email and password=:password and state = '有效'";
+        String hql = "from User where email=:email and password=:password and state = :state";
         Map<String, Object> param= new HashMap<>();
         param.put("email", userName);
         param.put("password", password);
+        param.put("state", Constant.STATE_VALID);
         List<User> users = find(hql, param);
         if(!CollectionUtils.isEmpty(users)) {
             return users.get(0);
@@ -62,9 +66,10 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 
     @Override
     public User getUserInfoByUserId(String userId) {
-        String hql = "from User where id=:id and state = '有效'";
+        String hql = "from User where id=:id and state = :state";
         Map<String, Object> param= new HashMap<>();
         param.put("id", Integer.parseInt(userId));
+        param.put("state", Constant.STATE_VALID);
         List<User> users = find(hql, param);
         if(!CollectionUtils.isEmpty(users)) {
             return users.get(0);

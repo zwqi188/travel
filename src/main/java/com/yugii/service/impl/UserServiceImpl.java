@@ -1,5 +1,6 @@
 package com.yugii.service.impl;
 
+import com.yugii.constants.Constant;
 import com.yugii.constants.Param;
 import com.yugii.dao.UserDao;
 import com.yugii.entity.User;
@@ -31,6 +32,7 @@ public class UserServiceImpl implements UserService {
             User user = new User();
             user.setMobile(mobile);
             user.setPassword(password);
+            user.setState(Constant.STATE_VALID);
             user.setCreatedAt(new Date());
             userDao.register(user);
             return true;
