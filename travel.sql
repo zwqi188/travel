@@ -11,7 +11,7 @@
  Target Server Version : 50641
  File Encoding         : utf-8
 
- Date: 04/05/2019 16:49:37 PM
+ Date: 04/06/2019 18:32:09 PM
 */
 
 SET NAMES utf8;
@@ -95,13 +95,13 @@ CREATE TABLE `menu` (
   `updatedAt` datetime DEFAULT NULL,
   `state` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `menu`
 -- ----------------------------
 BEGIN;
-INSERT INTO `menu` VALUES ('1', '1001', 'order', 'fa-list-alt', '1', '0', '0', '用户管理', null, null, '有效'), ('2', '1002', 'payInfo', 'fa-dot-circle-o', '2', '0', '0', '景点管理', null, null, '有效'), ('3', '1003', 'order2', 'fa-dot-circle-o', '3', '0', '0', '订单管理', null, null, '有效'), ('4', '1004', 'order2', 'fa-dot-circle-o', '4', '0', '0', '评论管理', null, null, '有效'), ('5', '100101', 'order.payment', null, '0', '1', '1', '订单支付情况查询', null, null, '有效'), ('6', '100102', 'order.paymentDetail', null, '1', '1', '1', '支付详情情况查询', null, null, '有效');
+INSERT INTO `menu` VALUES ('1', '1001', 'user', 'fa-list-alt', '1', '0', '0', '用户管理', null, null, '有效'), ('2', '1002', 'spot', 'fa-dot-circle-o', '2', '0', '0', '景点管理', null, null, '有效'), ('3', '1003', 'order', 'fa-dot-circle-o', '3', '0', '0', '订单管理', null, null, '有效'), ('4', '1004', 'commont', 'fa-dot-circle-o', '4', '0', '0', '评论管理', null, null, '有效'), ('5', '100101', 'user.regUserManager', null, '1', '1', '1', '注册用户管理', null, null, '有效'), ('7', '100201', 'spot.addSpot', null, '1', '1', '2', '新增景点', null, null, '有效'), ('8', '100202', 'spot.editSpot', null, '2', '1', '2', '编辑景点', null, null, '有效'), ('9', '100301', 'order.payConfig', null, '1', '1', '3', '普通订单管理', null, null, '有效'), ('10', '100302', 'order.payConfig', null, '2', '1', '3', '团购订单管理', null, null, '有效'), ('11', '100401', 'commont.payConfig', null, '1', '1', '4', '景点评论', null, null, '有效'), ('12', '1005', 'menu', 'fa-dot-circle-o', '5', '0', '0', '菜单管理', null, null, '有效'), ('13', '100501', 'menu.menuConfig', null, '1', '1', '12', '菜单配置管理', null, null, '有效');
 COMMIT;
 
 -- ----------------------------
