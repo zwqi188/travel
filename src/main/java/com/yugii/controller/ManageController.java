@@ -1,19 +1,20 @@
 package com.yugii.controller;
 
 import com.yugii.constants.Param;
-import com.yugii.constants.Response;
 import com.yugii.enums.ResponseEnums;
 import com.yugii.response.LeResponse;
 import com.yugii.service.MenuService;
+import com.yugii.service.SpotService;
+import com.yugii.service.UploadService;
 import com.yugii.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.naming.InsufficientResourcesException;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -26,6 +27,12 @@ public class ManageController {
 
     @Autowired
     private MenuService menuService;
+
+    @Autowired
+    private UploadService uploadService;
+
+    @Autowired
+    private SpotService spotService;
 
     /**
      * 用户注册 /getMenuList.json
@@ -76,5 +83,33 @@ public class ManageController {
     public String getUid(@RequestParam Map<String, Object> param) {
         Object obj = "admin";
         return JsonUtils.objectToString(LeResponse.success(obj));
+    }
+
+    /**
+     * 上传图片接口
+     * @param file 图片信息
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/uploadImg.json")
+    public String uploadImg(MultipartFile file) {
+        if(file == null) {
+            return JsonUtils.objectToString(LeResponse.fail(ResponseEnums.ERROR_LACK_PARAM.getMessage()));
+        }
+        return JsonUtils.objectToString(uploadService.uploadImg(file));
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/addSpot.json",method = RequestMethod.POST)
+    public String addSpot(@RequestParam Map<String,Object> param){
+        //校验参数
+        String spotName = (String) param.get(Param.SPOT_NAME);
+        String cityId = (String) param.get(Param.CITY_ID);
+        String price = (String) param.get(Param.PRICE);
+        String spotImg = (String) param.get(Param.SPOT_IMG);
+        String spotDesc = (String) param.get(Param.SPOT_DESC);
+        return JsonUtils.objectToString(spotService.addSpot(spotName,cityId,price,spotImg,spotDesc));
+
     }
 }

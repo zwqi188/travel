@@ -14,7 +14,7 @@ import java.io.IOException;
  * Created by mac on 2019/4/6.
  * 过滤器，解决跨域问题
  */
-@Component
+@Component("CrossFilter")
 public class CrossFilter implements Filter {
 
     private static Logger logger = LoggerFactory.getLogger(CrossFilter.class);

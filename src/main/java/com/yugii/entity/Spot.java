@@ -1,9 +1,7 @@
 package com.yugii.entity;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "spot")
@@ -12,7 +10,7 @@ public class Spot {
 	/**
 	 * 景点编号
 	 */
-	private int id;
+	private Integer id;
 	/**
 	 * 景点名称
 	 */
@@ -24,7 +22,7 @@ public class Spot {
 	/**
 	 * 门票价格
 	 */
-    private BigDecimal price;
+    private String price;
 	/**
 	 * 景点图片列表
 	 */
@@ -48,26 +46,24 @@ public class Spot {
 	 */
 	private Date updatedAt;
 
-	public Spot() {
-	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	@Column(name = "price")
-	public BigDecimal getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 
@@ -136,36 +132,5 @@ public class Spot {
 		this.updatedAt = updatedAt;
 	}
 
-
-	/**
-	 * 图片详情
-	 */
-	private class ImgDetail {
-		/**
-		 * 排序
-		 */
-		private int index;
-		/**
-		 * 图片地址
-		 */
-		private String url;
-
-
-		public int getIndex() {
-			return index;
-		}
-
-		public void setIndex(int index) {
-			this.index = index;
-		}
-
-		public String getUrl() {
-			return url;
-		}
-
-		public void setUrl(String url) {
-			this.url = url;
-		}
-	}
 
 }

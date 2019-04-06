@@ -25,4 +25,9 @@ public class Param {
     public static final String MENU_ORDER = "MenuOrder";
     public static final String SUB_MENUS = "SubMenus";
     public static final String ID = "Id";
+    public static final String SPOT_NAME = "spotName";
+    public static final String CITY_ID = "cityId";
+    public static final String PRICE = "price";
+    public static final String SPOT_IMG = "spotImg";
+    public static final String SPOT_DESC = "spotDesc";
 }

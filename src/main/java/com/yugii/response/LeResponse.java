@@ -38,6 +38,10 @@ public class LeResponse {
         return new LeResponse(Response.SUCCESS, Response.SUCCESS_MESSAGE, data);
     }
 
+    public static LeResponse succ(String data){
+        return new LeResponse(Response.SUCCESS, Response.SUCCESS_MESSAGE, data);
+    }
+
 
     public static LeResponse fail(){
         return new LeResponse(Response.FAIL, Response.FAIL_MESSAGE);

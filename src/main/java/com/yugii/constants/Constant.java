@@ -17,4 +17,5 @@ public class Constant {
 
     public static final String STATE_UNVALID = "无效";
 
+    public static final String UPLOAD_IMG_PATH = "../uploadImg/";
 }
