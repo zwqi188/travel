@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.naming.InsufficientResourcesException;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
 
@@ -56,11 +58,23 @@ public class ManageController {
     @RequestMapping(value = "/getMenuListByParentId.json",method = RequestMethod.POST)
     public String getMenuListByParentId(@RequestParam Map<String,Object> param){
         //校验参数
-        String parentId = (String) param.get(Param.PARENT_ID);
-        if(StringUtils.isEmpty(parentId)) {
+        Integer parentId = (Integer) param.get(Param.PARENT_ID);
+        if(parentId == null) {
             return JsonUtils.objectToString(LeResponse.fail(ResponseEnums.ERROR_LACK_PARAM.getMessage()));
         }
         return JsonUtils.objectToString(menuService.getMenuListByParentId(parentId));
 
+    }
+
+    /**
+     * 假装进行一次授权
+     * @param param
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/getUid.json",method = RequestMethod.GET)
+    public String getUid(@RequestParam Map<String, Object> param) {
+        Object obj = "admin";
+        return JsonUtils.objectToString(LeResponse.success(obj));
     }
 }

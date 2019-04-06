@@ -18,5 +18,5 @@ public interface MenuService {
      * @param parentId
      * @return
      */
-    LeResponse getMenuListByParentId(String parentId);
+    LeResponse getMenuListByParentId(Integer parentId);
 }

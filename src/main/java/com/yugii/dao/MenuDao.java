@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface MenuDao {
 
-    List<Menu> getMenuListByParentId(String parentId);
+    List<Menu> getMenuListByParentId(Integer parentId);
 }

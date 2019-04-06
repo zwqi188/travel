@@ -28,7 +28,7 @@ public class MenuServiceImpl implements MenuService {
      */
     @Override
     public LeResponse getMenuList() {
-        return LeResponse.success(getMenuList("0"));
+        return LeResponse.success(getMenuList(0));
     }
 
     /**
@@ -37,8 +37,8 @@ public class MenuServiceImpl implements MenuService {
      * @return
      */
     @Override
-    public LeResponse getMenuListByParentId(String parentId) {
-        return LeResponse.success(menuDao.getMenuListByParentId(String.valueOf(parentId)));
+    public LeResponse getMenuListByParentId(Integer parentId) {
+        return LeResponse.success(menuDao.getMenuListByParentId(parentId));
     }
 
     /**
@@ -46,9 +46,9 @@ public class MenuServiceImpl implements MenuService {
      * @param parentId
      * @return
      */
-    private List<Map<String,Object>> getMenuList(String parentId) {
+    private List<Map<String,Object>> getMenuList(Integer parentId) {
         List<Map<String,Object>> returnList = new ArrayList<>();
-        List<Menu> menuList = menuDao.getMenuListByParentId(String.valueOf(parentId));
+        List<Menu> menuList = menuDao.getMenuListByParentId(parentId);
         for (Menu menu: menuList) {
             Map<String,Object> returnMap = new HashMap<>();
             returnMap.put(Param.ID, menu.getId());
@@ -59,7 +59,7 @@ public class MenuServiceImpl implements MenuService {
             returnMap.put(Param.MENU_ORDER, menu.getMenuOrder());
             returnMap.put(Param.IS_LEAF, menu.getIsLeaf());
             if(menu.getIsLeaf() == Constant.FALSE) {
-                returnMap.put(Param.SUB_MENUS, getMenuList(String.valueOf(menu.getId())));
+                returnMap.put(Param.SUB_MENUS, getMenuList(menu.getId()));
             }
             returnList.add(returnMap);
         }
