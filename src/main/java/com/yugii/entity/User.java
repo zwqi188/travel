@@ -1,5 +1,7 @@
 package com.yugii.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -97,7 +99,9 @@ public class User implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
     @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")//格式：年-月-日 时：分：秒
     @Column(name = "createdAt")
     public Date getCreatedAt() {
         return createdAt;
@@ -108,6 +112,7 @@ public class User implements Serializable {
     }
 
     @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")//格式：年-月-日 时：分：秒
     @Column(name = "updatedAt")
     public Date getUpdatedAt() {
         return updatedAt;

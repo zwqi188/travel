@@ -11,7 +11,7 @@
  Target Server Version : 50641
  File Encoding         : utf-8
 
- Date: 04/06/2019 18:32:09 PM
+ Date: 04/07/2019 14:48:38 PM
 */
 
 SET NAMES utf8;
@@ -126,15 +126,22 @@ DROP TABLE IF EXISTS `spot`;
 CREATE TABLE `spot` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `spotName` varchar(255) DEFAULT NULL,
-  `cityId` int(255) DEFAULT NULL,
-  `price` decimal(10,0) DEFAULT NULL,
-  `spotImg` varbinary(255) DEFAULT NULL,
-  `like` int(11) DEFAULT NULL,
-  `spotDesc` varchar(255) DEFAULT NULL,
+  `cityId` varchar(255) DEFAULT NULL,
+  `price` varchar(10) DEFAULT NULL,
+  `spotImg` text,
+  `spotDesc` text,
   `createdAt` datetime DEFAULT NULL,
+  `love` int(11) DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `spot`
+-- ----------------------------
+BEGIN;
+INSERT INTO `spot` VALUES ('1', 'ererre', 'rt', '45', '[\"../uploadImg/92b9b902-1ed0-4d1b-b126-b5ec4acf4b77/贝加尔湖畔.jpg\"]', '7657568769879', '2019-04-07 09:20:34', null, null);
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `ticket`

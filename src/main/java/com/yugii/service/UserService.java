@@ -38,4 +38,18 @@ public interface UserService {
      * @return
      */
     LeResponse updateUserInfoByUserId(Map<String,Object> param);
+
+    /**
+     *  通过账号获取用户信息
+     * @param account
+     * @return
+     */
+    LeResponse getUserInfoByAccount(String account);
+
+    /**
+     * 通过userId使当前用户无效
+     * @param userId
+     * @return
+     */
+    LeResponse deleteByUserId(String userId);
 }

@@ -76,4 +76,22 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
         }
         return null;
     }
+
+    @Override
+    public List<User> findUserByMobile(String account) {
+        String hql = "from User where mobile=:mobile";
+        Map<String, Object> param= new HashMap<>();
+        param.put("mobile", account);
+        return find(hql, param);
+    }
+
+    @Override
+    public List<User> findUserByEmail(String account) {
+        String hql = "from User where email=:email";
+        Map<String, Object> param= new HashMap<>();
+        param.put("email", account);
+        return find(hql, param);
+    }
+
+
 }

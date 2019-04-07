@@ -2,6 +2,8 @@ package com.yugii.dao;
 
 import com.yugii.entity.User;
 
+import java.util.List;
+
 /**
  * Created by apple on 19/3/6.
  */
@@ -18,4 +20,8 @@ public interface UserDao {
     User getUserInfoByUserId(String userId);
 
     void update(User user);
+
+    List<User> findUserByMobile(String account);
+
+    List<User> findUserByEmail(String account);
 }

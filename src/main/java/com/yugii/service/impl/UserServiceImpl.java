@@ -9,11 +9,13 @@ import com.yugii.response.LeResponse;
 import com.yugii.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -110,6 +112,24 @@ public class UserServiceImpl implements UserService {
         } catch (Exception ex) {
             return LeResponse.fail(ex.getMessage());
         }
+        return LeResponse.success();
+    }
+
+    @Override
+    public LeResponse getUserInfoByAccount(String account) {
+        List<User> user = userDao.findUserByMobile(account);
+        if(CollectionUtils.isEmpty(user)) {
+            user = userDao.findUserByEmail(account);
+        }
+        return LeResponse.success(user);
+    }
+
+    @Override
+    @Transactional
+    public LeResponse deleteByUserId(String userId) {
+        User user = userDao.getUserInfoByUserId(userId);
+        user.setState(Constant.STATE_UNVALID);
+        userDao.update(user);
         return LeResponse.success();
     }
 }
