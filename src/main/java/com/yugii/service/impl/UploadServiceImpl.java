@@ -31,6 +31,7 @@ public class UploadServiceImpl implements UploadService {
             imgOut.close();
         } catch (Exception e) {
             e.printStackTrace();
+            return LeResponse.fail();
         }
         String rpath = path+"/"+fileName;
         return LeResponse.succ(rpath);

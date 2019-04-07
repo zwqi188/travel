@@ -1,11 +1,12 @@
 package com.yugii.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "spot")
-public class Spot {
+public class Spot implements Serializable{
 
 	/**
 	 * 景点编号
@@ -30,7 +31,7 @@ public class Spot {
 	/**
 	 * 点赞数
 	 */
-	private Integer like;
+	private Integer love;
 	/**
 	 * 景点描述
 	 */
@@ -94,13 +95,13 @@ public class Spot {
 		this.spotImg = spotImg;
 	}
 
-	@Column(name = "like")
-	public Integer getLike() {
-		return like;
+	@Column(name = "love")
+	public Integer getLove() {
+		return love;
 	}
 
-	public void setLike(Integer like) {
-		this.like = like;
+	public void setLove(Integer love) {
+		this.love = love;
 	}
 
 	@Column(name = "spotDesc")
