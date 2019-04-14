@@ -10,4 +10,8 @@ import java.util.List;
 public interface MenuDao {
 
     List<Menu> getMenuListByParentId(Integer parentId);
+
+    List<Menu> getMenuListByParentIdSortByOrder(Integer parentId);
+
+    void save(Menu menu);
 }

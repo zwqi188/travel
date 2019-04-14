@@ -19,4 +19,15 @@ public interface MenuService {
      * @return
      */
     LeResponse getMenuListByParentId(Integer parentId);
+
+    /**
+     * 添加菜单
+     * @param parentId
+     * @param menuName
+     * @param menuIcon
+     * @param menuUrl
+     * @param menuId
+     * @return
+     */
+    LeResponse addMenu(Integer parentId, String menuName, String menuIcon, String menuUrl, String menuId);
 }

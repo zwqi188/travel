@@ -153,4 +153,21 @@ public class ManageController {
         }
         return JsonUtils.objectToString(userService.deleteByUserId(userId));
     }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/addMenu.json", method = RequestMethod.POST)
+    public String addMenu(@RequestParam Map<String,Object> param) {
+        String parentId = (String) param.get(Param.PARENT_ID);
+        String menuName = (String) param.get(Param.MENU_NAME);
+        String menuId = (String) param.get(Param.MENU_ID);
+        String menuIcon = (String) param.get(Param.MENU_THUNBNAIL);
+        String menuUrl = (String) param.get(Param.MENU_URI);
+        if(StringUtils.isEmpty(parentId) || StringUtils.isEmpty(menuName)
+                  || StringUtils.isEmpty(menuUrl)) {
+            return JsonUtils.objectToString(LeResponse.fail(ResponseEnums.ERROR_LACK_PARAM.getMessage()));
+        }
+        Integer pId = Integer.parseInt(parentId);
+        return JsonUtils.objectToString(menuService.addMenu(pId,menuName,menuIcon, menuUrl, menuId));
+    }
 }

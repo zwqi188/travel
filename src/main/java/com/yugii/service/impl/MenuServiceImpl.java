@@ -1,18 +1,20 @@
 package com.yugii.service.impl;
 
+import com.mchange.v1.util.CollectionUtils;
 import com.yugii.constants.Constant;
 import com.yugii.constants.Param;
 import com.yugii.dao.MenuDao;
 import com.yugii.entity.Menu;
+import com.yugii.enums.ResponseEnums;
+import com.yugii.exception.RespException;
 import com.yugii.response.LeResponse;
 import com.yugii.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.transaction.Transactional;
+import java.util.*;
 
 /**
  * Created by mac on 2019/3/28.
@@ -39,6 +41,31 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public LeResponse getMenuListByParentId(Integer parentId) {
         return LeResponse.success(menuDao.getMenuListByParentId(parentId));
+    }
+
+    @Override
+    @Transactional
+    public LeResponse addMenu(Integer parentId, String menuName, String menuIcon, String menuUrl,  String menuId) {
+       try {
+           Menu menu = new Menu();
+           List<Menu> menuList = menuDao.getMenuListByParentIdSortByOrder(parentId);
+           Integer menuOrder = menuList.get(0).getMenuOrder() + 1;
+           menu.setMenuOrder(menuOrder);
+           if (parentId == 0) {
+               menu.setMenuId(String.valueOf(1000 + menuOrder));
+           } else {
+               menu.setMenuId(String.valueOf(Integer.valueOf(menuId) * 100 + menuOrder));
+           }
+           menu.setMenuName(menuName);
+           menu.setMenuThumbnail(menuIcon);
+           menu.setParentId(parentId);
+           menu.setMenuUri(menuUrl);
+           menu.setCreatedAt(new Date());
+           menuDao.save(menu);
+       } catch (Exception ex) {
+           throw new RespException(ResponseEnums.ERROR_SAVE_TO_DATEBASE);
+       }
+        return LeResponse.success();
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.yugii.exception;
 
+import com.yugii.enums.ResponseEnums;
 import com.yugii.response.LeResponse;
 
 /**
@@ -16,6 +17,11 @@ public class RespException extends RuntimeException {
     public RespException(String respCode, String respMsg) {
         this.respCode = respCode;
         this.respMsg = respMsg;
+    }
+
+    public RespException(ResponseEnums enums) {
+        this.respCode = enums.getCode();
+        this.respMsg = enums.getResponseMsg();
     }
 
 
