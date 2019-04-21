@@ -192,3 +192,33 @@ travelApp.controller('userCenterController', function ($scope, $rootScope, $http
     };
 
 });
+/**
+ * 景点推荐
+ */
+travelApp.controller('recommendController', function ($scope, $rootScope, $http, $state, Http, Utils, ConstantFactory, Cities) {
+    $scope.getRecommendSpot = function (recommendType) {
+        $scope.recommendList = null;
+        var param = {
+            'recommendType':recommendType
+        };
+        Http.go($http,
+            ConstantFactory.HTTP_METHOD_POST,
+            ConstantFactory.URL_GET_SPOT_RECOMMEND_TYPE,
+            param,
+            function (data) {
+                if(data.respCode == ConstantFactory.RESP_CODE_1000) {
+                    for(var i = 0 ; i < data.data.length ; i++) {
+                        data.data[i].spotImgs = data.data[i].spotImg.replace(/\"/g,"").replace("[","").replace("]","").split(",");
+                        console.log(data.data[i]);
+                    }
+
+                    console.log("全部"+data.data);
+                    $scope.recommendList = data.data;
+                }
+            },function (data) {
+
+            });
+
+    };
+
+});

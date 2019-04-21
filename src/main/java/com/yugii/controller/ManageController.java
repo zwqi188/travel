@@ -1,22 +1,26 @@
 package com.yugii.controller;
 
 import com.yugii.constants.Param;
+import com.yugii.entity.Spot;
 import com.yugii.enums.ResponseEnums;
 import com.yugii.response.LeResponse;
 import com.yugii.service.MenuService;
 import com.yugii.service.SpotService;
 import com.yugii.service.UploadService;
 import com.yugii.service.UserService;
+import com.yugii.utils.ComUtils;
 import com.yugii.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -124,7 +128,21 @@ public class ManageController {
         String price = (String) param.get(Param.PRICE);
         String spotImg = (String) param.get(Param.SPOT_IMG);
         String spotDesc = (String) param.get(Param.SPOT_DESC);
-        return JsonUtils.objectToString(spotService.addSpot(spotName,cityId,price,spotImg,spotDesc));
+        String label = (String) param.get(Param.LABEL);
+        String startPoint = (String) param.get(Param.START_POINT);
+        if(StringUtils.isEmpty(spotName) || StringUtils.isEmpty(cityId)
+                || StringUtils.isEmpty(spotImg) || StringUtils.isEmpty(spotDesc) ) {
+            return JsonUtils.objectToString(LeResponse.fail(ResponseEnums.ERROR_LACK_PARAM.getMessage()));
+        }
+        Spot spot = new Spot();
+        spot.setSpotName(spotName);
+        spot.setCityId(cityId);
+        spot.setPrice(price);
+        spot.setSpotImg(spotImg);
+        spot.setSpotDesc(spotDesc);
+        spot.setLabel(label);
+        spot.setStartPoint(startPoint);
+        return JsonUtils.objectToString(spotService.addSpot(spot));
 
     }
 
@@ -144,6 +162,11 @@ public class ManageController {
         return JsonUtils.objectToString(userService.getUserInfoByAccount(account));
     }
 
+    /**
+     * 通过userId删除
+     * @param param
+     * @return
+     */
     @ResponseBody
     @RequestMapping(value = "/deleteByUserId.json", method = RequestMethod.POST)
     public String deleteByUserId(@RequestParam Map<String, Object> param) {
@@ -155,6 +178,11 @@ public class ManageController {
     }
 
 
+    /**
+     * 添加菜单
+     * @param param
+     * @return
+     */
     @ResponseBody
     @RequestMapping(value = "/addMenu.json", method = RequestMethod.POST)
     public String addMenu(@RequestParam Map<String,Object> param) {
@@ -170,4 +198,25 @@ public class ManageController {
         Integer pId = Integer.parseInt(parentId);
         return JsonUtils.objectToString(menuService.addMenu(pId,menuName,menuIcon, menuUrl, menuId));
     }
+
+    /**
+     * 获取图片
+     * @param response
+     * @throws IOException
+     */
+    @RequestMapping(value = "/getImage.json",method= RequestMethod.GET)
+    public void getImage(HttpServletResponse response, @RequestParam Map<String,Object> param)
+            throws IOException {
+        String path = (String) param.get(Param.IMAGE_URL);
+        //设置不缓存图片
+        response.setHeader("Pragma", "No-cache");
+        response.setHeader("Cache-Control", "No-cache");
+        response.setDateHeader("Expires", 0);
+        //指定生成的响应图片,一定不能缺少这句话,否则错误.
+        response.setContentType("image/jpeg");
+        //创建BufferedImage对象,其作用相当于一图片
+        BufferedImage image = ComUtils.readImageFile(new File(path));
+        ImageIO.write(image,"JPEG",response.getOutputStream()); //输出图片
+    }
+
 }

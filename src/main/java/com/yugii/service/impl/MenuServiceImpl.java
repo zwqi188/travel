@@ -1,6 +1,5 @@
 package com.yugii.service.impl;
 
-import com.mchange.v1.util.CollectionUtils;
 import com.yugii.constants.Constant;
 import com.yugii.constants.Param;
 import com.yugii.dao.MenuDao;
@@ -11,6 +10,7 @@ import com.yugii.response.LeResponse;
 import com.yugii.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.transaction.Transactional;
@@ -49,12 +49,22 @@ public class MenuServiceImpl implements MenuService {
        try {
            Menu menu = new Menu();
            List<Menu> menuList = menuDao.getMenuListByParentIdSortByOrder(parentId);
-           Integer menuOrder = menuList.get(0).getMenuOrder() + 1;
+           Integer menuOrder = 1;
+           if(StringUtils.isEmpty(menuId)) {
+               menuId = menuList.get(0).getMenuId();
+           }
+           if(!CollectionUtils.isEmpty(menuList)) {
+               menuOrder = menuList.get(0).getMenuOrder() + 1;
+           }
            menu.setMenuOrder(menuOrder);
            if (parentId == 0) {
                menu.setMenuId(String.valueOf(1000 + menuOrder));
+               menu.setIsLeaf(Param.NO_LEAF);
+               menu.setState(Constant.STATE_VALID);
            } else {
                menu.setMenuId(String.valueOf(Integer.valueOf(menuId) * 100 + menuOrder));
+               menu.setIsLeaf(Param.YES_LEAF);
+               menu.setState(Constant.STATE_VALID);
            }
            menu.setMenuName(menuName);
            menu.setMenuThumbnail(menuIcon);

@@ -1,5 +1,6 @@
 package com.yugii.service;
 
+import com.yugii.entity.Spot;
 import com.yugii.response.LeResponse;
 
 /**
@@ -9,13 +10,14 @@ public interface SpotService {
 
     /**
      * 新增景点
-     * @param spotName
-     * @param cityId
-     * @param price
-     * @param spotImg
-     * @param spotDesc
      * @return
      */
-    LeResponse addSpot(String spotName, String cityId,
-                       String price, String spotImg, String spotDesc);
+    LeResponse addSpot(Spot spot);
+
+    /**
+     * 获取推荐景点
+     * @param recommondType
+     * @return
+     */
+    LeResponse getRecommondSpot(String recommondType);
 }

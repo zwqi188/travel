@@ -133,15 +133,20 @@ CREATE TABLE `spot` (
   `createdAt` datetime DEFAULT NULL,
   `love` int(11) DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
+  `label` varchar(255) DEFAULT NULL COMMENT '关键字',
+  `startPoint` varchar(255) DEFAULT NULL COMMENT '出发地',
+  `sysRecommend` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `spot`
 -- ----------------------------
 BEGIN;
-INSERT INTO `spot` VALUES ('1', 'ererre', 'rt', '45', '[\"../uploadImg/92b9b902-1ed0-4d1b-b126-b5ec4acf4b77/贝加尔湖畔.jpg\"]', '7657568769879', '2019-04-07 09:20:34', null, null);
+INSERT INTO `spot` VALUES ('1', '【国旅自组】QR摩洛哥10天跟团游', 'rt', '41800', '[\"../uploadImg/92b9b902-1ed0-4d1b-b126-b5ec4acf4b77/贝加尔湖畔.jpg\"]', '7657568769879', '2019-04-07 09:20:34', null, null, '[\"卡萨布兰卡\",\"拉巴特\",\"马拉喀什\"]', '上海出发', '16'), ('2', '【国旅自组】纳米比亚津巴布韦赞比亚博兹瓦纳15天跟团游', '浙江苏州市', '10999', '[\"../uploadImg/a1aa5e6c-4b2f-4944-81a4-fb40b30db35a/100.jpg\"]', '苏州城外寒山寺，夜半钟声到客船', '2019-04-20 13:38:52', null, null, '[\"纳米比亚\",\"津巴布韦\",\"赞比亚\",\"博兹瓦纳\"]', '上海出发', '5'), ('3', '【国旅开班】恋上波西米亚 奥地利 匈牙利 捷克 斯洛伐克 德国13天跟团游>新春特别班期---赠送维也纳音乐会 布拉格城堡 匈牙利三小镇 茜茜公主美泉宫', '奥地利 匈牙利 捷克 斯洛伐克 德国', '35445', '[\"../uploadImg/ea7f6c38-e812-4e24-ac52-3a3e5705f1ff/0636467ca694fd072ea7f7fddca2a367.jpg\"]', '【国旅开班】恋上波西米亚 奥地利 匈牙利 捷克 斯洛伐克 德国13天跟团游&gt;<div>新春特别班期---赠送维也纳音乐会 布拉格城堡 匈牙利三小镇</div><div>&nbsp;茜茜公主美泉宫</div>', '2019-04-21 00:22:45', null, null, null, null, null), ('4', '【国旅开班】恋上波西米亚 奥地利 匈牙利 捷克 斯洛伐克 德国13天跟团游>新春特别班期---赠送维也纳音乐会 布拉格城堡 匈牙利三小镇 茜茜公主美泉宫', '奥地利 匈牙利 捷克 斯洛伐克 德国', '35445', '[\"../uploadImg/ea7f6c38-e812-4e24-ac52-3a3e5705f1ff/0636467ca694fd072ea7f7fddca2a367.jpg\",\"../uploadImg/0a06f9c6-c180-403f-b2d8-fbf42b360702/8137a90d5b2c53e96323c2ceecff2079.jpg\",\"../uploadImg/116f98f3-a9af-4e8f-b835-55eecc7f1e7c/eb7c195921ac6f7ad283d17c3357b21a.jpg\",\"../uploadImg/a047f8ce-6603-41f3-9fa5-511fdf6feaed/2439f4cf4abb9779d25e6e755b698ed4.jpg\",\"../uploadImg/ba084424-28cf-4ac2-a385-c70ba061f3ea/4a44919975410727ddf7e32b4158fd47.jpg\"]', '【国旅开班】恋上波西米亚 奥地利 匈牙利 捷克 斯洛伐克 德国13天跟团游&gt;<div>新春特别班期---赠送维也纳音乐会 布拉格城堡 匈牙利三小镇</div><div>&nbsp;茜茜公主美泉宫</div>', '2019-04-21 00:34:29', null, null, null, null, null);
 COMMIT;
+
+SET FOREIGN_KEY_CHECKS = 1;
 
 -- ----------------------------
 --  Table structure for `ticket`

@@ -1,5 +1,7 @@
 package com.yugii.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -47,6 +49,20 @@ public class Spot implements Serializable{
 	 */
 	private Date updatedAt;
 
+	/**
+	 * 关键字
+	 */
+	private String label;
+
+	/**
+	 * 出发地
+	 */
+	private String startPoint;
+
+	/**
+	 * 系统推荐指数
+	 */
+	private Integer sysRecommend;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -114,6 +130,7 @@ public class Spot implements Serializable{
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "createdAt")
 	public Date getCreatedAt() {
 		return createdAt;
@@ -124,6 +141,7 @@ public class Spot implements Serializable{
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "updatedAt")
 	public Date getUpdatedAt() {
 		return updatedAt;
@@ -134,4 +152,30 @@ public class Spot implements Serializable{
 	}
 
 
+	@Column(name = "label")
+	public String getLabel() {
+		return label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
+	@Column(name = "startPoint")
+	public String getStartPoint() {
+		return startPoint;
+	}
+
+	public void setStartPoint(String startPoint) {
+		this.startPoint = startPoint;
+	}
+
+	@Column(name = "sysRecommend")
+	public Integer getSysRecommend() {
+		return sysRecommend;
+	}
+
+	public void setSysRecommend(Integer sysRecommend) {
+		this.sysRecommend = sysRecommend;
+	}
 }

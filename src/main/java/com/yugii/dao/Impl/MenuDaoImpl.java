@@ -29,7 +29,7 @@ public class MenuDaoImpl extends BaseDAO<Menu> implements MenuDao {
 
     @Override
     public List<Menu> getMenuListByParentIdSortByOrder(Integer parentId) {
-        String hql = "select IFNULL(MAX(menuOrder),0) menuOrder from Menu where parentId=:parentId order by menuOrder desc ";
+        String hql = "from Menu where parentId=:parentId order by menuOrder desc ";
         Map<String, Object> param= new HashMap<>();
         param.put("parentId", parentId);
         return find(hql, param);

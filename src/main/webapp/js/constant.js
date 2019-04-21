@@ -12,6 +12,8 @@ travelApp.factory('ConstantFactory',function () {
     constant.URL_GET_USERINFO_BY_USERID = "/travel/getUserInfoByUserId.json";
     //修改用户信息
     constant.URL_UPDATE_USERINFO = "/travel/updateUserInfo.json";
+    //获取推荐景点信息
+    constant.URL_GET_SPOT_RECOMMEND_TYPE = "/travel/spot/getRecommendSpot.json";
 
     constant.RESP_CODE_1000 = "1000";
 

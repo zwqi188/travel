@@ -1,5 +1,7 @@
 package com.yugii.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -51,6 +53,7 @@ public class Discount {
 
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "createdAt")
 	public Date getCreatedAt() {
 		return createdAt;
@@ -61,6 +64,7 @@ public class Discount {
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name = "updatedAt")
 	public Date getUpdatedAt() {
 		return updatedAt;
