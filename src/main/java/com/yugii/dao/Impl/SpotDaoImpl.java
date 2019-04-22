@@ -32,7 +32,7 @@ public class SpotDaoImpl extends BaseDAO<Spot> implements SpotDao {
     public List<Spot> findBySysRecommend() {
         try {
             String hql = "from Spot order by sysRecommend desc";
-            return find(hql);
+            return find(hql,5);
         } catch (Exception ex) {
             ex.printStackTrace();
             return null;
@@ -49,7 +49,7 @@ public class SpotDaoImpl extends BaseDAO<Spot> implements SpotDao {
     public List<Spot> findByCreated() {
         try {
             String hql = "from Spot order by createdAt desc";
-            return find(hql);
+            return find(hql,5);
         } catch (Exception ex) {
             ex.printStackTrace();
             return null;

@@ -1,7 +1,7 @@
 <div class="web_new">
     <div class="gl_menu" id="gnBox_n">
         <div class="gl_title gl_gn"><i class="gl_gn_logo"></i><h2>国内游</h2></div>
-        <div class="gl_classline" id="inbound">
+        <div class="gl_classline gl_inbound" id="inbound">
             <ul>
                 <li class="current">精选</li>
                 <li>云南</li>
@@ -22,29 +22,29 @@
     <div class="gl_m_left">
         <div class="hotsec"><h4>热门目的地</h4>
             <ul>
-                <li><a target="_blank" href="/guide/lijiang.htm">丽江</a></li>
-                <li><a target="_blank" href="/guide/sanya.htm">三亚</a></li>
-                <li><a target="_blank" href="/guide/guilin.htm">桂林</a></li>
-                <li><a target="_blank" href="/guide/zhangjiajie.htm">张家界</a></li>
-                <li><a href="/xizang_t/" target="_blank">西藏 </a></li>
-                <li><a href="/guide/qingdao.htm" target="_blank">青岛 </a></li>
-                <li><a href="/xinjiang_t/" target="_blank">新疆</a></li>
-                <li><a href="/guide/xiamen.htm" target="_blank">厦门</a></li>
-                <li><a href="/guide/chongqing.htm" target="_blank">重庆</a></li>
-                <li><a href="/guide/kunming.htm" target="_blank">昆明</a></li>
-                <li><a href="/guide/dalian.htm" target="_blank">大连</a></li>
-                <li><a href="/guide/haerbin.htm" target="_blank">哈尔滨</a></li>
-                <li><a href="/guide/pingyao.htm" target="_blank">平遥</a></li>
-                <li><a href="/guide/sanxia.htm" target="_blank">三峡</a></li>
-                <li><a href="/guide/shenlongjia.htm" target="_blank">神农架</a></li>
-                <li><a href="/guide/tulufan.htm" target="_blank">吐鲁番</a></li>
-                <li><a href="/guide/dali.htm" target="_blank">大理</a></li>
-                <li><a href="/guide/xian.htm" target="_blank">西安</a></li>
-                <li><a href="/guide/wuyishan.htm" target="_blank">武夷山</a></li>
-                <li><a href="/guide/jiuzhaigou.htm" target="_blank">九寨沟 </a></li>
-                <li><a href="/guide/chengdu.htm" target="_blank">成都</a></li>
-                <li><a href="/neimenggu_t/" target="_blank">内蒙古</a></li>
-                <li><a href="/guide/xishuangbanna.htm" target="_blank">西双版纳</a></li>
+                <li><a>丽江</a></li>
+                <li><a>三亚</a></li>
+                <li><a>桂林</a></li>
+                <li><a>张家界</a></li>
+                <li><a>西藏 </a></li>
+                <li><a>青岛 </a></li>
+                <li><a>新疆</a></li>
+                <li><a>厦门</a></li>
+                <li><a>重庆</a></li>
+                <li><a>昆明</a></li>
+                <li><a>大连</a></li>
+                <li><a>哈尔滨</a></li>
+                <li><a>平遥</a></li>
+                <li><a>三峡</a></li>
+                <li><a>神农架</a></li>
+                <li><a>吐鲁番</a></li>
+                <li><a>大理</a></li>
+                <li><a>西安</a></li>
+                <li><a>武夷山</a></li>
+                <li><a>九寨沟 </a></li>
+                <li><a>成都</a></li>
+                <li><a>内蒙古</a></li>
+                <li><a>西双版纳</a></li>
             </ul>
         </div>
         <div class="prpsecpic">
@@ -93,3 +93,11 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".gl_inbound ul li").click(function(){
+            $(".gl_inbound ul li").removeClass("current");
+            $(this).addClass("current");
+        });
+    });
+</script>

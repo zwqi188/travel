@@ -94,6 +94,22 @@ public class BaseDAO<T> implements Serializable {
         return query.list();
     }
 
+    /**
+     * 查询前n条
+     * @param queryString
+     * @param end
+     * @return
+     * @throws DataAccessException
+     */
+    public List<T> find(String queryString, Integer end) throws DataAccessException {
+        log.debug("DAO:Running HQL query :" + queryString);
+        Query query = getSession().createQuery(queryString);
+        query.setMaxResults(end);
+        query.setFirstResult(1);
+        query.setCacheable(true);
+        return query.list();
+    }
+
     private Query createQuery(String queryString, Map<String, Object> params, int startRow, int pageSize) {
         Query query = getSession().createQuery(queryString);
         if (params != null) {

@@ -3,7 +3,7 @@
         <div class="gl_title gl_zb">
             <i class="gl_zb_logo"></i><h2>上海周边</h2>
         </div>
-        <div class="gl_classline" id="peripherals">
+        <div class="gl_classline gl_around" id="peripherals">
             <ul>
                 <li class="current">精选</li>
                 <li>浙江</li>
@@ -81,3 +81,11 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".gl_around ul li").click(function(){
+            $(".gl_around ul li").removeClass("current");
+            $(this).addClass("current");
+        });
+    });
+</script>

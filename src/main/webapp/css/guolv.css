@@ -253,15 +253,15 @@ a img{border:none;}
 .v_p i{ font-style:normal; font-size:12px; padding-right:5px;}
 
 .t_content li{ width:390px; height:236px; margin-bottom:10px;}
-.t_content .t_name{ position:absolute; bottom:0; left:0;background:url(http://images.tyjiaqi.com/imgs1/shawBg.png); padding-left:10px; width:380px; color:#fff; line-height:32px; font-size:16px; height:32px; overflow:hidden;}
+.t_content .t_name{ position:absolute; bottom:0; left:0;background:url('../images/shawBg.png'); padding-left:10px; width:380px; color:#fff; line-height:32px; font-size:16px; height:32px; overflow:hidden;}
 .t_content  .t_sm{ width:190px; height:113px;}
 .t_content  .t_sm .t_name{ width:180px;}
 
-.cat_re_line{display:none; float:left; bottom:0px; left:0px; position:absolute;}
-.cat_re_line li{width:220px; float:left;  margin-right:25px; margin-bottom:15px; position:relative;}
+.cat_re_line {display:none; float:left; bottom:0px; left:0px; position:absolute;}
+.cat_re_line li{ width:216px; float:left; margin-left: 12px; margin-right:12px; margin-bottom:15px; position:relative;}
 .cat_re_line li:hover{box-shadow:0px 4px 12px #ddd;}
 .cat_re_line .re_cf{ position:absolute; right:7px; bottom:10px;}
-.cat_re_line .re_lnewname{position:absolute; bottom:0px; color:#fff;background:url(http://images.tyjiaqi.com/imgs1/shawBg.png); font-size:12px; z-index:9; left:0px;padding:3px 5px 2px 5px; line-height:20px; max-height:20px; overflow:hidden; width:210px;}
+.cat_re_line .re_lnewname{position:absolute; bottom:0px; color:#fff;background:url('../images/shawBg.png'); font-size:12px; z-index:9; left:0px;padding:3px 5px 2px 5px; line-height:20px; max-height:20px; overflow:hidden; width:200px;}
 .cat_re_line .re_img{  float:left; height:120px; position:relative;}
 .cat_re_line .re_cont{ float:left; background:#f9f9f9; padding:5px;}
 .cat_re_line .re_title{float:left; height:43px; overflow:hidden; line-height:21px; width:210px;}
