@@ -15,7 +15,7 @@
                     <li ng-repeat="item in recommendList"><p class="re_img" ><a>
                         <img class="scrollLoading" src="/travel/spot/getImage.json?imageUrl={{item.spotImgs[0]}}" width="220" height="120"></a>
                         <span class="re_lnewname">{{item.label}}</span></p><p class="re_cont">
-                        <span class="re_title"><a ui-sref="travelDetailView" target="_blank">{{item.spotName}}</a></span>
+                        <span class="re_title"><a href="#travelDetailView" target="_blank">{{item.spotName}}</a></span>
                         <span class="re_prices"><i>￥</i>{{item.price}}<em>起</em></span>
                         <span class="re_cf">{{item.startPoint}}</span></p>
                     </li>
